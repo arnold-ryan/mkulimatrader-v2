@@ -18372,7 +18372,7 @@ ${t} to its parent, because: ${e}`), this.childBlock = r, this.childState = n
                         static parseZoomOptions_(e) {
                             e = e.zoom || {};
                             let t = {};
-                            return t.controls = void 0 !== e.controls && !!e.controls, t.wheel = void 0 !== e.wheel && !!e.wheel, t.startScale = void 0 === e.startScale ? 1 : Number(e.startScale), t.maxScale = void 0 === e.maxScale ? 3 : Number(e.maxScale), t.minScale = void 0 === e.minScale ? .3 : Number(e.minScale), t.scaleSpeed = void 0 === e.scaleSpeed ? 1.2 : Number(e.scaleSpeed), t.pinch = void 0 === e.pinch ? t.wheel || t.controls : !!e.pinch, t
+                            return t.controls = void 0 !== e.controls && !!e.controls, t.wheel = void 0 !== e.wheel && !!e.wheel, t.startScale = void 0 === e.startScale ? 1 : Number(e.startScale), t.maxScale = void 0 === e.maxScale ? 3 : Number(e.maxScale), t.minScale = void 0 === e.minScale ?.3 : Number(e.minScale), t.scaleSpeed = void 0 === e.scaleSpeed ? 1.2 : Number(e.scaleSpeed), t.pinch = void 0 === e.pinch ? t.wheel || t.controls : !!e.pinch, t
                         }
                         static parseGridOptions_(e) {
                             e = e.grid || {};
@@ -41315,7 +41315,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     weekdays: {
                         format: "нядзелю_панядзелак_аўторак_сераду_чацвер_пятніцу_суботу".split("_"),
                         standalone: "нядзеля_панядзелак_аўторак_серада_чацвер_пятніца_субота".split("_"),
-                        isFormat: /\[ ?[Ууў] ?(?:мінулую|наступную)? ?\] ?dddd/
+                        isFormat: /\[ ?[Ууў] ?(?:мінулую|наступную)??\] ?dddd/
                     },
                     weekdaysShort: "нд_пн_ат_ср_чц_пт_сб".split("_"),
                     weekdaysMin: "нд_пн_ат_ср_чц_пт_сб".split("_"),
@@ -48305,7 +48305,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     weekdays: {
                         standalone: "воскресенье_понедельник_вторник_среда_четверг_пятница_суббота".split("_"),
                         format: "воскресенье_понедельник_вторник_среду_четверг_пятницу_субботу".split("_"),
-                        isFormat: /\[ ?[Вв] ?(?:прошлую|следующую|эту)? ?] ?dddd/
+                        isFormat: /\[ ?[Вв] ?(?:прошлую|следующую|эту)??] ?dddd/
                     },
                     weekdaysShort: "вс_пн_вт_ср_чт_пт_сб".split("_"),
                     weekdaysMin: "вс_пн_вт_ср_чт_пт_сб".split("_"),
@@ -50218,7 +50218,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         accusative: "неділю_понеділок_вівторок_середу_четвер_п’ятницю_суботу".split("_"),
                         genitive: "неділі_понеділка_вівторка_середи_четверга_п’ятниці_суботи".split("_")
                     };
-                    return !0 === e ? r.nominative.slice(1, 7).concat(r.nominative.slice(0, 1)) : e ? r[/(\[[ВвУу]\]) ?dddd/.test(t) ? "accusative" : /\[?(?:минулої|наступної)? ?\] ?dddd/.test(t) ? "genitive" : "nominative"][e.day()] : r.nominative
+                    return !0 === e ? r.nominative.slice(1, 7).concat(r.nominative.slice(0, 1)) : e ? r[/(\[[ВвУу]\]) ?dddd/.test(t) ? "accusative" : /\[?(?:минулої|наступної)??\] ?dddd/.test(t) ? "genitive" : "nominative"][e.day()] : r.nominative
                 }
 
                 function i(e) {
@@ -55465,7 +55465,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                             [_, [p, "Quark"]],
                             [/\bddg\/([\w\.]+)/i],
                             [_, [p, "DuckDuckGo"]],
-                            [/(?:\buc? ?browser|(?:juc.+)ucweb)[\/ ]?([\w\.]+)/i],
+                            [/(?:\buc??browser|(?:juc.+)ucweb)[\/ ]?([\w\.]+)/i],
                             [_, [p, "UC" + O]],
                             [/microm.+\bqbcore\/([\w\.]+)/i, /\bqbcore\/([\w\.]+).+microm/i, /micromessenger\/([\w\.]+)/i],
                             [_, [p, "WeChat"]],
@@ -56685,10 +56685,10 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                 tn = (e, t, r) => {
                     let n = [];
                     return function(i, o) {
-                        if (!(t ? .includes(i) || e && D(o))) {
+                        if (!(t ?.includes(i) || e && D(o))) {
                             if ("object" != typeof o || M(o)) return o;
                             for (; n.length > 0 && n[n.length - 1] !== this;) n.pop();
-                            return n.includes(o) ? (r ? .warn(te(tr, i)), "[Circular Reference]") : (n.push(o), o)
+                            return n.includes(o) ? (r ?.warn(te(tr, i)), "[Circular Reference]") : (n.push(o), o)
                         }
                     }
                 },
@@ -56696,7 +56696,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     try {
                         return JSON.stringify(e, tn(t, r, n))
                     } catch (e) {
-                        return n ? .warn(tt, e), null
+                        return n ?.warn(tt, e), null
                     }
                 },
                 to = (e, t) => {
@@ -56713,18 +56713,18 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                 tl = e => {
                     let t = document.getElementsByTagName("head");
                     if (t.length > 0) {
-                        t[0] ? .insertBefore(e, t[0] ? .firstChild);
+                        t[0] ?.insertBefore(e, t[0] ?.firstChild);
                         return
                     }
                     let r = document.getElementsByTagName("script");
-                    if (r.length > 0 && r[0] ? .parentNode) {
-                        r[0] ? .parentNode.insertBefore(e, r[0]);
+                    if (r.length > 0 && r[0] ?.parentNode) {
+                        r[0] ?.parentNode.insertBefore(e, r[0]);
                         return
                     }
                     let n = document.createElement("head");
                     n.appendChild(e);
                     let i = document.getElementsByTagName("html")[0];
-                    i ? .insertBefore(n, i.firstChild)
+                    i ?.insertBefore(n, i.firstChild)
                 },
                 tu = (e, t, r, n = !0, i) => new Promise((o, s) => {
                     document.getElementById(t) && s(Error(e8(t)));
@@ -56764,7 +56764,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     })
                 }
                 onError(e) {
-                    if (this.hasErrorHandler) this.errorHandler ? .onError(e, ec);
+                    if (this.hasErrorHandler) this.errorHandler ?.onError(e, ec);
                     else throw e
                 }
             }
@@ -57056,7 +57056,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     this.outputLog("ERROR", e)
                 }
                 outputLog(e, t) {
-                    this.minLogLevel <= tA[e] && this.logProvider[e.toLowerCase()] ? .(...this.formatLogData(t))
+                    this.minLogLevel <= tA[e] && this.logProvider[e.toLowerCase()] ?.(...this.formatLogData(t))
                 }
                 setScope(e) {
                     this.scope = e || this.scope
@@ -57400,17 +57400,17 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     if (!e.name) {
                         let t = t0(es);
                         if (this.config.throws) throw Error(t);
-                        this.logger ? .error(t, e)
+                        this.logger ?.error(t, e)
                     }
                     if (this.byName[e.name]) {
                         let t = t1(es, e.name);
                         if (this.config.throws) throw Error(t);
-                        this.logger ? .error(t)
+                        this.logger ?.error(t)
                     }
                     this.cache = {}, this.plugins = this.plugins.slice();
                     let r = this.plugins.length;
                     this.plugins.forEach((t, n) => {
-                        t.deps ? .includes(e.name) && (r = Math.min(r, n))
+                        t.deps ?.includes(e.name) && (r = Math.min(r, n))
                     }), this.plugins.splice(r, 0, e), this.byName[e.name] = e, T(e.initialize) && e.initialize(t)
                 }
                 unregister(e) {
@@ -57418,13 +57418,13 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     if (!t) {
                         let t = t2(es, e);
                         if (this.config.throws) throw Error(t);
-                        this.logger ? .error(t)
+                        this.logger ?.error(t)
                     }
                     let r = this.plugins.indexOf(t);
                     if (-1 === r) {
                         let t = t3(es, e);
                         if (this.config.throws) throw Error(t);
-                        this.logger ? .error(t)
+                        this.logger ?.error(t)
                     }
                     this.cache = {}, delete this.byName[e], this.plugins = this.plugins.slice(), this.plugins.splice(r, 1)
                 }
@@ -57432,11 +57432,11 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     return this.byName[e]
                 }
                 getPlugins(e) {
-                    let t = e ? ? ".";
+                    let t = e ?? ".";
                     return !this.cache[t] && (this.cache[t] = this.plugins.filter(e => {
-                        if (e.deps ? .some(e => !this.byName[e])) {
+                        if (e.deps ?.some(e => !this.byName[e])) {
                             let t = e.deps.filter(e => !this.byName[e]);
-                            return this.logger ? .error(t4(es, e.name, t)), !1
+                            return this.logger ?.error(t4(es, e.name, t)), !1
                         }
                         return "." === t || x(e, t)
                     })), this.cache[t]
@@ -57448,7 +57448,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     let n = e;
                     if (!n) throw Error(tq);
                     let i = n.startsWith("!"),
-                        o = this.config.throws ? ? n.endsWith("!");
+                        o = this.config.throws ?? n.endsWith("!");
                     if (!(n = n.replace(/(^!|!$)/g, ""))) throw Error(tK);
                     let s = n.split(".");
                     s.pop();
@@ -57460,7 +57460,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                             return t.apply(R(e, a), r)
                         } catch (t) {
                             if (o) throw t;
-                            this.logger ? .error(t5(es, n, e.name), t)
+                            this.logger ?.error(t5(es, n, e.name), t)
                         }
                         return null
                     })
@@ -57490,7 +57490,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         if (e instanceof Error || e instanceof ErrorEvent || e instanceof PromiseRejectionEvent && e.reason) return e;
                         if (e instanceof Event) {
                             let t = e.target;
-                            if (t && "script" !== t.localName || t ? .dataset && (t.dataset.loader !== nh || "true" !== t.dataset.isnonnativesdk)) return;
+                            if (t && "script" !== t.localName || t ?.dataset && (t.dataset.loader !== nh || "true" !== t.dataset.isnonnativesdk)) return;
                             let r = `Error in loading a third-party script from URL ${t?.src} with ID ${t?.id}.`;
                             return Object.create(e, {
                                 message: {
@@ -57519,7 +57519,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         this.onError(e, void 0, void 0, void 0, tj.UNHANDLEDEXCEPTION)
                     }), globalThis.addEventListener("unhandledrejection", e => {
                         this.onError(e, void 0, void 0, void 0, tj.UNHANDLEDREJECTION)
-                    })) : this.logger ? .debug("Failed to attach global error listeners.")
+                    })) : this.logger ?.debug("Failed to attach global error listeners.")
                 }
                 init(e, t) {
                     if (this.httpClient = e, !!this.pluginEngine) try {
@@ -57528,7 +57528,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         r instanceof Promise && r.then(e => {
                             this.errReportingClient = e
                         }).catch(e => {
-                            this.logger ? .error(tZ(eo), e)
+                            this.logger ?.error(tZ(eo), e)
                         })
                     } catch (e) {
                         this.onError(e, eo)
@@ -57561,7 +57561,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                             })
                         }
                     } catch (e) {
-                        this.logger ? .error(tQ(eo), e)
+                        this.logger ?.error(tQ(eo), e)
                     }
                     if (i === tj.HANDLEDEXCEPTION) {
                         if (this.logger) {
@@ -57580,7 +57580,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     if (this.pluginEngine && this.httpClient) try {
                         this.pluginEngine.invokeSingle("errorReporting.notify", this.pluginEngine, this.errReportingClient, e, nl, this.logger, this.httpClient, t)
                     } catch (e) {
-                        this.logger ? .error(tQ(eo), e)
+                        this.logger ?.error(tQ(eo), e)
                     }
                 }
             }
@@ -57631,7 +57631,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
             }
 
             function nS(e, t) {
-                if (!e ? .default && t) {
+                if (!e ?.default && t) {
                     let t = Object.create(null);
                     return t.default = e, t.__esModule = !0, t
                 }
@@ -57690,7 +57690,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                 },
                 nO = () => ({}),
                 nC = () => ({}),
-                nI = e => nD ? .(e) || {},
+                nI = e => nD ?.(e) || {},
                 nA = { ...nO(),
                     ...nC()
                 },
@@ -57755,7 +57755,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     let n;
                     let i = e.shouldAddMissingPlugins || t,
                         o = (n = e.activePluginName ? [...e.basePlugins || [], e.activePluginName] : [...e.supportedPlugins]).filter(e => !r.includes(e));
-                    o.length > 0 && (i && r.push(...o), this.logger ? .warn(rx(en, e.configurationStatusStr, o, i)))
+                    o.length > 0 && (i && r.push(...o), this.logger ?.warn(rx(en, e.configurationStatusStr, o, i)))
                 }
                 setActivePlugins() {
                     let e = this.getPluginsToLoadBasedOnConfig(),
@@ -57907,7 +57907,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                             details: e
                         }
                     } catch (e) {
-                        return this.onError(e.error ? ? e), {
+                        return this.onError(e.error ?? e), {
                             data: void 0,
                             details: e
                         }
@@ -57924,11 +57924,11 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     nB(nY(r, n, this.basicAuthHeader), i, this.logger).then(e => {
                         !s && t(o ? e.response : nN(e.response, this.onError), e)
                     }).catch(e => {
-                        this.onError(e.error ? ? e), !s && t(void 0, e)
+                        this.onError(e.error ?? e), !s && t(void 0, e)
                     })
                 }
                 onError(e) {
-                    if (this.hasErrorHandler) this.errorHandler ? .onError(e, eh);
+                    if (this.hasErrorHandler) this.errorHandler ?.onError(e, eh);
                     else throw e
                 }
                 setAuthHeader(e, t = !1) {
@@ -57975,7 +57975,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     try {
                         return encodeURIComponent(e)
                     } catch (e) {
-                        t ? .error(n3, e);
+                        t ?.error(n3, e);
                         return
                     }
                 },
@@ -58030,7 +58030,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         },
                         isRawResponse: !0,
                         callback: (e, t) => {
-                            nl.capabilities.isAdBlocked.value = t ? .error !== void 0 || t ? .xhr ? .responseURL !== n
+                            nl.capabilities.isAdBlocked.value = t ?.error !== void 0 || t ?.xhr ?.responseURL !== n
                         }
                     })
                 },
@@ -58039,7 +58039,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                 io = () => !D(globalThis.navigator.sendBeacon) && T(globalThis.navigator.sendBeacon),
                 is = () => !!globalThis.navigator.userAgent.match(/Trident.*rv:11\./),
                 ia = (e, t = "none") => {
-                    "none" === t && e(void 0), "default" === t && e(navigator.userAgentData), "full" === t && navigator.userAgentData ? .getHighEntropyValues(["architecture", "bitness", "brands", "mobile", "model", "platform", "platformVersion", "uaFullVersion", "fullVersionList", "wow64"]).then(t => {
+                    "none" === t && e(void 0), "default" === t && e(navigator.userAgentData), "full" === t && navigator.userAgentData ?.getHighEntropyValues(["architecture", "bitness", "brands", "mobile", "model", "platform", "platformVersion", "uaFullVersion", "fullVersionList", "wow64"]).then(t => {
                         e(t)
                     }).catch(() => {
                         e()
@@ -58121,10 +58121,10 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                                 n = t, i = nq;
                                 break;
                             case nU:
-                                n = t ? ? globalThis.localStorage, i = nK;
+                                n = t ?? globalThis.localStorage, i = nK;
                                 break;
                             case nW:
-                                n = t ? ? globalThis.sessionStorage, i = nJ;
+                                n = t ?? globalThis.sessionStorage, i = nJ;
                                 break;
                             default:
                                 return !1
@@ -58134,7 +58134,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     } catch (e) {
                         l = !1, o = e, id(e) && (a = "full")
                     }
-                    return !l && r ? .warn(`${s}${a}.`, o), !1
+                    return !l && r ?.warn(`${s}${a}.`, o), !1
                 },
                 ig = e => {
                     let t = document.createElement("a");
@@ -58142,7 +58142,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                 },
                 i_ = e => {
                     let t = "function" != typeof globalThis.URL ? ig(e) : new URL(e).hostname,
-                        r = t ? .split(".") ? ? [],
+                        r = t ?.split(".") ?? [],
                         n = r[r.length - 1],
                         i = [];
                     if (4 === r.length && n && n === parseInt(n, 10).toString()) return i;
@@ -58191,7 +58191,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     this.options = iy(), this.logger = t, this.configure(e), ik.globalSingleton = this
                 }
                 configure(e) {
-                    return this.options = Y(this.options ? ? {}, e), e.sameDomainCookiesOnly && delete this.options.domain, this.isSupportAvailable = ip(nH, this), this.isEnabled = !!(this.options.enabled && this.isSupportAvailable), this.options
+                    return this.options = Y(this.options ?? {}, e), e.sameDomainCookiesOnly && delete this.options.domain, this.isSupportAvailable = ip(nH, this), this.isEnabled = !!(this.options.enabled && this.isSupportAvailable), this.options
                 }
                 setItem(e, t) {
                     return ie(e, t, this.options, this.logger), this.length = Object.keys(ie()).length, !0
@@ -58206,7 +58206,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                 }
                 clear() {}
                 key(e) {
-                    return this.keys()[e] ? ? null
+                    return this.keys()[e] ?? null
                 }
                 keys() {
                     return Object.keys(ie())
@@ -58217,7 +58217,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                 length = 0;
                 data = {};
                 constructor(e, t) {
-                    this.options = iw(), this.logger = t, this.configure(e ? ? {})
+                    this.options = iw(), this.logger = t, this.configure(e ?? {})
                 }
                 configure(e) {
                     return this.options = Y(this.options, e), this.isEnabled = !!this.options.enabled, this.options
@@ -58235,7 +58235,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     this.data = {}, this.length = 0
                 }
                 key(e) {
-                    return this.keys()[e] ? ? null
+                    return this.keys()[e] ?? null
                 }
                 keys() {
                     return Object.keys(this.data)
@@ -58407,7 +58407,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     iD.clear(), this.length = 0
                 }
                 key(e) {
-                    return this.keys()[e] ? ? null
+                    return this.keys()[e] ?? null
                 }
                 keys() {
                     return iD.keys()
@@ -58436,10 +58436,10 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     if (!!this.store) this.store.removeItem(e), this.length = this.store.length
                 }
                 clear() {
-                    this.store ? .clear(), this.length = 0
+                    this.store ?.clear(), this.length = 0
                 }
                 key(e) {
-                    return this.store ? .key(e) ? ? null
+                    return this.store ?.key(e) ?? null
                 }
                 keys() {
                     let e = [];
@@ -58492,7 +58492,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
             class iB {
                 hasErrorHandler = !1;
                 constructor(e, t, r) {
-                    this.id = e.id, this.name = e.name, this.isEncrypted = e.isEncrypted ? ? !1, this.validKeys = e.validKeys ? ? {}, this.engine = t ? ? iR(nU), this.noKeyValidation = 0 === Object.keys(this.validKeys).length, this.noCompoundKey = e.noCompoundKey, this.originalEngine = this.engine, this.errorHandler = e.errorHandler ? ? ng, this.hasErrorHandler = !!this.errorHandler, this.logger = e.logger ? ? tB, this.pluginsManager = r
+                    this.id = e.id, this.name = e.name, this.isEncrypted = e.isEncrypted ?? !1, this.validKeys = e.validKeys ?? {}, this.engine = t ?? iR(nU), this.noKeyValidation = 0 === Object.keys(this.validKeys).length, this.noCompoundKey = e.noCompoundKey, this.originalEngine = this.engine, this.errorHandler = e.errorHandler ?? ng, this.hasErrorHandler = !!this.errorHandler, this.logger = e.logger ?? tB, this.pluginsManager = r
                 }
                 createValidKey(e) {
                     let t;
@@ -58525,7 +58525,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     if (!!r) try {
                         this.engine.setItem(r, this.encrypt(ti(t, !1, [], this.logger)))
                     } catch (r) {
-                        id(r) ? (this.logger ? .warn(rv(`Store ${this.id}`)), this.swapQueueStoreToInMemoryEngine(), this.set(e, t)) : this.onError(to(r, ri(e)))
+                        id(r) ? (this.logger ?.warn(rv(`Store ${this.id}`)), this.swapQueueStoreToInMemoryEngine(), this.set(e, t)) : this.onError(to(r, ri(e)))
                     }
                 }
                 get(e) {
@@ -58536,7 +58536,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         if (t = this.decrypt(this.engine.getItem(r)), D(t)) return null;
                         return JSON.parse(t)
                     } catch (r) {
-                        return this.onError(Error(`${ro(e)}: ${r.message}`)), S(t) && t.startsWith("RudderEncrypt:") && this.logger ? .warn(r$(e)), null
+                        return this.onError(Error(`${ro(e)}: ${r.message}`)), S(t) && t.startsWith("RudderEncrypt:") && this.logger ?.warn(r$(e)), null
                     }
                 }
                 remove(e) {
@@ -58556,16 +58556,16 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     if (!this.isEncrypted || !e || "string" != typeof e || "" === H(e)) return e;
                     let r = `storage.${t}`,
                         n = this.pluginsManager ? this.pluginsManager.invokeSingle(r, e) : e;
-                    return void 0 === n ? e : n ? ? ""
+                    return void 0 === n ? e : n ?? ""
                 }
                 onError(e) {
-                    if (this.hasErrorHandler) this.errorHandler ? .onError(e, `Store ${this.id}`);
+                    if (this.hasErrorHandler) this.errorHandler ?.onError(e, `Store ${this.id}`);
                     else throw e
                 }
             }
             let ij = (e, t) => {
                 let r;
-                if (e.consents.preConsent.value.enabled) switch (e.consents.preConsent.value.storage ? .strategy) {
+                if (e.consents.preConsent.value.enabled) switch (e.consents.preConsent.value.storage ?.strategy) {
                     case "none":
                         r = nG;
                         break;
@@ -58605,11 +58605,11 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                                 enabled: !0
                             }
                         };
-                    iY(j(Y(t.cookieStorageOptions ? ? {}, nl.storage.cookie ? .value ? ? {})), j(t.localStorageOptions), j(t.inMemoryStorageOptions), j(t.sessionStorageOptions)), this.initClientDataStores(), this.isInitialized = !0
+                    iY(j(Y(t.cookieStorageOptions ?? {}, nl.storage.cookie ?.value ?? {})), j(t.localStorageOptions), j(t.inMemoryStorageOptions), j(t.sessionStorageOptions)), this.initClientDataStores(), this.isInitialized = !0
                 }
                 initClientDataStores() {
                     this.initializeStorageState(), [nV, nU, nH, nW].forEach(e => {
-                        iR(e) ? .isEnabled && this.setStore({
+                        iR(e) ?.isEnabled && this.setStore({
                             id: n2[e],
                             name: n2[e],
                             isEncrypted: !0,
@@ -58620,16 +58620,16 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                 }
                 initializeStorageState() {
                     let e = nl.storage.type.value,
-                        t = nl.loadOptions.value.storage ? .entries,
+                        t = nl.loadOptions.value.storage ?.entries,
                         r = nl.consents.postConsent.value.storage;
-                    (O(r ? .type) || O(r ? .entries)) && (e = r ? .type, t = r ? .entries);
+                    (O(r ?.type) || O(r ?.entries)) && (e = r ?.type, t = r ?.entries);
                     let n = !0,
                         i = {};
                     n1.forEach(r => {
                         let o = r,
                             s = r,
-                            a = t ? .[o] ? .type,
-                            l = ij(nl, r) ? ? a ? ? e ? ? tH,
+                            a = t ?.[o] ?.type,
+                            l = ij(nl, r) ?? a ?? e ?? tH,
                             u = this.getResolvedStorageTypeForEntry(l, r);
                         u !== nG && (n = !1), i = { ...i,
                             [r]: {
@@ -58645,18 +58645,18 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     let r = e;
                     switch (e) {
                         case nU:
-                            !iR(nU) ? .isEnabled && (r = nV);
+                            !iR(nU) ?.isEnabled && (r = nV);
                             break;
                         case nW:
-                            !iR(nW) ? .isEnabled && (r = nV);
+                            !iR(nW) ?.isEnabled && (r = nV);
                             break;
                         case nV:
                         case nG:
                             break;
                         default:
-                            r = iR(nH) ? .isEnabled ? nH : iR(nU) ? .isEnabled ? nU : iR(nW) ? .isEnabled ? nW : nV
+                            r = iR(nH) ?.isEnabled ? nH : iR(nU) ?.isEnabled ? nU : iR(nW) ?.isEnabled ? nW : nV
                     }
-                    return r !== e && this.logger ? .warn(rb(ea, t, e, r)), r
+                    return r !== e && this.logger ?.warn(rb(ea, t, e, r)), r
                 }
                 setStore(e) {
                     let t = iR(e.type);
@@ -58666,7 +58666,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     return this.stores[e]
                 }
                 onError(e) {
-                    if (this.hasErrorHandler) this.errorHandler ? .onError(e, ea);
+                    if (this.hasErrorHandler) this.errorHandler ?.onError(e, ea);
                     else throw e
                 }
             }
@@ -58732,7 +58732,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         })
                     }), t
                 },
-                i0 = e => e ? .endsWith("/") ? i0(e.substring(0, e.length - 1)) : e,
+                i0 = e => e ?.endsWith("/") ? i0(e.substring(0, e.length - 1)) : e,
                 i1 = e => {
                     try {
                         return new URL(e).host
@@ -58740,7 +58740,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         return null
                     }
                 },
-                i2 = e => i1(e) ? ? "",
+                i2 = e => i1(e) ?? "",
                 i3 = e => {
                     let t = {};
                     try {
@@ -58766,8 +58766,8 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                 i5 = () => !!(window.chrome && window.chrome.runtime && window.chrome.runtime.id),
                 i6 = "none",
                 i8 = "immediate",
-                i7 = e => e ? .statsCollection ? .errors ? .enabled === !0,
-                i9 = e => e ? .statsCollection ? .metrics ? .enabled === !0,
+                i7 = e => e ?.statsCollection ?.errors ?.enabled === !0,
+                i9 = e => e ?.statsCollection ?.metrics ?.enabled === !0,
                 oe = e => {
                     let t = {
                         sendPageEvent: !1,
@@ -58787,7 +58787,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     let {
                         provider: r
                     } = e, n = r ? rK[r] : void 0;
-                    return r && !n && (t ? .error(tX(et, r, rK)), r = void 0), {
+                    return r && !n && (t ?.error(tX(et, r, rK)), r = void 0), {
                         provider: r,
                         consentManagerPluginName: n
                     }
@@ -58797,7 +58797,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     let i = [],
                         o = [],
                         s = !1,
-                        a = e ? .enabled === !0;
+                        a = e ?.enabled === !0;
                     B(e) && a && ({
                         provider: n,
                         consentManagerPluginName: r
@@ -58833,12 +58833,12 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         storage: i,
                         setCookieDomain: o,
                         sameDomainCookiesOnly: s
-                    } = nl.loadOptions.value, a = i ? .cookie, l = !1;
+                    } = nl.loadOptions.value, a = i ?.cookie, l = !1;
                     if (r) {
                         l = r;
-                        let i = a.domain ? ? o,
+                        let i = a.domain ?? o,
                             u = O(i) && !iZ(W(i)) || s,
-                            c = iX(n ? ? rZ, u);
+                            c = iX(n ?? rZ, u);
                         if (iU(c)) {
                             t = i0(c);
                             let r = i1(window.location.href),
@@ -58846,7 +58846,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                             r !== n && (a = { ...a,
                                 samesite: "None",
                                 secure: !0
-                            }), !s && u && n !== W(i) && (l = !1, e ? .warn(rd(et, i, n)))
+                            }), !s && u && n !== W(i) && (l = !1, e ?.warn(rd(et, i, n)))
                         } else l = !1
                     }
                     return {
@@ -58858,14 +58858,14 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                 oa = e => {
                     let {
                         storage: t
-                    } = nl.loadOptions.value, r = t ? .type;
-                    O(r) && !iq(r) && (e ? .warn(ru(et, r, tH)), r = tH);
-                    let n = t ? .encryption ? .version,
+                    } = nl.loadOptions.value, r = t ?.type;
+                    O(r) && !iq(r) && (e ?.warn(ru(et, r, tH)), r = tH);
+                    let n = t ?.encryption ?.version,
                         i = n && rJ[n];
-                    !L(n) && L(i) ? (e ? .warn(rc(et, n, rJ, rq)), n = rq) : L(n) && (n = rq);
-                    let o = t ? .migrate,
+                    !L(n) && L(i) ? (e ?.warn(rc(et, n, rJ, rq)), n = rq) : L(n) && (n = rq);
+                    let o = t ?.migrate,
                         s = o && n === rq;
-                    !0 === o && s !== o && e ? .warn(rh(et, n, rq));
+                    !0 === o && s !== o && e ?.warn(rh(et, n, rq));
                     let {
                         sscEnabled: a,
                         finalDataServiceUrl: l,
@@ -58882,13 +58882,13 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         initialized: n,
                         enabled: i,
                         consentsData: o
-                    } = on(nl.loadOptions.value.consentManagement, e), s = nl.loadOptions.value.preConsent, a = s ? .storage ? .strategy ? ? i6, l = ["none", "session", "anonymousId"];
-                    O(a) && !l.includes(a) && (a = i6, e ? .warn(rA(et, s ? .storage ? .strategy, i6)));
-                    let u = s ? .events ? .delivery ? ? i8,
+                    } = on(nl.loadOptions.value.consentManagement, e), s = nl.loadOptions.value.preConsent, a = s ?.storage ?.strategy ?? i6, l = ["none", "session", "anonymousId"];
+                    O(a) && !l.includes(a) && (a = i6, e ?.warn(rA(et, s ?.storage ?.strategy, i6)));
+                    let u = s ?.events ?.delivery ?? i8,
                         c = ["immediate", "buffer"];
-                    O(u) && !c.includes(u) && (u = i8, e ? .warn(rR(et, s ? .events ? .delivery, i8))), tp(() => {
+                    O(u) && !c.includes(u) && (u = i8, e ?.warn(rR(et, s ?.events ?.delivery, i8))), tp(() => {
                         nl.consents.activeConsentManagerPluginName.value = r, nl.consents.initialized.value = n, nl.consents.enabled.value = i, nl.consents.data.value = o, nl.consents.provider.value = t, nl.consents.preConsent.value = {
-                            enabled: nl.loadOptions.value.preConsent ? .enabled === !0 && !1 === n && !0 === i,
+                            enabled: nl.loadOptions.value.preConsent ?.enabled === !0 && !1 === n && !0 === i,
                             storage: {
                                 strategy: a
                             },
@@ -58900,7 +58900,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                 },
                 ou = e => {
                     let t, r = nl.consents.resolutionStrategy.value;
-                    $(e.consentManagementMetadata) && (nl.consents.provider.value && (r = e.consentManagementMetadata.providers.find(e => e.provider === nl.consents.provider.value) ? .resolutionStrategy ? ? nl.consents.resolutionStrategy.value), t = e.consentManagementMetadata), "custom" === nl.consents.provider.value && (r = void 0), tp(() => {
+                    $(e.consentManagementMetadata) && (nl.consents.provider.value && (r = e.consentManagementMetadata.providers.find(e => e.provider === nl.consents.provider.value) ?.resolutionStrategy ?? nl.consents.resolutionStrategy.value), t = e.consentManagementMetadata), "custom" === nl.consents.provider.value && (r = void 0), tp(() => {
                         nl.consents.metadata.value = m(t), nl.consents.resolutionStrategy.value = r
                     })
                 },
@@ -58908,7 +58908,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     if (nl.dataPlaneEvents.deliveryEnabled.value) {
                         let t = "XhrQueue",
                             r = t;
-                        nl.loadOptions.value.useBeacon && (nl.capabilities.isBeaconAvailable.value ? r = "BeaconQueue" : (r = t, e ? .warn(rf(et)))), tp(() => {
+                        nl.loadOptions.value.useBeacon && (nl.capabilities.isBeaconAvailable.value ? r = "BeaconQueue" : (r = t, e ?.warn(rf(et)))), tp(() => {
                             nl.dataPlaneEvents.eventsQueuePluginName.value = r
                         })
                     }
@@ -58931,7 +58931,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         !i0(t.pathname).endsWith("/sourceConfig") && (t.pathname = `${i0(t.pathname)}/sourceConfig/`), t.pathname = iH(t.pathname), o.forEach((e, r) => {
                             null === t.searchParams.get(r) && t.searchParams.set(r, e)
                         }), s = t.origin, l = t.pathname, a = t.searchParams, u = t.hash
-                    } else i ? .warn(rC(et, e));
+                    } else i ?.warn(rC(et, e));
                     return `${s}${l}?${a}${u}`
                 },
                 od = (e, t, r, n, i, o) => {
@@ -58952,7 +58952,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                 }
                 attachEffects() {
                     tC(() => {
-                        this.logger ? .setMinLogLevel(nl.lifecycle.logLevel.value)
+                        this.logger ?.setMinLogLevel(nl.lifecycle.logLevel.value)
                     })
                 }
                 init() {
@@ -58974,13 +58974,13 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     }), this.getConfig()
                 }
                 onError(e, t, r) {
-                    if (this.hasErrorHandler) this.errorHandler ? .onError(e, et, t, r);
+                    if (this.hasErrorHandler) this.errorHandler ?.onError(e, et, t, r);
                     else throw e
                 }
                 processConfig(e, t) {
                     let r;
                     if (!e) {
-                        this.onError(t8(t ? .error));
+                        this.onError(t8(t ?.error));
                         return
                     }
                     try {
@@ -58994,7 +58994,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         return
                     }
                     if (!1 === r.source.enabled) {
-                        this.logger ? .error(tV);
+                        this.logger ?.error(tV);
                         return
                     }
                     oo(r);
@@ -59004,7 +59004,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                             config: r.source.config,
                             id: r.source.id,
                             workspaceId: r.source.workspaceId
-                        }, nl.nativeDestinations.configuredDestinations.value = n, nl.plugins.pluginsToLoadFromConfig.value = nl.loadOptions.value.plugins ? ? [], ou(r), nl.lifecycle.status.value = "configured"
+                        }, nl.nativeDestinations.configuredDestinations.value = n, nl.plugins.pluginsToLoadFromConfig.value = nl.loadOptions.value.plugins ?? [], ou(r), nl.lifecycle.status.value = "configured"
                     })
                 }
                 getConfig() {
@@ -59030,14 +59030,14 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     let e = new Date().toString().match(/([A-Z]+[+-]\d+)/);
                     return e && e[1] ? e[1] : "NA"
                 },
-                om = () => document ? .referrer || "$direct",
+                om = () => document ?.referrer || "$direct",
                 oy = () => {
                     let e = document.getElementsByTagName("link"),
                         t = "";
                     for (let r = 0; e[r]; r += 1) {
                         let n = e[r];
                         if ("canonical" === n.getAttribute("rel") && !t) {
-                            t = n.getAttribute("href") ? ? "";
+                            t = n.getAttribute("href") ?? "";
                             break
                         }
                     }
@@ -59056,7 +59056,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     }
                     return e
                 },
-                ob = () => L(globalThis.navigator) ? null : globalThis.navigator.language ? ? globalThis.navigator.browserLanguage,
+                ob = () => L(globalThis.navigator) ? null : globalThis.navigator.language ?? globalThis.navigator.browserLanguage,
                 ow = () => {
                     let e = oy(),
                         t = globalThis.location.pathname,
@@ -59113,7 +59113,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     nl.capabilities.isLegacyDOM.value = ic();
                     let e = nl.loadOptions.value.polyfillURL,
                         t = ok;
-                    if (C(e) && (iU(e) ? t = e : this.logger ? .warn(rN(ee, e))), nl.loadOptions.value.polyfillIfRequired && nl.capabilities.isLegacyDOM.value && iU(t)) {
+                    if (C(e) && (iU(e) ? t = e : this.logger ?.warn(rN(ee, e))), nl.loadOptions.value.polyfillIfRequired && nl.capabilities.isLegacyDOM.value && iU(t)) {
                         let e = t !== nl.loadOptions.value.polyfillURL;
                         if (e) {
                             let e = `RS_polyfillCallback_${nl.lifecycle.writeKey.value}`,
@@ -59163,7 +59163,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     return !!(!e || t > e)
                 },
                 oN = () => Date.now(),
-                o$ = (e, t) => !!(e && oA(e) && oI(oR, e)) || (t ? .warn(ry(ei, e, oR)), !1),
+                o$ = (e, t) => !!(e && oA(e) && oI(oR, e)) || (t ?.warn(ry(ei, e, oR)), !1),
                 oP = e => {
                     let t = Date.now(),
                         r = e || eV;
@@ -59186,11 +59186,11 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     let t = ow(),
                         r = {};
                     return Object.keys(t).forEach(n => {
-                        r[n] = e ? .[n] || t[n]
-                    }), r.initial_referrer = e ? .initial_referrer || nl.session.initialReferrer.value, r.initial_referring_domain = e ? .initial_referring_domain || nl.session.initialReferringDomain.value, r
+                        r[n] = e ?.[n] || t[n]
+                    }), r.initial_referrer = e ?.initial_referrer || nl.session.initialReferrer.value, r.initial_referring_domain = e ?.initial_referring_domain || nl.session.initialReferringDomain.value, r
                 },
                 oH = (e, t) => {
-                    let r = t ? .page || {},
+                    let r = t ?.page || {},
                         n = e,
                         i = ow();
                     return Object.keys(i).forEach(e => {
@@ -59199,7 +59199,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                 },
                 oU = (e, t, r) => {
                     $(e) && Object.keys(e).forEach(e => {
-                        (oO.includes(e) || oO.includes(e.toLowerCase())) && r ? .warn(rp(er, e, t, oO))
+                        (oO.includes(e) || oO.includes(e.toLowerCase())) && r ?.warn(rp(er, e, t, oO))
                     })
                 },
                 oW = (e, t) => {
@@ -59237,7 +59237,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                 },
                 oq = e => {
                     let t;
-                    return m(t = nl.loadOptions.value.useGlobalIntegrationsConfigInEvents ? nl.consents.postConsent.value.integrations ? ? nl.nativeDestinations.loadOnlyIntegrations.value : e ? e : rY)
+                    return m(t = nl.loadOptions.value.useGlobalIntegrationsConfigInEvents ? nl.consents.postConsent.value.integrations ?? nl.nativeDestinations.loadOnlyIntegrations.value : e ? e : rY)
                 },
                 oK = (e, t, r, n) => {
                     let i = {
@@ -59277,7 +59277,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         messageId: eS(),
                         userId: e.userId || nl.session.userId.value
                     };
-                    oB(nl.storage.entries.value.anonymousId ? .type) ? i.anonymousId = nl.session.anonymousId.value : i.anonymousId = oj(), nl.storage.trulyAnonymousTracking.value && (i.context.trulyAnonymousTracking = !0), "identify" === e.type && (i.context.traits = nl.storage.entries.value.userTraits ? .type !== nG ? m(nl.session.userTraits.value) : e.context.traits), "group" === e.type && ((e.groupId || nl.session.groupId.value) && (i.groupId = e.groupId || nl.session.groupId.value), (e.traits || nl.session.groupTraits.value) && (i.traits = nl.storage.entries.value.groupTraits ? .type !== nG ? m(nl.session.groupTraits.value) : e.traits));
+                    oB(nl.storage.entries.value.anonymousId ?.type) ? i.anonymousId = nl.session.anonymousId.value : i.anonymousId = oj(), nl.storage.trulyAnonymousTracking.value && (i.context.trulyAnonymousTracking = !0), "identify" === e.type && (i.context.traits = nl.storage.entries.value.userTraits ?.type !== nG ? m(nl.session.userTraits.value) : e.context.traits), "group" === e.type && ((e.groupId || nl.session.groupId.value) && (i.groupId = e.groupId || nl.session.groupId.value), (e.traits || nl.session.groupTraits.value) && (i.traits = nl.storage.entries.value.groupTraits ?.type !== nG ? m(nl.session.groupTraits.value) : e.traits));
                     let o = Y(e, i);
                     return void 0 === o.event && (o.event = null), void 0 === o.properties && (o.properties = null), oz(o, t), oW(o, n), o.integrations = oq(o.integrations), o
                 };
@@ -59286,7 +59286,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     this.logger = e
                 }
                 generatePageEvent(e, t, r, n) {
-                    let i = r ? ? {};
+                    let i = r ?? {};
                     return oK({
                         properties: i = oH(i, n),
                         name: t,
@@ -59315,7 +59315,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         previousId: t,
                         type: "alias"
                     }, r, void 0, this.logger);
-                    return n.userId = e ? ? n.userId, n
+                    return n.userId = e ?? n.userId, n
                 }
                 generateGroupEvent(e, t, r) {
                     let n = {
@@ -59378,13 +59378,13 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         externalAnonymousIdCookieName: t,
                         anonymousIdOptions: r
                     } = nl.loadOptions.value;
-                    C(t) && "string" == typeof t && (e = this.getExternalAnonymousIdByCookieName(t)), this.setAnonymousId(e ? ? this.getAnonymousId(r)), this.setAuthToken(this.getAuthToken()), this.setInitialReferrerInfo(), this.configureSessionTracking()
+                    C(t) && "string" == typeof t && (e = this.getExternalAnonymousIdByCookieName(t)), this.setAnonymousId(e ?? this.getAnonymousId(r)), this.setAuthToken(this.getAuthToken()), this.setInitialReferrerInfo(), this.configureSessionTracking()
                 }
                 configureSessionTracking() {
                     let e = this.getSessionInfo();
                     if (this.isPersistenceEnabledForStorageEntry("sessionInfo")) {
                         let t = this.getConfiguredSessionTrackingInfo(),
-                            r = e ? ? r3;
+                            r = e ?? r3;
                         !(e = { ...r,
                             ...t,
                             autoTrack: t.autoTrack && !0 !== r.manualTrack
@@ -59402,17 +59402,17 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     }
                 }
                 isPersistenceEnabledForStorageEntry(e) {
-                    return oB(nl.storage.entries.value[e] ? .type)
+                    return oB(nl.storage.entries.value[e] ?.type)
                 }
                 migrateDataFromPreviousStorage() {
                     let e = nl.storage.entries.value,
                         t = [nH, nU, nW];
                     Object.keys(e).forEach(r => {
                         let n = r,
-                            i = e[n] ? .type,
-                            o = this.storeManager ? .getStore(n2[i]);
+                            i = e[n] ?.type,
+                            o = this.storeManager ?.getStore(n2[i]);
                         o && t.forEach(e => {
-                            let t = this.storeManager ? .getStore(n2[e]);
+                            let t = this.storeManager ?.getStore(n2[e]);
                             if (t && e !== i) {
                                 let e = t.get(nz[n]);
                                 I(e) && o.set(nz[n], e), t.remove(nz[n])
@@ -59424,23 +59424,23 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     if (!nl.storage.migrate.value) return;
                     let e = [];
                     [nZ, nQ, n0].forEach(t => {
-                        let r = this.storeManager ? .getStore(t);
+                        let r = this.storeManager ?.getStore(t);
                         r && e.push(r)
                     }), Object.keys(nz).forEach(t => {
                         let r = nz[t];
                         e.forEach(e => {
-                            let t = this.pluginsManager ? .invokeSingle("storage.migrate", r, e.engine, this.errorHandler, this.logger);
+                            let t = this.pluginsManager ?.invokeSingle("storage.migrate", r, e.engine, this.errorHandler, this.logger);
                             !D(t) && e.set(r, t)
                         })
                     })
                 }
                 getConfiguredSessionTrackingInfo() {
-                    let e, t = nl.loadOptions.value.sessions ? .autoTrack !== !1;
+                    let e, t = nl.loadOptions.value.sessions ?.autoTrack !== !1;
                     if (!t) return {
                         autoTrack: t
                     };
-                    let r = nl.loadOptions.value.sessions ? .timeout;
-                    return oA(r) ? e = r : (this.logger ? .warn(rg(ei, r, eV)), e = eV), 0 === e && (this.logger ? .warn(r_(ei)), t = !1), e > 0 && e < eG && this.logger ? .warn(rm(ei, e, eG)), {
+                    let r = nl.loadOptions.value.sessions ?.timeout;
+                    return oA(r) ? e = r : (this.logger ?.warn(rg(ei, r, eV)), e = eV), 0 === e && (this.logger ?.warn(r_(ei)), t = !1), e > 0 && e < eG && this.logger ?.warn(rm(ei, e, eG)), {
                         timeout: e,
                         autoTrack: t
                     }
@@ -59452,7 +59452,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                 getEncryptedCookieData(e, t) {
                     let r = [];
                     return e.forEach(e => {
-                        let n = t ? .encrypt(ti(e.value, !1, [], this.logger));
+                        let n = t ?.encrypt(ti(e.value, !1, [], this.logger));
                         C(n) && r.push({
                             name: e.name,
                             value: n
@@ -59460,21 +59460,21 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     }), r
                 }
                 makeRequestToSetCookie(e, t) {
-                    this.httpClient ? .getAsyncData({
+                    this.httpClient ?.getAsyncData({
                         url: nl.serverCookies.dataServiceUrl.value,
                         options: {
                             method: "POST",
                             data: ti({
                                 reqType: "setCookies",
-                                workspaceId: nl.source.value ? .workspaceId,
+                                workspaceId: nl.source.value ?.workspaceId,
                                 data: {
                                     options: {
-                                        maxAge: nl.storage.cookie.value ? .maxage,
-                                        path: nl.storage.cookie.value ? .path,
-                                        domain: nl.storage.cookie.value ? .domain,
-                                        sameSite: nl.storage.cookie.value ? .samesite,
-                                        secure: nl.storage.cookie.value ? .secure,
-                                        expires: nl.storage.cookie.value ? .expires
+                                        maxAge: nl.storage.cookie.value ?.maxage,
+                                        path: nl.storage.cookie.value ?.path,
+                                        domain: nl.storage.cookie.value ?.domain,
+                                        sameSite: nl.storage.cookie.value ?.samesite,
+                                        secure: nl.storage.cookie.value ?.secure,
+                                        expires: nl.storage.cookie.value ?.expires
                                     },
                                     cookies: e
                                 }
@@ -59490,11 +59490,11 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     try {
                         let n = this.getEncryptedCookieData(e, r);
                         n.length > 0 && this.makeRequestToSetCookie(n, (n, i) => {
-                            i ? .xhr ? .status === 200 ? e.forEach(e => {
-                                let n = r ? .get(e.name),
+                            i ?.xhr ?.status === 200 ? e.forEach(e => {
+                                let n = r ?.get(e.name),
                                     i = ti(e.value, !1, []);
-                                ti(n, !1, []) !== i && (this.logger ? .error(ra(e.name)), t && t(e.name, e.value))
-                            }) : (this.logger ? .error(rs(i ? .xhr ? .status)), e.forEach(e => {
+                                ti(n, !1, []) !== i && (this.logger ?.error(ra(e.name)), t && t(e.name, e.value))
+                            }) : (this.logger ?.error(rs(i ?.xhr ?.status)), e.forEach(e => {
                                 t && t(e.name, e.value)
                             }))
                         })
@@ -59506,18 +59506,18 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                 }
                 syncValueToStorage(e, t) {
                     let r = nl.storage.entries.value,
-                        n = r[e] ? .type;
+                        n = r[e] ?.type;
                     if (oB(n)) {
-                        let i = this.storeManager ? .getStore(n2[n]),
-                            o = r[e] ? .key;
+                        let i = this.storeManager ?.getStore(n2[n]),
+                            o = r[e] ?.key;
                         t && (S(t) || B(t)) ? nl.serverCookies.isEnabledServerSideCookies.value && n === nH ? (this.serverSideCookieDebounceFuncs[e] && globalThis.clearTimeout(this.serverSideCookieDebounceFuncs[e]), this.serverSideCookieDebounceFuncs[e] = globalThis.setTimeout(() => {
                             this.setServerSideCookies([{
                                 name: o,
                                 value: t
                             }], (e, t) => {
-                                i ? .set(e, t)
+                                i ?.set(e, t)
                             }, i)
-                        }, r2)) : i ? .set(o, t) : i ? .remove(o)
+                        }, r2)) : i ?.set(o, t) : i ?.remove(o)
                     }
                 }
                 registerEffects() {
@@ -59529,28 +59529,28 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                 }
                 setAnonymousId(e, t) {
                     let r = e;
-                    this.isPersistenceEnabledForStorageEntry("anonymousId") ? (!r && t && (r = this.pluginsManager ? .invokeSingle("userSession.anonymousIdGoogleLinker", t)), r = r || oj()) : r = r1.anonymousId, nl.session.anonymousId.value = r
+                    this.isPersistenceEnabledForStorageEntry("anonymousId") ? (!r && t && (r = this.pluginsManager ?.invokeSingle("userSession.anonymousIdGoogleLinker", t)), r = r || oj()) : r = r1.anonymousId, nl.session.anonymousId.value = r
                 }
                 getAnonymousId(e) {
-                    if (oB(nl.storage.entries.value.anonymousId ? .type)) {
+                    if (oB(nl.storage.entries.value.anonymousId ?.type)) {
                         let t = this.getEntryValue("anonymousId");
-                        !t && e && (t = this.pluginsManager ? .invokeSingle("storage.getAnonymousId", iR, e)), nl.session.anonymousId.value = t || oj()
+                        !t && e && (t = this.pluginsManager ?.invokeSingle("storage.getAnonymousId", iR, e)), nl.session.anonymousId.value = t || oj()
                     }
                     return nl.session.anonymousId.value
                 }
                 getEntryValue(e) {
                     let t = nl.storage.entries.value,
-                        r = t[e] ? .type;
+                        r = t[e] ?.type;
                     if (oB(r)) {
-                        let n = this.storeManager ? .getStore(n2[r]),
-                            i = t[e] ? .key;
-                        return n ? .get(i) ? ? null
+                        let n = this.storeManager ?.getStore(n2[r]),
+                            i = t[e] ?.key;
+                        return n ?.get(i) ?? null
                     }
                     return null
                 }
                 getExternalAnonymousIdByCookieName(e) {
                     let t = iR(nH);
-                    return t ? .isEnabled ? t.getItem(e) ? ? null : null
+                    return t ?.isEnabled ? t.getItem(e) ?? null : null
                 }
                 getUserId() {
                     return this.getEntryValue("userId")
@@ -59577,11 +59577,11 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     return this.getEntryValue("authToken")
                 }
                 getSessionId() {
-                    let e = this.getSessionInfo() ? ? r1.sessionInfo;
-                    return e.autoTrack && !ox(e.expiresAt) || e.manualTrack ? e.id ? ? null : null
+                    let e = this.getSessionInfo() ?? r1.sessionInfo;
+                    return e.autoTrack && !ox(e.expiresAt) || e.manualTrack ? e.id ?? null : null
                 }
                 refreshSession() {
-                    let e = this.getSessionInfo() ? ? r1.sessionInfo;
+                    let e = this.getSessionInfo() ?? r1.sessionInfo;
                     (e.autoTrack || e.manualTrack) && (e.autoTrack && (this.startOrRenewAutoTracking(e), e = nl.session.sessionInfo.value), void 0 === e.sessionStart ? e = { ...e,
                         sessionStart: !0
                     } : e.sessionStart && (e = { ...e,
@@ -59603,13 +59603,13 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     nl.session.userId.value = this.isPersistenceEnabledForStorageEntry("userId") && e ? e : r1.userId
                 }
                 setUserTraits(e) {
-                    nl.session.userTraits.value = this.isPersistenceEnabledForStorageEntry("userTraits") && $(e) ? Y(nl.session.userTraits.value ? ? r1.userTraits, e) : r1.userTraits
+                    nl.session.userTraits.value = this.isPersistenceEnabledForStorageEntry("userTraits") && $(e) ? Y(nl.session.userTraits.value ?? r1.userTraits, e) : r1.userTraits
                 }
                 setGroupId(e) {
                     nl.session.groupId.value = this.isPersistenceEnabledForStorageEntry("groupId") && e ? e : r1.groupId
                 }
                 setGroupTraits(e) {
-                    nl.session.groupTraits.value = this.isPersistenceEnabledForStorageEntry("groupTraits") && $(e) ? Y(nl.session.groupTraits.value ? ? r1.groupTraits, e) : r1.groupTraits
+                    nl.session.groupTraits.value = this.isPersistenceEnabledForStorageEntry("groupTraits") && $(e) ? Y(nl.session.groupTraits.value ?? r1.groupTraits, e) : r1.groupTraits
                 }
                 setInitialReferrer(e) {
                     nl.session.initialReferrer.value = this.isPersistenceEnabledForStorageEntry("initialReferrer") && e ? e : r1.initialReferrer
@@ -59643,7 +59643,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
             let oQ = ["BeaconQueue", "Bugsnag", "CustomConsentManager", "DeviceModeDestinations", "DeviceModeTransformation", "ErrorReporting", "ExternalAnonymousId", "GoogleLinker", "IubendaConsentManager", "KetchConsentManager", "NativeDestinationQueue", "OneTrustConsentManager", "StorageEncryption", "StorageEncryptionLegacy", "StorageMigrator", "XhrQueue"],
                 o0 = (e, t) => {
                     let r = m(t);
-                    return !S(r.setCookieDomain) && delete r.setCookieDomain, !["Strict", "Lax", "None"].includes(r.sameSiteCookie) && delete r.sameSiteCookie, r.secureCookie = !0 === r.secureCookie, r.sameDomainCookiesOnly = !0 === r.sameDomainCookiesOnly, !["none", "default", "full"].includes(r.uaChTrackLevel) && delete r.uaChTrackLevel, !B(r.integrations) && delete r.integrations, r.plugins = r.plugins ? ? oQ, r.useGlobalIntegrationsConfigInEvents = !0 === r.useGlobalIntegrationsConfigInEvents, r.bufferDataPlaneEventsUntilReady = !0 === r.bufferDataPlaneEventsUntilReady, r.sendAdblockPage = !0 === r.sendAdblockPage, r.useServerSideCookies = !0 === r.useServerSideCookies, r.dataServiceEndpoint && "string" != typeof r.dataServiceEndpoint && delete r.dataServiceEndpoint, !$(r.sendAdblockPageOptions) && delete r.sendAdblockPageOptions, O(r.loadIntegration) ? r.loadIntegration = !0 === r.loadIntegration : delete r.loadIntegration, $(r.storage) ? (r.storage = F(r.storage), r.storage.migrate = r.storage ? .migrate === !0) : delete r.storage, $(r.beaconQueueOptions) ? r.beaconQueueOptions = F(r.beaconQueueOptions) : delete r.beaconQueueOptions, $(r.destinationsQueueOptions) ? r.destinationsQueueOptions = F(r.destinationsQueueOptions) : delete r.destinationsQueueOptions, $(r.queueOptions) ? r.queueOptions = F(r.queueOptions) : delete r.queueOptions, r.lockIntegrationsVersion = !0 === r.lockIntegrationsVersion, r.lockPluginsVersion = !0 === r.lockPluginsVersion, !oC(r.dataPlaneEventsBufferTimeout) && delete r.dataPlaneEventsBufferTimeout, $(r.storage ? .cookie) ? r.storage.cookie = F(r.storage ? .cookie) : delete r.storage ? .cookie, $(r.preConsent) ? r.preConsent = F(r.preConsent) : delete r.preConsent, Y(e, r)
+                    return !S(r.setCookieDomain) && delete r.setCookieDomain, !["Strict", "Lax", "None"].includes(r.sameSiteCookie) && delete r.sameSiteCookie, r.secureCookie = !0 === r.secureCookie, r.sameDomainCookiesOnly = !0 === r.sameDomainCookiesOnly, !["none", "default", "full"].includes(r.uaChTrackLevel) && delete r.uaChTrackLevel, !B(r.integrations) && delete r.integrations, r.plugins = r.plugins ?? oQ, r.useGlobalIntegrationsConfigInEvents = !0 === r.useGlobalIntegrationsConfigInEvents, r.bufferDataPlaneEventsUntilReady = !0 === r.bufferDataPlaneEventsUntilReady, r.sendAdblockPage = !0 === r.sendAdblockPage, r.useServerSideCookies = !0 === r.useServerSideCookies, r.dataServiceEndpoint && "string" != typeof r.dataServiceEndpoint && delete r.dataServiceEndpoint, !$(r.sendAdblockPageOptions) && delete r.sendAdblockPageOptions, O(r.loadIntegration) ? r.loadIntegration = !0 === r.loadIntegration : delete r.loadIntegration, $(r.storage) ? (r.storage = F(r.storage), r.storage.migrate = r.storage ?.migrate === !0) : delete r.storage, $(r.beaconQueueOptions) ? r.beaconQueueOptions = F(r.beaconQueueOptions) : delete r.beaconQueueOptions, $(r.destinationsQueueOptions) ? r.destinationsQueueOptions = F(r.destinationsQueueOptions) : delete r.destinationsQueueOptions, $(r.queueOptions) ? r.queueOptions = F(r.queueOptions) : delete r.queueOptions, r.lockIntegrationsVersion = !0 === r.lockIntegrationsVersion, r.lockPluginsVersion = !0 === r.lockPluginsVersion, !oC(r.dataPlaneEventsBufferTimeout) && delete r.dataPlaneEventsBufferTimeout, $(r.storage ?.cookie) ? r.storage.cookie = F(r.storage ?.cookie) : delete r.storage ?.cookie, $(r.preConsent) ? r.preConsent = F(r.preConsent) : delete r.preConsent, Y(e, r)
                 },
                 o1 = "dataplaneEventsQueue",
                 o2 = "destinationsEventsQueue",
@@ -59658,7 +59658,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         i = o4(e.integrations, n);
                     return r.integrations = Y(n, i), r
                 },
-                o6 = e => e.consents.preConsent.value.enabled && e.consents.preConsent.value.events ? .delivery === "buffer" && (e.consents.preConsent.value.storage ? .strategy === "session" || e.consents.preConsent.value.storage ? .strategy === "none");
+                o6 = e => e.consents.preConsent.value.enabled && e.consents.preConsent.value.events ?.delivery === "buffer" && (e.consents.preConsent.value.storage ?.strategy === "session" || e.consents.preConsent.value.storage ?.strategy === "none");
             class o8 {
                 constructor(e, t, r, n) {
                     this.pluginsManager = e, this.errorHandler = r, this.logger = n, this.httpClient = new nj(r, n), this.storeManager = t, this.onError = this.onError.bind(this)
@@ -59681,18 +59681,18 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         this.onError(e, rS)
                     }
                     tC(() => {
-                        !0 === nl.nativeDestinations.clientDestinationsReady.value && (this.destinationsEventsQueue ? .start(), this.dmtEventsQueue ? .start())
+                        !0 === nl.nativeDestinations.clientDestinationsReady.value && (this.destinationsEventsQueue ?.start(), this.dmtEventsQueue ?.start())
                     });
                     let t = o6(nl);
                     tC(() => {
                         let r = !0 === nl.loadOptions.value.bufferDataPlaneEventsUntilReady && !1 === nl.nativeDestinations.clientDestinationsReady.value;
-                        (!1 === nl.nativeDestinations.activeDestinations.value.some(e => nm(e)) || !1 === r) && !t && this.dataplaneEventsQueue ? .scheduleTimeoutActive !== !0 && (globalThis.clearTimeout(e), this.dataplaneEventsQueue ? .start())
+                        (!1 === nl.nativeDestinations.activeDestinations.value.some(e => nm(e)) || !1 === r) && !t && this.dataplaneEventsQueue ?.scheduleTimeoutActive !== !0 && (globalThis.clearTimeout(e), this.dataplaneEventsQueue ?.start())
                     }), !0 === nl.loadOptions.value.bufferDataPlaneEventsUntilReady && (e = globalThis.setTimeout(() => {
-                        this.dataplaneEventsQueue ? .scheduleTimeoutActive !== !0 && this.dataplaneEventsQueue ? .start()
+                        this.dataplaneEventsQueue ?.scheduleTimeoutActive !== !0 && this.dataplaneEventsQueue ?.start()
                     }, nl.loadOptions.value.dataPlaneEventsBufferTimeout))
                 }
                 resume() {
-                    this.dataplaneEventsQueue ? .scheduleTimeoutActive !== !0 && (nl.consents.postConsent.value.discardPreConsentEvents && (this.dataplaneEventsQueue ? .clear(), this.destinationsEventsQueue ? .clear()), this.dataplaneEventsQueue ? .start())
+                    this.dataplaneEventsQueue ?.scheduleTimeoutActive !== !0 && (nl.consents.postConsent.value.discardPreConsentEvents && (this.dataplaneEventsQueue ?.clear(), this.destinationsEventsQueue ?.clear()), this.dataplaneEventsQueue ?.start())
                 }
                 enqueue(e, t) {
                     let r;
@@ -59708,7 +59708,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         this.onError(e, rD)
                     }
                     try {
-                        t ? .(r)
+                        t ?.(r)
                     } catch (e) {
                         this.onError(e, rT)
                     }
@@ -59739,7 +59739,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         i = m(r);
                     N(t) && (i = t, n = void 0), tp(() => {
                         nl.lifecycle.writeKey.value = e, nl.lifecycle.dataPlaneUrl.value = n, nl.loadOptions.value = o0(nl.loadOptions.value, i), nl.lifecycle.status.value = "mounted"
-                    }), this.logger ? .setMinLogLevel(nl.loadOptions.value.logLevel ? ? tx), eJ("state", nl, e), this.startLifecycle()
+                    }), this.logger ?.setMinLogLevel(nl.loadOptions.value.logLevel ?? tx), eJ("state", nl, e), this.startLifecycle()
                 }
                 startLifecycle() {
                     tC(() => {
@@ -59800,13 +59800,13 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     this.pluginsManager = new nx(nc, this.errorHandler, this.logger), this.storeManager = new iF(this.pluginsManager, this.errorHandler, this.logger), this.configManager = new og(this.httpClient, this.errorHandler, this.logger), this.userSessionManager = new oZ(this.errorHandler, this.logger, this.pluginsManager, this.storeManager, this.httpClient), this.eventRepository = new o8(this.pluginsManager, this.storeManager, this.errorHandler, this.logger), this.eventManager = new oX(this.eventRepository, this.userSessionManager, this.errorHandler, this.logger)
                 }
                 loadConfig() {
-                    nl.lifecycle.writeKey.value && this.httpClient.setAuthHeader(nl.lifecycle.writeKey.value), this.configManager ? .init()
+                    nl.lifecycle.writeKey.value && this.httpClient.setAuthHeader(nl.lifecycle.writeKey.value), this.configManager ?.init()
                 }
                 onPluginsReady() {
-                    this.errorHandler.init(this.httpClient, this.externalSrcLoader), this.storeManager ? .init(), this.userSessionManager ? .init(), nl.consents.enabled.value && !nl.consents.initialized.value && (this.pluginsManager ? .invokeSingle("consentManager.init", nl, this.logger), !1 === nl.consents.preConsent.value.enabled && this.pluginsManager ? .invokeSingle("consentManager.updateConsentsInfo", nl, this.storeManager, this.logger)), this.eventManager ? .init(), nl.lifecycle.status.value = "initialized"
+                    this.errorHandler.init(this.httpClient, this.externalSrcLoader), this.storeManager ?.init(), this.userSessionManager ?.init(), nl.consents.enabled.value && !nl.consents.initialized.value && (this.pluginsManager ?.invokeSingle("consentManager.init", nl, this.logger), !1 === nl.consents.preConsent.value.enabled && this.pluginsManager ?.invokeSingle("consentManager.updateConsentsInfo", nl, this.storeManager, this.logger)), this.eventManager ?.init(), nl.lifecycle.status.value = "initialized"
                 }
                 onConfigured() {
-                    this.pluginsManager ? .init()
+                    this.pluginsManager ?.init()
                 }
                 onInitialized() {
                     this.processDataInPreloadBuffer(), T(nl.loadOptions.value.onLoaded) && nl.loadOptions.value.onLoaded(globalThis.rudderanalytics), tp(() => {
@@ -59835,13 +59835,13 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                 }
                 loadDestinations() {
                     if (nl.nativeDestinations.clientDestinationsReady.value) return;
-                    this.pluginsManager ? .invokeSingle("nativeDestinations.setActiveDestinations", nl, this.pluginsManager, this.errorHandler, this.logger);
+                    this.pluginsManager ?.invokeSingle("nativeDestinations.setActiveDestinations", nl, this.pluginsManager, this.errorHandler, this.logger);
                     let e = nl.nativeDestinations.activeDestinations.value.length;
                     if (0 === e) {
                         nl.lifecycle.status.value = "destinationsReady";
                         return
                     }
-                    nl.lifecycle.status.value = "destinationsLoading", this.pluginsManager ? .invokeSingle("nativeDestinations.load", nl, this.externalSrcLoader, this.errorHandler, this.logger), tC(() => {
+                    nl.lifecycle.status.value = "destinationsLoading", this.pluginsManager ?.invokeSingle("nativeDestinations.load", nl, this.externalSrcLoader, this.errorHandler, this.logger), tC(() => {
                         (0 === e || nl.nativeDestinations.initializedDestinations.value.length + nl.nativeDestinations.failedDestinations.value.length === e) && tp(() => {
                             nl.lifecycle.status.value = "destinationsReady", nl.nativeDestinations.clientDestinationsReady.value = !0
                         })
@@ -59872,7 +59872,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         nl.eventBuffer.toBeProcessedArray.value = [...nl.eventBuffer.toBeProcessedArray.value, [r, e]];
                         return
                     }
-                    this.errorHandler.leaveBreadcrumb(`New ${r} event`), nl.metrics.triggered.value += 1, this.eventManager ? .addEvent({
+                    this.errorHandler.leaveBreadcrumb(`New ${r} event`), nl.metrics.triggered.value += 1, this.eventManager ?.addEvent({
                         type: "page",
                         category: e.category,
                         name: e.name,
@@ -59889,7 +59889,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         nl.eventBuffer.toBeProcessedArray.value = [...nl.eventBuffer.toBeProcessedArray.value, [r, e]];
                         return
                     }
-                    this.errorHandler.leaveBreadcrumb(`New ${r} event`), nl.metrics.triggered.value += 1, this.eventManager ? .addEvent({
+                    this.errorHandler.leaveBreadcrumb(`New ${r} event`), nl.metrics.triggered.value += 1, this.eventManager ?.addEvent({
                         type: r,
                         name: e.name || void 0,
                         properties: e.properties,
@@ -59903,7 +59903,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         nl.eventBuffer.toBeProcessedArray.value = [...nl.eventBuffer.toBeProcessedArray.value, [r, e]];
                         return
                     }
-                    this.errorHandler.leaveBreadcrumb(`New ${r} event`), nl.metrics.triggered.value += 1, e.userId && nl.session.userId.value && e.userId !== nl.session.userId.value && this.reset(), !M(e.userId) && this.userSessionManager ? .setUserId(e.userId), this.userSessionManager ? .setUserTraits(e.traits), this.eventManager ? .addEvent({
+                    this.errorHandler.leaveBreadcrumb(`New ${r} event`), nl.metrics.triggered.value += 1, e.userId && nl.session.userId.value && e.userId !== nl.session.userId.value && this.reset(), !M(e.userId) && this.userSessionManager ?.setUserId(e.userId), this.userSessionManager ?.setUserTraits(e.traits), this.eventManager ?.addEvent({
                         type: r,
                         userId: e.userId,
                         traits: e.traits,
@@ -59918,8 +59918,8 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         return
                     }
                     this.errorHandler.leaveBreadcrumb(`New ${r} event`), nl.metrics.triggered.value += 1;
-                    let n = e.from ? ? this.userSessionManager ? .getUserId() ? ? this.userSessionManager ? .getAnonymousId();
-                    this.eventManager ? .addEvent({
+                    let n = e.from ?? this.userSessionManager ?.getUserId() ?? this.userSessionManager ?.getAnonymousId();
+                    this.eventManager ?.addEvent({
                         type: r,
                         to: e.to,
                         from: n,
@@ -59933,7 +59933,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         nl.eventBuffer.toBeProcessedArray.value = [...nl.eventBuffer.toBeProcessedArray.value, [r, e]];
                         return
                     }
-                    this.errorHandler.leaveBreadcrumb(`New ${r} event`), nl.metrics.triggered.value += 1, !M(e.groupId) && this.userSessionManager ? .setGroupId(e.groupId), this.userSessionManager ? .setGroupTraits(e.traits), this.eventManager ? .addEvent({
+                    this.errorHandler.leaveBreadcrumb(`New ${r} event`), nl.metrics.triggered.value += 1, !M(e.groupId) && this.userSessionManager ?.setGroupId(e.groupId), this.userSessionManager ?.setGroupTraits(e.traits), this.eventManager ?.addEvent({
                         type: r,
                         groupId: e.groupId,
                         traits: e.traits,
@@ -59947,10 +59947,10 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         nl.eventBuffer.toBeProcessedArray.value = [...nl.eventBuffer.toBeProcessedArray.value, [r, e]];
                         return
                     }
-                    this.errorHandler.leaveBreadcrumb(`New ${r} invocation, resetAnonymousId: ${e}`), this.userSessionManager ? .reset(e)
+                    this.errorHandler.leaveBreadcrumb(`New ${r} invocation, resetAnonymousId: ${e}`), this.userSessionManager ?.reset(e)
                 }
                 getAnonymousId(e) {
-                    return this.userSessionManager ? .getAnonymousId(e)
+                    return this.userSessionManager ?.getAnonymousId(e)
                 }
                 setAnonymousId(e, t, r = !1) {
                     let n = "setAnonymousId";
@@ -59958,7 +59958,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         nl.eventBuffer.toBeProcessedArray.value = [...nl.eventBuffer.toBeProcessedArray.value, [n, e, t]];
                         return
                     }
-                    this.errorHandler.leaveBreadcrumb(`New ${n} invocation`), this.userSessionManager ? .setAnonymousId(e, t)
+                    this.errorHandler.leaveBreadcrumb(`New ${n} invocation`), this.userSessionManager ?.setAnonymousId(e, t)
                 }
                 getUserId() {
                     return nl.session.userId.value
@@ -59978,7 +59978,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         nl.eventBuffer.toBeProcessedArray.value = [...nl.eventBuffer.toBeProcessedArray.value, [r, e]];
                         return
                     }
-                    this.errorHandler.leaveBreadcrumb(`New ${r} invocation`), this.userSessionManager ? .start(e)
+                    this.errorHandler.leaveBreadcrumb(`New ${r} invocation`), this.userSessionManager ?.start(e)
                 }
                 endSession(e = !1) {
                     let t = "endSession";
@@ -59986,10 +59986,10 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         nl.eventBuffer.toBeProcessedArray.value = [...nl.eventBuffer.toBeProcessedArray.value, [t]];
                         return
                     }
-                    this.errorHandler.leaveBreadcrumb(`New ${t} invocation`), this.userSessionManager ? .end()
+                    this.errorHandler.leaveBreadcrumb(`New ${t} invocation`), this.userSessionManager ?.end()
                 }
                 getSessionId() {
-                    return this.userSessionManager ? .getSessionId() ? ? null
+                    return this.userSessionManager ?.getSessionId() ?? null
                 }
                 consent(e, t = !1) {
                     let r = "consent";
@@ -60006,7 +60006,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                             consentsData: r
                         } = on(nl.consents.postConsent.value.consentManagement, this.logger);
                         nl.consents.initialized.value = t || nl.consents.initialized.value, nl.consents.data.value = r
-                    }), nl.consents.enabled.value && !nl.consents.initialized.value && this.pluginsManager ? .invokeSingle("consentManager.updateConsentsInfo", nl, this.storeManager, this.logger), this.storeManager ? .initializeStorageState(), this.userSessionManager ? .syncStorageDataToState(), this.eventManager ? .resume(), this.loadDestinations(), this.sendTrackingEvents(t)
+                    }), nl.consents.enabled.value && !nl.consents.initialized.value && this.pluginsManager ?.invokeSingle("consentManager.updateConsentsInfo", nl, this.storeManager, this.logger), this.storeManager ?.initializeStorageState(), this.userSessionManager ?.syncStorageDataToState(), this.eventManager ?.resume(), this.loadDestinations(), this.sendTrackingEvents(t)
                 }
                 sendTrackingEvents(e) {
                     if (nl.consents.postConsent.value.trackConsent) {
@@ -60019,7 +60019,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     }
                 }
                 setAuthToken(e) {
-                    this.userSessionManager ? .setAuthToken(e)
+                    this.userSessionManager ?.setAuthToken(e)
                 }
             }
             class se {
@@ -60035,7 +60035,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     e && (this.defaultAnalyticsKey = e)
                 }
                 getAnalyticsInstance(e) {
-                    let t = e ? ? this.defaultAnalyticsKey;
+                    let t = e ?? this.defaultAnalyticsKey;
                     return !this.analyticsInstances[t] && (this.analyticsInstances[t] = new o9), this.analyticsInstances[t]
                 }
                 load(e, t, r) {
@@ -60055,15 +60055,15 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     let {
                         autoTrack: r,
                         useBeacon: n
-                    } = t ? ? {}, {
+                    } = t ?? {}, {
                         enabled: i = !1,
                         options: o = {},
                         pageLifecycle: s
-                    } = r ? ? {}, {
+                    } = r ?? {}, {
                         events: a = [Q.LOADED, Q.UNLOADED],
                         enabled: l = i,
                         options: u = o
-                    } = s ? ? {};
+                    } = s ?? {};
                     if (nl.autoTrack.pageLifecycle.enabled.value = l, nl.autoTrack.enabled.value = i || l, !!l) this.trackPageLoadedEvent(a, u, e), this.setupPageUnloadTracking(a, n, u)
                 }
                 trackPageLoadedEvent(e, t, r) {
@@ -61171,7 +61171,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     } = u();
                     return (0, o.useEffect)(() => {
                         var r;
-                        t && n((null != e && e.length ? (null == (r = e[e.length - 1]) ? void 0 : r.enabled_for) ? ? [] : []).includes(+i))
+                        t && n((null != e && e.length ? (null == (r = e[e.length - 1]) ? void 0 : r.enabled_for) ?? [] : []).includes(+i))
                     }, [t, e, i]), r
                 };
 
@@ -61487,7 +61487,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         let s, a;
                         let l = {
                             jti: window.crypto.randomUUID(),
-                            htm: n ? ? "GET",
+                            htm: n ?? "GET",
                             htu: t,
                             iat: Math.floor(Date.now() / 1e3)
                         };
@@ -63370,7 +63370,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
             Symbol.toStringTag;
             let eo = () => {
                     let e = new URLSearchParams(window.location.search).get("lang"),
-                        t = localStorage.getItem(en) ? ? '"EN"';
+                        t = localStorage.getItem(en) ?? '"EN"';
                     /^".*"$/.test(t) || (localStorage.setItem(en, JSON.stringify(t)), t = localStorage.getItem(en));
                     let r = JSON.parse(t);
                     if (e) {
@@ -64274,7 +64274,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                             })
                         }), f && !_ && f, k.children && !_ && (0, n.jsx)(s.x, {
                             align: "center",
-                            size: b ? ? h[y],
+                            size: b ?? h[y],
                             weight: "bold",
                             as: "span",
                             children: k.children
@@ -64875,7 +64875,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                             locale: r = "en-US",
                             currency: n,
                             decimalPlaces: i
-                        } = t || {}, o = a[n ? ? "USD"], s = i || o;
+                        } = t || {}, o = a[n ?? "USD"], s = i || o;
                         return new Intl.NumberFormat(r, {
                             minimumFractionDigits: s,
                             maximumFractionDigits: s
@@ -64996,7 +64996,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                 },
                 et = () => {
                     let e = ee(),
-                        t = W(d) ? ? "EN";
+                        t = W(d) ?? "EN";
                     return `wss://${e}/websockets/v3?app_id=${Z()}&l=${t}&brand=${o}`
                 },
                 er = e => e.replace(/(^\/|\/$|[^a-zA-Z0-9-_./()#])/g, ""),
@@ -65014,7 +65014,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     getDerivStaticURL: (e, t) => {
                         var r;
                         let n = null != t && t.isEU ? S : T,
-                            i = (null == (r = W(d)) ? void 0 : r.toLowerCase()) ? ? "en";
+                            i = (null == (r = W(d)) ? void 0 : r.toLowerCase()) ?? "en";
                         return i = "en" === i ? "" : `/${i.replace("_","-")}`, null != t && t.isDocument ? `${n}/${er(e)}` : `${n}${i}/${er(e)}`
                     },
                     getLoginInfoFromURL: () => {
@@ -65038,7 +65038,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                         }
                     },
                     getOauthURL: () => {
-                        let e = W(d) ? ? "EN";
+                        let e = W(d) ?? "EN";
                         return `https://oauth.deriv.com/oauth2/authorize?app_id=${Z()}&l=${e}&brand=${o}`
                     },
                     getQueryParameter: e => new URLSearchParams(window.location.search).get(e),
@@ -67285,7 +67285,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                 i(() => {
                     s.current = t
                 }, [t]), (0, n.useEffect)(() => {
-                    let t = (null == r ? void 0 : r.current) ? ? window;
+                    let t = (null == r ? void 0 : r.current) ?? window;
                     if (!(t && t.addEventListener)) return;
                     let n = e => {
                         s.current(e)
@@ -67338,7 +67338,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
             }
 
             function c(e, t) {
-                let [r, i] = (0, n.useState)(() => !e || (null == t ? void 0 : t.shouldPreventLoad) ? "idle" : "undefined" == typeof window ? "loading" : l.get(e) ? ? "loading");
+                let [r, i] = (0, n.useState)(() => !e || (null == t ? void 0 : t.shouldPreventLoad) ? "idle" : "undefined" == typeof window ? "loading" : l.get(e) ?? "loading");
                 return (0, n.useEffect)(() => {
                     if (!e || (null == t ? void 0 : t.shouldPreventLoad)) return;
                     let r = l.get(e);
@@ -67348,7 +67348,7 @@ function ${t.FUNCTION_NAME_PLACEHOLDER_}(haystack, needle, replacement) {
                     }
                     let n = u(e),
                         o = n.node;
-                    if (o) i(n.status ? ? r ? ? "loading");
+                    if (o) i(n.status ?? r ?? "loading");
                     else {
                         (o = document.createElement("script")).src = e, o.async = !0, (null == t ? void 0 : t.id) && (o.id = t.id), o.setAttribute("data-status", "loading"), document.body.appendChild(o);
                         let r = e => {

@@ -2201,7 +2201,7 @@
                                 className: "deriv-account-switcher__container",
                                 isOpen: m,
                                 children: e && (0, a.jsx)(u, {
-                                    activeTab: t.isVirtual ? (null == d ? void 0 : d.demo) ? ? "Demo" : (null == d ? void 0 : d.real) ? ? "Real",
+                                    activeTab: t.isVirtual ? (null == d ? void 0 : d.demo) ?? "Demo" : (null == d ? void 0 : d.real) ?? "Real",
                                     variant: "secondary",
                                     children: e
                                 })
@@ -2212,9 +2212,9 @@
                                 },
                                 className: "deriv-account-switcher__container--mobile",
                                 isOpen: m,
-                                style: p ? ? {},
+                                style: p ?? {},
                                 children: e && (0, a.jsx)(u, {
-                                    activeTab: t.isVirtual ? (null == d ? void 0 : d.demo) ? ? "Demo" : (null == d ? void 0 : d.real) ? ? "Real",
+                                    activeTab: t.isVirtual ? (null == d ? void 0 : d.demo) ?? "Demo" : (null == d ? void 0 : d.real) ?? "Real",
                                     variant: "secondary",
                                     children: e
                                 })
@@ -3287,7 +3287,7 @@
 
             function eh(e) {
                 this.setState((function(t) {
-                    return this.constructor.getDerivedStateFromProps(e, t) ? ? null
+                    return this.constructor.getDerivedStateFromProps(e, t) ?? null
                 }).bind(this))
             }
 

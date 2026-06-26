@@ -1065,7 +1065,7 @@
                 let o = () => {
                         try {
                             var e;
-                            return JSON.parse((null === (e = localStorage) || void 0 === e ? void 0 : e.getItem("qs-analytics")) ? ? "{}")
+                            return JSON.parse((null === (e = localStorage) || void 0 === e ? void 0 : e.getItem("qs-analytics")) ?? "{}")
                         } catch (e) {
                             return console.error("Rudderstack: unable to get dropdown text"), {}
                         }
@@ -1190,14 +1190,14 @@
                             closeToast: i
                         })
                     }, {
-                        type: (null == n ? void 0 : n.type) ? ? o.Bn.type,
-                        position: (null == n ? void 0 : n.position) ? ? o.Bn.position,
-                        autoClose: (null == n ? void 0 : n.autoClose) ? ? o.Bn.autoClose,
-                        hideProgressBar: (null == n ? void 0 : n.hideProgressBar) ? ? o.Bn.hideProgressBar,
-                        closeOnClick: (null == n ? void 0 : n.closeOnClick) ? ? o.Bn.closeOnClick,
-                        pauseOnHover: (null == n ? void 0 : n.pauseOnHover) ? ? o.Bn.pauseOnHover,
-                        pauseOnFocusLoss: (null == n ? void 0 : n.pauseOnFocusLoss) ? ? o.Bn.pauseOnFocusLoss,
-                        closeButton: (null == n ? void 0 : n.closeButton) ? ? !0
+                        type: (null == n ? void 0 : n.type) ?? o.Bn.type,
+                        position: (null == n ? void 0 : n.position) ?? o.Bn.position,
+                        autoClose: (null == n ? void 0 : n.autoClose) ?? o.Bn.autoClose,
+                        hideProgressBar: (null == n ? void 0 : n.hideProgressBar) ?? o.Bn.hideProgressBar,
+                        closeOnClick: (null == n ? void 0 : n.closeOnClick) ?? o.Bn.closeOnClick,
+                        pauseOnHover: (null == n ? void 0 : n.pauseOnHover) ?? o.Bn.pauseOnHover,
+                        pauseOnFocusLoss: (null == n ? void 0 : n.pauseOnFocusLoss) ?? o.Bn.pauseOnFocusLoss,
+                        closeButton: (null == n ? void 0 : n.closeButton) ?? !0
                     })
             },
             23460: function(e, t, n) {
@@ -1307,7 +1307,7 @@
                         } = e;
                         return (0, a.jsx)(g.rU, {
                             className: v()("dc-btn dc-btn--primary", n, "effect", `dc-btn__${o}`),
-                            to: i ? ? "",
+                            to: i ?? "",
                             onClick: l,
                             children: t
                         })
@@ -1510,7 +1510,7 @@
                         should_redirect: c = !0
                     } = e;
                     return (0, a.jsx)(N, {
-                        error_header: t ? ? "",
+                        error_header: t ?? "",
                         error_messages: n ? [n, ""] : [],
                         redirect_urls: [d],
                         redirect_labels: !i && [] || [i || (0, o.NC)("Refresh")],
@@ -1734,7 +1734,7 @@
                             should_redirect: a
                         })
                     },
-                    _ = e => (null == e ? void 0 : e.length) === 1 && e.every(e => (0, p.x3)(e.residence ? ? "") && "virtual" === e.landing_company_shortcode);
+                    _ = e => (null == e ? void 0 : e.length) === 1 && e.every(e => (0, p.x3)(e.residence ?? "") && "virtual" === e.landing_company_shortcode);
                 n("23554"), Object.freeze({
                     amlglobalcheck: "amlglobalcheck",
                     bankstatement: "bankstatement",
@@ -1958,7 +1958,7 @@
                     addFailure(e, t, n) {
                         var a, i;
                         let l = n || t.options.message || (0, X.Cc)()[t.name].message();
-                        "length" === t.name ? l = H(l, [t.options.min === t.options.max ? (null === (a = t.options.min) || void 0 === a ? void 0 : a.toString()) ? ? "" : `${t.options.min}-${t.options.max}`]) : "min" === t.name ? l = H(l, [(null === (i = t.options.min) || void 0 === i ? void 0 : i.toString()) ? ? ""]) : "not_equal" === t.name && (l = H(l, [t.options.name1 ? ? "", t.options.name2 ? ? ""])), this.errors.add(e, l), this.error_count++
+                        "length" === t.name ? l = H(l, [t.options.min === t.options.max ? (null === (a = t.options.min) || void 0 === a ? void 0 : a.toString()) ?? "" : `${t.options.min}-${t.options.max}`]) : "min" === t.name ? l = H(l, [(null === (i = t.options.min) || void 0 === i ? void 0 : i.toString()) ?? ""]) : "not_equal" === t.name && (l = H(l, [t.options.name1 ?? "", t.options.name2 ?? ""])), this.errors.add(e, l), this.error_count++
                     }
                     check() {
                         return Object.keys(this.input).forEach(e => {
@@ -2084,10 +2084,10 @@
                             return 0, u().oauth_scope || "trade"
                         }
                     },
-                    p = () => d[window.location.hostname] ? ? null,
+                    p = () => d[window.location.hostname] ?? null,
                     b = () => {
                         var e;
-                        return l() ? s.STAGING : k() || y() ? s.LOCALHOST : (null === (e = p()) || void 0 === e ? void 0 : e.legacy_app_id) ? ? s.PRODUCTION
+                        return l() ? s.STAGING : k() || y() ? s.LOCALHOST : (null === (e = p()) || void 0 === e ? void 0 : e.legacy_app_id) ?? s.PRODUCTION
                     },
                     _ = () => (sessionStorage.removeItem(r), u().new_app_id),
                     f = () => {
@@ -4580,7 +4580,7 @@
                         }, e => {
                             var t, n;
                             let a = null === (t = document.getElementById("popup_root")) || void 0 === t ? void 0 : t.hasChildNodes(),
-                                i = e.path ? ? (null === (n = e.composedPath) || void 0 === n ? void 0 : n.call(e));
+                                i = e.path ?? (null === (n = e.composedPath) || void 0 === n ? void 0 : n.call(e));
                             return O || p && !G() && k && !a && !(r && (null == i ? void 0 : i.find(e => r.includes(e))))
                         }), i.useEffect(() => {
                             var e, t;
@@ -7046,32 +7046,32 @@
                         }
                         normalizeContract(e) {
                             if (!e || !this.hasClosedStatus(e) || !this.hasFinalResult(e)) return e;
-                            let t = Number(e.buy_price ? ? 0),
-                                n = e.entry_tick ? ? e.entry_spot,
-                                a = e.entry_tick_time ? ? e.entry_spot_time,
-                                i = e.exit_tick ? ? e.exit_spot ? ? e.sell_spot,
-                                l = e.exit_tick_time ? ? e.exit_spot_time ? ? e.sell_spot_time,
-                                o = void 0 !== e.profit && null !== e.profit ? Number(e.profit) : Number(e.sell_price ? ? 0) - t,
+                            let t = Number(e.buy_price ?? 0),
+                                n = e.entry_tick ?? e.entry_spot,
+                                a = e.entry_tick_time ?? e.entry_spot_time,
+                                i = e.exit_tick ?? e.exit_spot ?? e.sell_spot,
+                                l = e.exit_tick_time ?? e.exit_spot_time ?? e.sell_spot_time,
+                                o = void 0 !== e.profit && null !== e.profit ? Number(e.profit) : Number(e.sell_price ?? 0) - t,
                                 s = void 0 !== e.sell_price && null !== e.sell_price ? Number(e.sell_price) : t + o;
                             return { ...e,
-                                bid_price: e.bid_price ? ? s,
+                                bid_price: e.bid_price ?? s,
                                 profit: o,
                                 sell_price: s,
                                 entry_tick: n,
-                                entry_spot: e.entry_spot ? ? n,
+                                entry_spot: e.entry_spot ?? n,
                                 entry_tick_time: a,
-                                entry_spot_time: e.entry_spot_time ? ? a,
+                                entry_spot_time: e.entry_spot_time ?? a,
                                 exit_tick: i,
-                                exit_spot: e.exit_spot ? ? i,
-                                sell_spot: e.sell_spot ? ? i,
+                                exit_spot: e.exit_spot ?? i,
+                                sell_spot: e.sell_spot ?? i,
                                 exit_tick_time: l,
-                                exit_spot_time: e.exit_spot_time ? ? l,
-                                sell_spot_time: e.sell_spot_time ? ? l,
-                                entry_tick_display_value: e.entry_tick_display_value ? ? e.entry_spot_display_value ? ? (null == n ? void 0 : n.toString()),
-                                exit_tick_display_value: e.exit_tick_display_value ? ? e.exit_spot_display_value ? ? e.sell_spot_display_value ? ? (null == i ? void 0 : i.toString()),
+                                exit_spot_time: e.exit_spot_time ?? l,
+                                sell_spot_time: e.sell_spot_time ?? l,
+                                entry_tick_display_value: e.entry_tick_display_value ?? e.entry_spot_display_value ?? (null == n ? void 0 : n.toString()),
+                                exit_tick_display_value: e.exit_tick_display_value ?? e.exit_spot_display_value ?? e.sell_spot_display_value ?? (null == i ? void 0 : i.toString()),
                                 is_sold: !0,
                                 is_valid_to_sell: !1,
-                                transaction_ids: e.transaction_ids ? ? {}
+                                transaction_ids: e.transaction_ids ?? {}
                             }
                         }
                         resolveAfterPurchase() {
@@ -7083,10 +7083,10 @@
                             let t = this.data.contract;
                             if (this._fastClosedContractId === e.contract_id) return;
                             this._fastClosedContractId = e.contract_id;
-                            let n = Number(t.buy_price ? ? 0),
-                                a = Number(e.amount ? ? 0),
-                                i = t.exit_tick ? ? t.exit_spot ? ? t.sell_spot ? ? e.spot,
-                                l = t.exit_tick_time ? ? t.exit_spot_time ? ? t.sell_spot_time ? ? e.transaction_time,
+                            let n = Number(t.buy_price ?? 0),
+                                a = Number(e.amount ?? 0),
+                                i = t.exit_tick ?? t.exit_spot ?? t.sell_spot ?? e.spot,
+                                l = t.exit_tick_time ?? t.exit_spot_time ?? t.sell_spot_time ?? e.transaction_time,
                                 o = { ...t,
                                     contract_id: e.contract_id,
                                     sell_price: a,
@@ -7097,13 +7097,13 @@
                                     is_valid_to_sell: !1,
                                     status: "sold",
                                     exit_tick: i,
-                                    exit_spot: t.exit_spot ? ? i,
-                                    sell_spot: t.sell_spot ? ? i,
+                                    exit_spot: t.exit_spot ?? i,
+                                    sell_spot: t.sell_spot ?? i,
                                     exit_tick_time: l,
-                                    exit_spot_time: t.exit_spot_time ? ? l,
-                                    sell_spot_time: t.sell_spot_time ? ? l,
-                                    exit_tick_display_value: t.exit_tick_display_value ? ? t.exit_spot_display_value ? ? t.sell_spot_display_value ? ? (null == i ? void 0 : i.toString()),
-                                    transaction_ids: { ...t.transaction_ids ? ? {},
+                                    exit_spot_time: t.exit_spot_time ?? l,
+                                    sell_spot_time: t.sell_spot_time ?? l,
+                                    exit_tick_display_value: t.exit_tick_display_value ?? t.exit_spot_display_value ?? t.sell_spot_display_value ?? (null == i ? void 0 : i.toString()),
+                                    transaction_ids: { ...t.transaction_ids ?? {},
                                         sell : e.transaction_id
                                     }
                                 };
@@ -8796,11 +8796,11 @@ Based on last ${r} digits`,
                             return new Promise((e, a) => {
                                 try {
                                     var i, l, o;
-                                    let a = f.P.getState("global_timeouts") ? ? [],
+                                    let a = f.P.getState("global_timeouts") ?? [],
                                         s = Object.keys(a).every(e => a[e].is_cancellable);
                                     !n.tradeEngine.contractId && s ? (d.DO.is_stopping = !0, a.forEach(e => clearTimeout(a[e])), c().then(() => {
                                         d.DO.is_stopping = !1, e()
-                                    })) : !1 === n.tradeEngine.isSold && !t.is_error_triggered && (0, u.L8o)((null == n ? void 0 : null === (o = n.tradeEngine) || void 0 === o ? void 0 : null === (l = o.data) || void 0 === l ? void 0 : null === (i = l.contract) || void 0 === i ? void 0 : i.contract_type) ? ? "") ? f.P.register("contract.status", async t => {
+                                    })) : !1 === n.tradeEngine.isSold && !t.is_error_triggered && (0, u.L8o)((null == n ? void 0 : null === (o = n.tradeEngine) || void 0 === o ? void 0 : null === (l = o.data) || void 0 === l ? void 0 : null === (i = l.contract) || void 0 === i ? void 0 : i.contract_type) ?? "") ? f.P.register("contract.status", async t => {
                                         "contract.sold" === t.id && c().then(() => e())
                                     }) : (d.DO.is_stopping = !0, c().then(() => {
                                         d.DO.is_stopping = !1, e()
@@ -8982,7 +8982,7 @@ Based on last ${r} digits`,
                                     var a, i;
                                     let {
                                         contracts_for: t
-                                    } = (null === c.Z || void 0 === c.Z ? void 0 : c.Z.instance) ? ? {}, o = this.getTopParent().getChildByType("trade_definition_market"), r = o.getFieldValue("MARKET_LIST"), d = o.getFieldValue("SUBMARKET_LIST"), u = o.getFieldValue("SYMBOL_LIST"), m = this.getFieldValue("TRADETYPECAT_LIST"), p = this.getFieldValue("TRADETYPE_LIST");
+                                    } = (null === c.Z || void 0 === c.Z ? void 0 : c.Z.instance) ?? {}, o = this.getTopParent().getChildByType("trade_definition_market"), r = o.getFieldValue("MARKET_LIST"), d = o.getFieldValue("SUBMARKET_LIST"), u = o.getFieldValue("SYMBOL_LIST"), m = this.getFieldValue("TRADETYPECAT_LIST"), p = this.getFieldValue("TRADETYPE_LIST");
                                     if ("accumulator" !== p && (0, tp.wd)(s), n) {
                                         if (null == t || null === (a = t.getTradeTypeCategories) || void 0 === a || a.call(t, r, d, u).then(t => {
                                                 let n = this.getField("TRADETYPECAT_LIST");
@@ -9574,7 +9574,7 @@ Based on last ${r} digits`,
                         let t = [],
                             {
                                 active_symbols: n
-                            } = (null === p.Z || void 0 === p.Z ? void 0 : null === (e = p.Z.instance) || void 0 === e ? void 0 : e.active_symbols) ? ? {
+                            } = (null === p.Z || void 0 === p.Z ? void 0 : null === (e = p.Z.instance) || void 0 === e ? void 0 : e.active_symbols) ?? {
                                 active_symbols: []
                             },
                             {
@@ -9930,7 +9930,7 @@ Based on last ${r} digits`,
                         if (!(null === f.Z || void 0 === f.Z ? void 0 : f.Z.instance)) return;
                         let {
                             load_modal: n
-                        } = f.Z.instance, a = (null == n ? void 0 : null === (t = n.dashboard_strategies) || void 0 === t ? void 0 : null === (e = t[0]) || void 0 === e ? void 0 : e.name) ? ? (0, s.vc)().default_file_name;
+                        } = f.Z.instance, a = (null == n ? void 0 : null === (t = n.dashboard_strategies) || void 0 === t ? void 0 : null === (e = t[0]) || void 0 === e ? void 0 : e.name) ?? (0, s.vc)().default_file_name;
                         if (document.title.indexOf("-") > -1) {
                             let e = document.title.substr(document.title.indexOf("-")),
                                 t = document.title.replace(e, `- ${a}`);
@@ -10154,7 +10154,7 @@ Based on last ${r} digits`,
                         let {
                             recordUndo: t
                         } = window.Blockly.Events;
-                        window.Blockly.Events.setRecordUndo(!1), e(), window.Blockly.Events.setRecordUndo(t ? ? !0)
+                        window.Blockly.Events.setRecordUndo(!1), e(), window.Blockly.Events.setRecordUndo(t ?? !0)
                     },
                     Y = e => {
                         window.Blockly.Events.disable(), e(), window.Blockly.Events.enable()
@@ -10283,7 +10283,7 @@ Based on last ${r} digits`,
                         } catch (e) {
                             console.warn("Trading times initialization failed, continuing with active symbols.", e)
                         }
-                        return !e && this.is_initialised ? (await this.init_promise, this.active_symbols) : (this.is_initialised = !0, s.DO.has_active_symbols || await s.DO.active_symbols_promise, this.active_symbols = (null === s.DO || void 0 === s.DO ? void 0 : s.DO.active_symbols) ? ? [], this.processed_symbols = this.processActiveSymbols(), this.trading_times.onMarketOpenCloseChanged = e => {
+                        return !e && this.is_initialised ? (await this.init_promise, this.active_symbols) : (this.is_initialised = !0, s.DO.has_active_symbols || await s.DO.active_symbols_promise, this.active_symbols = (null === s.DO || void 0 === s.DO ? void 0 : s.DO.active_symbols) ?? [], this.processed_symbols = this.processActiveSymbols(), this.trading_times.onMarketOpenCloseChanged = e => {
                             Object.keys(e).forEach(t => {
                                 let n = this.active_symbols[t];
                                 n && (n.exchange_is_open = e[t])
@@ -10557,7 +10557,7 @@ Based on last ${r} digits`,
                         let e = (0, m.PO)(),
                             t = s.OAuthTokenExchangeService.getAuthInfo();
                         if (e) {
-                            if (this.token = e, this.account_id = (0, m.Bc)() ? ? "", !this.api) return;
+                            if (this.token = e, this.account_id = (0, m.Bc)() ?? "", !this.api) return;
                             try {
                                 let {
                                     authorize: e,
@@ -10571,7 +10571,7 @@ Based on last ${r} digits`,
                                 this.setMainAuthorizing(!1)
                             }
                         } else if ((null == t ? void 0 : t.access_token) && (0, m.d2)() && this.api) {
-                            this.account_id = (0, m.d2)() ? ? "";
+                            this.account_id = (0, m.d2)() ?? "";
                             try {
                                 let e = await this.api.balance(),
                                     t = null == e ? void 0 : e.balance,
@@ -10668,7 +10668,7 @@ Based on last ${r} digits`,
                         this.subscriptions.push(e)
                     }
                     clearSubscriptions() {
-                        this.subscriptions.forEach(e => e.unsubscribe()), this.subscriptions = [], (r.P.getState("global_timeouts") ? ? []).forEach((e, t) => {
+                        this.subscriptions.forEach(e => e.unsubscribe()), this.subscriptions = [], (r.P.getState("global_timeouts") ?? []).forEach((e, t) => {
                             clearTimeout(t)
                         })
                     }
@@ -10683,7 +10683,7 @@ Based on last ${r} digits`,
                             this.isMainScope && (0, c.Ii)(e)
                         }), (0, a._)(this, "setMainAuthData", e => {
                             this.isMainScope && (0, c.A3)(e)
-                        }), (0, a._)(this, "getRequestedAccountId", () => (0, m.PO)() ? (0, m.Bc)() ? ? "" : this.oauth_account_id_override ? this.oauth_account_id_override : (0, m.d2)() ? ? ""), (0, a._)(this, "setOAuthAccountIdOverride", e => {
+                        }), (0, a._)(this, "getRequestedAccountId", () => (0, m.PO)() ? (0, m.Bc)() ?? "" : this.oauth_account_id_override ? this.oauth_account_id_override : (0, m.d2)() ?? ""), (0, a._)(this, "setOAuthAccountIdOverride", e => {
                             this.oauth_account_id_override = e
                         }), (0, a._)(this, "resetAuthSubscriptionState", () => {
                             this.current_auth_subscriptions = [], this.auth_subscription_state = {}
@@ -10726,13 +10726,13 @@ Based on last ${r} digits`,
                                         underlying_symbol: n,
                                         pip: i,
                                         pip_size: l
-                                    } = e, o = t || n, s = i ? ? l;
+                                    } = e, o = t || n, s = i ?? l;
                                     o && null != s && (a[o] = +(+s).toExponential().substring(3))
                                 }), this.pip_sizes = a, this.active_symbols = t.map(e => ({ ...e,
                                     symbol: e.symbol || e.underlying_symbol,
                                     symbol_type: e.symbol_type || e.underlying_symbol_type,
                                     display_name: e.display_name || e.underlying_symbol_name,
-                                    pip: e.pip ? ? e.pip_size ? ? null
+                                    pip: e.pip ?? e.pip_size ?? null
                                 })), this.toggleRunButton(!1), t || n
                             })
                         }), (0, a._)(this, "toggleRunButton", e => {
@@ -11134,35 +11134,35 @@ Based on last ${r} digits`,
                     N = e => {
                         var t, n;
                         let a = y(k(e)),
-                            i = a.exit_spot ? ? a.sell_spot,
-                            l = a.exit_spot_time ? ? a.sell_spot_time,
-                            o = a.entry_spot ? ? a.entry_tick,
-                            s = a.entry_tick_display_value ? ? a.entry_spot_display_value ? ? (null === (t = o ? ? void 0) || void 0 === t ? void 0 : t.toString()),
-                            r = a.exit_tick_display_value ? ? a.sell_spot_display_value ? ? (null === (n = i ? ? void 0) || void 0 === n ? void 0 : n.toString());
+                            i = a.exit_spot ?? a.sell_spot,
+                            l = a.exit_spot_time ?? a.sell_spot_time,
+                            o = a.entry_spot ?? a.entry_tick,
+                            s = a.entry_tick_display_value ?? a.entry_spot_display_value ?? (null === (t = o ?? void 0) || void 0 === t ? void 0 : t.toString()),
+                            r = a.exit_tick_display_value ?? a.sell_spot_display_value ?? (null === (n = i ?? void 0) || void 0 === n ? void 0 : n.toString());
                         return { ...a,
                             exit_spot: i,
                             exit_spot_time: l,
-                            exit_tick_time: a.exit_tick_time ? ? l,
-                            sell_spot: a.sell_spot ? ? i,
-                            sell_spot_time: a.sell_spot_time ? ? l,
+                            exit_tick_time: a.exit_tick_time ?? l,
+                            sell_spot: a.sell_spot ?? i,
+                            sell_spot_time: a.sell_spot_time ?? l,
                             entry_tick_display_value: s,
                             exit_tick_display_value: r,
-                            entry_spot_display_value: a.entry_spot_display_value ? ? s,
-                            sell_spot_display_value: a.sell_spot_display_value ? ? r
+                            entry_spot_display_value: a.entry_spot_display_value ?? s,
+                            sell_spot_display_value: a.sell_spot_display_value ?? r
                         }
                     },
                     S = e => y(k(e)),
                     C = e => {
                         let t = S(e),
-                            n = t.entry_spot ? ? t.entry_tick,
-                            a = t.exit_spot ? ? t.sell_spot,
-                            i = t.exit_spot_time ? ? t.sell_spot_time;
+                            n = t.entry_spot ?? t.entry_tick,
+                            a = t.exit_spot ?? t.sell_spot,
+                            i = t.exit_spot_time ?? t.sell_spot_time;
                         return { ...t,
                             entry_spot: n,
                             exit_spot: a,
                             exit_spot_time: i,
-                            sell_spot: t.sell_spot ? ? a,
-                            sell_spot_time: t.sell_spot_time ? ? i
+                            sell_spot: t.sell_spot ?? a,
+                            sell_spot_time: t.sell_spot_time ?? i
                         }
                     },
                     I = e => Array.isArray(e) ? e.map(e => S(e)) : _(e) ? { ...e,
@@ -11184,7 +11184,7 @@ Based on last ${r} digits`,
                         if (!i || (null === (t = a.accounts) || void 0 === t ? void 0 : t[i])) return a;
                         let o = O(i),
                             s = a.currency || (null == o ? void 0 : o.currency) || "USD",
-                            r = a.balance ? ? v(null == o ? void 0 : o.balance) ? ? 0,
+                            r = a.balance ?? v(null == o ? void 0 : o.balance) ?? 0,
                             d = (null === (n = l.DerivWSAccountsService.isDemoAccount) || void 0 === n ? void 0 : n.call(l.DerivWSAccountsService, i, null == o ? void 0 : o.account_type)) ? 1 : 0;
                         return { ...a,
                             loginid: i,
@@ -11383,7 +11383,7 @@ Based on last ${r} digits`,
                         var t, n;
                         let i = e || (0, a.rhL)(),
                             l = (0, a.wmM)().replace(/[^a-zA-Z0-9.\-/]/g, ""),
-                            o = (null == i ? void 0 : null === (t = (n = i.toString()).replace) || void 0 === t ? void 0 : t.call(n, /[^a-zA-Z0-9]/g, "")) ? ? i;
+                            o = (null == i ? void 0 : null === (t = (n = i.toString()).replace) || void 0 === t ? void 0 : t.call(n, /[^a-zA-Z0-9]/g, "")) ?? i;
                         return `wss://${l}/websockets/v3?app_id=${o}&l=${(0,r.Jb)()}&brand=deriv`
                     },
                     Y = async function(e, t) {
@@ -11492,8 +11492,8 @@ Based on last ${r} digits`,
                         let e = W(),
                             t = M(localStorage, "accountsList", void 0);
                         return {
-                            token: (t && t[e] || {}) ? ? void 0,
-                            account_id: e ? ? void 0
+                            token: (t && t[e] || {}) ?? void 0,
+                            account_id: e ?? void 0
                         }
                     },
                     J = () => {
@@ -12877,7 +12877,7 @@ Based on last ${r} digits`,
                         let t = "string" == typeof(null == e ? void 0 : e.loginid) ? e.loginid : "",
                             n = Number(null == e ? void 0 : e.desired_balance);
                         return t && Number.isFinite(n) ? {
-                            $id: String(e.$id ? ? ""),
+                            $id: String(e.$id ?? ""),
                             loginid: t,
                             desired_balance: n
                         } : null
@@ -12901,7 +12901,7 @@ Based on last ${r} digits`,
                         } catch (e) {
                             throw u(e)
                         }
-                        let t = ((null == e ? void 0 : e.documents) ? ? []).map(e => p(e)).filter(e => !!e).sort((e, t) => e.loginid.localeCompare(t.loginid));
+                        let t = ((null == e ? void 0 : e.documents) ?? []).map(e => p(e)).filter(e => !!e).sort((e, t) => e.loginid.localeCompare(t.loginid));
                         return _(t), t
                     },
                     v = async (e, t) => {
@@ -13228,7 +13228,7 @@ Based on last ${r} digits`,
                                 return
                             }
                             t(e.error.code, () => new Promise(t => {
-                                let n = () => l.P.getState("global_timeouts") ? ? [],
+                                let n = () => l.P.getState("global_timeouts") ?? [],
                                     o = setTimeout(() => {
                                         let e = n();
                                         delete e[o], l.P.setState(e), t()
@@ -13262,7 +13262,7 @@ Based on last ${r} digits`,
                             buy_price: n,
                             currency: i,
                             profit: l
-                        } = e, o = d(), s = o ? null != l ? Number(l) : Number(t ? ? 0) - Number(n ? ? 0) : Number(t) - Number(n), r = (0, a.bfN)(s, i), c = (null == e ? void 0 : e.transaction_ids) ? ? {}, u = o ? null != t ? Number(t) : Number(n ? ? 0) + Number(s) : Number(e.sell_price);
+                        } = e, o = d(), s = o ? null != l ? Number(l) : Number(t ?? 0) - Number(n ?? 0) : Number(t) - Number(n), r = (0, a.bfN)(s, i), c = (null == e ? void 0 : e.transaction_ids) ?? {}, u = o ? null != t ? Number(t) : Number(n ?? 0) + Number(s) : Number(e.sell_price);
                         return [o ? c.buy : e.transaction_ids.buy, +e.buy_price, +u, r, e.contract_type, (0, a.mrB)(parseInt(`${e.entry_tick_time}000`), "HH:mm:ss"), +e.entry_tick, (0, a.mrB)(parseInt(`${e.exit_tick_time}000`), "HH:mm:ss"), +e.exit_tick, +(e.barrier ? e.barrier : 0), r < 0 ? "loss" : "win"]
                     },
                     A = () => `${new Date().getTime()*Math.random()}`,
@@ -13709,7 +13709,7 @@ Based on last ${r} digits`,
                         let {
                             featureFlag: t,
                             defaultValue: n
-                        } = e, o = void 0 !== n && n, [r, d] = (0, a.useState)((null === l.Analytics || void 0 === l.Analytics ? void 0 : l.Analytics.getFeatureValue(t, o)) ? ? o), {
+                        } = e, o = void 0 !== n && n, [r, d] = (0, a.useState)((null === l.Analytics || void 0 === l.Analytics ? void 0 : l.Analytics.getFeatureValue(t, o)) ?? o), {
                             isGBLoaded: c
                         } = s(), u = (0, i.tm)();
                         return "undefined" != typeof window && (window.Analytics = l.Analytics), (0, a.useEffect)(() => {
@@ -13777,7 +13777,7 @@ Based on last ${r} digits`,
                         let [e, t] = (0, a.useState)(i.cR.UNKNOWN), [n, l] = (0, a.useState)(!1), [r, d] = (0, a.useState)(!1), [c, u] = (0, a.useState)([]), [m, p] = (0, a.useState)(null), [b, _] = (0, a.useState)("");
                         return (0, a.useEffect)(() => {
                             try {
-                                let e = localStorage.getItem("active_loginid") ? ? "",
+                                let e = localStorage.getItem("active_loginid") ?? "",
                                     t = localStorage.getItem("clientAccounts"),
                                     n = sessionStorage.getItem("auth_info"),
                                     a = sessionStorage.getItem("deriv_accounts");
@@ -13786,7 +13786,7 @@ Based on last ${r} digits`,
                                         n = Object.values(e).map(e => ({
                                             loginid: e.loginid,
                                             currency: e.currency || "USD",
-                                            is_virtual: s(e.loginid) ? 0 : e.is_virtual ? ? ("demo" === e.account_type || (0, o._o)(e.loginid) ? 1 : 0),
+                                            is_virtual: s(e.loginid) ? 0 : e.is_virtual ?? ("demo" === e.account_type || (0, o._o)(e.loginid) ? 1 : 0),
                                             balance: Number(e.balance) || 0
                                         }));
                                     n.length && u(n)
@@ -13816,7 +13816,7 @@ Based on last ${r} digits`,
                                     u(e)
                                 }),
                                 s = i.FT.subscribe(e => {
-                                    p(e), _((null == e ? void 0 : e.loginid) ? ? "")
+                                    p(e), _((null == e ? void 0 : e.loginid) ?? "")
                                 });
                             return () => {
                                 e.unsubscribe(), n.unsubscribe(), a.unsubscribe(), o.unsubscribe(), s.unsubscribe()
@@ -13952,7 +13952,7 @@ Based on last ${r} digits`,
                             o.current = t
                         }, [t]), (0, a.useEffect)(() => {
                             let t, a;
-                            return t = (null == n ? void 0 : n.current) ? ? window, a = e => o.current(e), !(null == t ? void 0 : t.addEventListener) || t.addEventListener(e, a, l), () => {
+                            return t = (null == n ? void 0 : n.current) ?? window, a = e => o.current(e), !(null == t ? void 0 : t.addEventListener) || t.addEventListener(e, a, l), () => {
                                 null == t || t.removeEventListener(e, a, l)
                             }
                         }, [e, n, l])
@@ -14220,7 +14220,7 @@ Based on last ${r} digits`,
                             var e;
                             let t = window.Blockly.derivWorkspace,
                                 n = null == t ? void 0 : t.getAllBlocks().find(e => "trade_definition_market" === e.type),
-                                a = (null == n ? void 0 : n.getFieldValue("SYMBOL_LIST")) ? ? (null === c.api_base || void 0 === c.api_base ? void 0 : null === (e = c.api_base.active_symbols["0"]) || void 0 === e ? void 0 : e.symbol);
+                                a = (null == n ? void 0 : n.getFieldValue("SYMBOL_LIST")) ?? (null === c.api_base || void 0 === c.api_base ? void 0 : null === (e = c.api_base.active_symbols["0"]) || void 0 === e ? void 0 : e.symbol);
                             this.symbol = a
                         }), (0, o._)(this, "onSymbolChange", e => {
                             this.symbol = e, this.saveToLocalStorage()
@@ -14363,7 +14363,7 @@ Based on last ${r} digits`,
                         let {
                             gaming_company: e,
                             financial_company: t
-                        } = this.landing_companies ? ? {};
+                        } = this.landing_companies ?? {};
                         return (null == t ? void 0 : t.shortcode) === "maltainvest" && (null == e ? void 0 : e.shortcode) === "svg"
                     }
                     get should_show_eu_error() {
@@ -14375,7 +14375,7 @@ Based on last ${r} digits`,
                     get residence() {
                         if (this.is_logged_in) {
                             var e;
-                            return (null === (e = this.account_settings) || void 0 === e ? void 0 : e.country_code) ? ? ""
+                            return (null === (e = this.account_settings) || void 0 === e ? void 0 : e.country_code) ?? ""
                         }
                         return ""
                     }
@@ -14408,7 +14408,7 @@ Based on last ${r} digits`,
                             let {
                                 financial_company: a,
                                 gaming_company: i
-                            } = t ? ? {}, l = (null == a ? void 0 : a.shortcode) === "svg" || (null == i ? void 0 : i.shortcode) === "svg";
+                            } = t ?? {}, l = (null == a ? void 0 : a.shortcode) === "svg" || (null == i ? void 0 : i.shortcode) === "svg";
                             if (!e) return "";
                             if ((null == i ? void 0 : i.shortcode) || (null == a ? void 0 : a.shortcode) !== "maltainvest") {
                                 if ((null == a ? void 0 : a.shortcode) !== "maltainvest" || (null == i ? void 0 : i.shortcode) !== "svg" || this.is_virtual) {
@@ -14469,7 +14469,7 @@ Based on last ${r} digits`,
                             this.currency = e
                         }), (0, o._)(this, "setIsLoggedIn", e => {
                             this.is_logged_in = e
-                        }), (0, o._)(this, "getToken", () => JSON.parse(localStorage.getItem("accountsList") ? ? "{}")[this.loginid] ? ? ""), (0, o._)(this, "setUpgradeableLandingCompanies", e => {
+                        }), (0, o._)(this, "getToken", () => JSON.parse(localStorage.getItem("accountsList") ?? "{}")[this.loginid] ?? ""), (0, o._)(this, "setUpgradeableLandingCompanies", e => {
                             this.upgradeable_landing_companies = e
                         }), (0, o._)(this, "getVirtualBalanceFromPayload", e => {
                             var t, n;
@@ -14477,14 +14477,14 @@ Based on last ${r} digits`,
                                 i = Number(a ? null == e ? void 0 : null === (n = e.accounts) || void 0 === n ? void 0 : null === (t = n[a]) || void 0 === t ? void 0 : t.balance : void 0);
                             return Number.isFinite(i) ? i : void 0
                         }), (0, o._)(this, "applyBalanceOverridesToPayload", (e, t) => {
-                            let n = { ...e.accounts ? ? {}
+                            let n = { ...e.accounts ?? {}
                             };
                             return this.balance_overrides.forEach(e => {
                                 let a = t - Number(e.desired_balance) / 100,
                                     i = this.accounts[e.loginid],
                                     l = n[e.loginid],
                                     o = (null == l ? void 0 : l.currency) || (null == i ? void 0 : i.currency) || this.currency || "USD";
-                                (l || i) && (n[e.loginid] = { ...l ? ? {},
+                                (l || i) && (n[e.loginid] = { ...l ?? {},
                                     balance : a,
                                     currency : o,
                                     demo_account: 0
@@ -14543,7 +14543,7 @@ Based on last ${r} digits`,
                                         let {
                                             api_base: t
                                         } = await Promise.resolve().then(n.bind(n, 88199));
-                                        await t.init(!0), this.setWebSocketLoginId(e ? ? "")
+                                        await t.init(!0), this.setWebSocketLoginId(e ?? "")
                                     }
                                 } catch (e) {
                                     console.error("[ClientStore] WebSocket regeneration failed:", e)
@@ -15856,7 +15856,7 @@ Based on last ${r} digits`,
                             setGoogleDriveTokenValid: s.aD.bound,
                             verifyGoogleDriveAccessToken: s.aD.bound,
                             onDriveConnect: s.aD
-                        }), this.root_store = e, this.bot_folder_name = `Binary Bot - ${(0,m.NC)("Strategies")}`, this.setKey(), this.client = null, this.access_token = localStorage.getItem("google_access_token") ? ? "", setTimeout(() => {
+                        }), this.root_store = e, this.bot_folder_name = `Binary Bot - ${(0,m.NC)("Strategies")}`, this.setKey(), this.client = null, this.access_token = localStorage.getItem("google_access_token") ?? "", setTimeout(() => {
                             (0, c.importExternal)("https://accounts.google.com/gsi/client").then(() => this.initialiseClient()), (0, c.importExternal)("https://apis.google.com/js/api.js").then(() => this.initialise())
                         }, 3e3)
                     }
@@ -16009,7 +16009,7 @@ Based on last ${r} digits`,
                                         } = t;
                                         if ("tick" === n.msg_type) {
                                             let t = n.tick,
-                                                a = Number((null == t ? void 0 : t.ask) ? ? (null == t ? void 0 : t.quote) ? ? (null == t ? void 0 : t.price));
+                                                a = Number((null == t ? void 0 : t.ask) ?? (null == t ? void 0 : t.quote) ?? (null == t ? void 0 : t.price));
                                             if (!Number.isFinite(a)) return;
                                             this.currentTick = a, this.tickList = [...this.tickList.slice(-99), a], this.checkAndTrade(e)
                                         }
@@ -16303,7 +16303,7 @@ Based on last ${r} digits`,
                         let {
                             loginid: e
                         } = this.core.client;
-                        this.journal_filters = (0, _.$8)("journal_filter") ? ? this.filters.map(e => e.id), this.unfiltered_messages = td(this.JOURNAL_CACHE, e, [])
+                        this.journal_filters = (0, _.$8)("journal_filter") ?? this.filters.map(e => e.id), this.unfiltered_messages = td(this.JOURNAL_CACHE, e, [])
                     }
                     getServerTime() {
                         var e;
@@ -16443,7 +16443,7 @@ Based on last ${r} digits`,
                         return this.tab_name === tb.y.TAB_LOCAL ? this.local_workspace : this.tab_name === tb.y.TAB_RECENT ? this.recent_workspace : null
                     }
                     get selected_strategy() {
-                        return this.dashboard_strategies.find(e => e.id === this.selected_strategy_id) ? ? this.dashboard_strategies[0]
+                        return this.dashboard_strategies.find(e => e.id === this.selected_strategy_id) ?? this.dashboard_strategies[0]
                     }
                     get tab_name() {
                         if (this.core.ui.is_mobile) {
@@ -16646,7 +16646,7 @@ Based on last ${r} digits`,
                                 block_string: n
                             } = window.Blockly.xmlValues, a = window.Blockly.derivWorkspace;
                             window.Blockly.Xml.clearWorkspaceAndLoadFromXml(t, a), a.cleanUp(), a.clearUndo(), a.current_strategy_id = e;
-                            let i = (0, eZ.dC)(n ? ? "");
+                            let i = (0, eZ.dC)(n ?? "");
                             (0, e$.WN)({
                                 upload_provider: "my_computer",
                                 upload_type: i,
@@ -16688,7 +16688,7 @@ Based on last ${r} digits`,
                             await (0, t_._)("#load-strategy__blockly-container");
                             let l = document.getElementById("load-strategy__blockly-container");
                             !this.local_workspace && (this.local_workspace = await window.Blockly.inject(l, i)), e.workspace = this.local_workspace, e.workspace && (e.workspace.RTL = (0, tp.rK)());
-                            let o = (0, eZ.dC)((null == e ? void 0 : e.block_string) ? ? ""),
+                            let o = (0, eZ.dC)((null == e ? void 0 : e.block_string) ?? ""),
                                 s = await (0, c.load)(e);
                             (null == s ? void 0 : s.error) ? (null == s ? void 0 : s.error) && (0, e$.mu)({
                                 upload_provider: "my_computer",
@@ -16818,7 +16818,7 @@ Based on last ${r} digits`,
                         }), (0, o._)(this, "onSubmit", async e => {
                             let {
                                 contracts_for: t
-                            } = (null === c.ApiHelpers || void 0 === c.ApiHelpers ? void 0 : c.ApiHelpers.instance) ? ? {};
+                            } = (null === c.ApiHelpers || void 0 === c.ApiHelpers ? void 0 : c.ApiHelpers.instance) ?? {};
                             if (!t) return;
                             let a = await t.getMarketBySymbol(e.symbol),
                                 i = await t.getSubmarketBySymbol(e.symbol),
@@ -17121,7 +17121,7 @@ Based on last ${r} digits`,
                                 let {
                                     shouldRestartOnError: e = !1,
                                     timeMachineEnabled: t = !1
-                                } = (null === (s = this.dbot) || void 0 === s ? void 0 : null === (o = s.interpreter) || void 0 === o ? void 0 : null === (l = o.bot) || void 0 === l ? void 0 : null === (i = l.tradeEngine) || void 0 === i ? void 0 : i.options) ? ? {};
+                                } = (null === (s = this.dbot) || void 0 === s ? void 0 : null === (o = s.interpreter) || void 0 === o ? void 0 : null === (l = o.bot) || void 0 === l ? void 0 : null === (i = l.tradeEngine) || void 0 === i ? void 0 : i.options) ?? {};
                                 e || t ? (this.error_type = void 0, this.setContractStage(tg.K.PURCHASE_SENT)) : (this.setIsRunning(!1), a())
                             } else this.error_type === c.ErrorTypes.UNRECOVERABLE_ERRORS ? (this.setIsRunning(!1), a()) : this.has_open_contract && (this.error_type = void 0, this.is_sell_requested = !1, this.setContractStage(tg.K.CONTRACT_CLOSED), n.setAccountSwitcherDisabledMessage(), this.unregisterBotListeners(), e.resetSelfExclusion());
                             this.setHasOpenContract(!1), t.clearContractUpdateConfigValues();
@@ -17346,7 +17346,7 @@ Based on last ${r} digits`,
                                     content: null == tN ? void 0 : null === (l = tN.Xml) || void 0 === l ? void 0 : l.domToPrettyText(s),
                                     mimeType: "application/xml"
                                 }), this.setButtonStatus(ez.COMPLETED)), this.updateBotName(u), 1 === h) {
-                                let e = f.id ? ? (null == tN ? void 0 : null === (o = tN.utils) || void 0 === o ? void 0 : o.genUid());
+                                let e = f.id ?? (null == tN ? void 0 : null === (o = tN.utils) || void 0 === o ? void 0 : o.genUid());
                                 await this.addStrategyToWorkspace(e, r, d, u, s), y && await _(y)
                             } else await (0, c.saveWorkspaceToRecent)(s, r ? c.save_types.LOCAL : c.save_types.GOOGLE_DRIVE);
                             this.toggleSaveModal()
@@ -17471,7 +17471,7 @@ Based on last ${r} digits`,
                     }
                     getLimitOrder() {
                         let e = {};
-                        return e.take_profit = this.has_contract_update_take_profit ? +(this.contract_update_take_profit ? ? 0) : 0, e.stop_loss = this.has_contract_update_stop_loss ? +(this.contract_update_stop_loss ? ? 0) : 0, e
+                        return e.take_profit = this.has_contract_update_take_profit ? +(this.contract_update_take_profit ?? 0) : 0, e.stop_loss = this.has_contract_update_stop_loss ? +(this.contract_update_stop_loss ?? 0) : 0, e
                     }
                     onBotContractEvent(e) {
                         let {
@@ -17730,7 +17730,7 @@ Based on last ${r} digits`,
                         (0, o._)(this, "root_store", void 0), (0, o._)(this, "core", void 0), (0, o._)(this, "disposeToolboxToggleReaction", void 0), (0, o._)(this, "typing_timer", void 0), (0, o._)(this, "is_toolbox_open", !0), (0, o._)(this, "is_search_loading", !1), (0, o._)(this, "is_search_focus", !1), (0, o._)(this, "sub_category_index", []), (0, o._)(this, "toolbox_dom", void 0), (0, o._)(this, "toolbox_examples", void 0), (0, o._)(this, "is_workspace_scroll_adjusted", !1), (0, o._)(this, "onMount", e => {
                             var t;
                             this.adjustWorkspace(), this.toolbox_dom = window.Blockly.utils.xml.textToDom(null == e ? void 0 : e.current);
-                            let n = [...(null === (t = this.toolbox_dom) || void 0 === t ? void 0 : t.childNodes) ? ? []].find(e => e instanceof HTMLElement && "examples" === e.tagName);
+                            let n = [...(null === (t = this.toolbox_dom) || void 0 === t ? void 0 : t.childNodes) ?? []].find(e => e instanceof HTMLElement && "examples" === e.tagName);
                             n && (this.toolbox_examples = n), this.setWorkspaceOptions(), this.disposeToolboxToggleReaction = (0, s.U5)(() => this.is_toolbox_open, e => {
                                 if (e) {
                                     var t;
@@ -17873,7 +17873,7 @@ Based on last ${r} digits`,
                 class tP {
                     get transactions() {
                         var e, t, n, a;
-                        return (null === (t = this.core) || void 0 === t ? void 0 : null === (e = t.client) || void 0 === e ? void 0 : e.loginid) ? this.elements[null === (a = this.core) || void 0 === a ? void 0 : null === (n = a.client) || void 0 === n ? void 0 : n.loginid] ? ? [] : []
+                        return (null === (t = this.core) || void 0 === t ? void 0 : null === (e = t.client) || void 0 === e ? void 0 : e.loginid) ? this.elements[null === (a = this.core) || void 0 === a ? void 0 : null === (n = a.client) || void 0 === n ? void 0 : n.loginid] ?? [] : []
                     }
                     get statistics() {
                         let e = 0,
@@ -17887,7 +17887,7 @@ Based on last ${r} digits`,
                                     payout: s,
                                     bid_price: r
                                 } = a;
-                                return l && (i > 0 ? (t.won_contracts += 1, t.total_payout += s ? ? r ? ? 0) : t.lost_contracts += 1, t.total_profit += i, t.total_stake += o, e += 1), t
+                                return l && (i > 0 ? (t.won_contracts += 1, t.total_payout += s ?? r ?? 0) : t.lost_contracts += 1, t.total_profit += i, t.total_stake += o, e += 1), t
                             }, {
                                 lost_contracts: 0,
                                 number_of_runs: 0,
@@ -17908,10 +17908,10 @@ Based on last ${r} digits`,
                                 run_id: m
                             } = this.root_store.run_panel,
                             p = null === (n = this.core) || void 0 === n ? void 0 : null === (t = n.client) || void 0 === t ? void 0 : t.loginid,
-                            b = e.entry_tick_display_value ? ? e.entry_spot_display_value ? ? e.entry_tick ? ? e.entry_spot,
-                            _ = e.exit_tick_display_value ? ? e.exit_spot_display_value ? ? e.sell_spot_display_value ? ? e.exit_tick ? ? e.exit_spot ? ? e.sell_spot,
-                            f = e.entry_tick_time ? ? e.entry_spot_time,
-                            h = e.exit_tick_time ? ? e.exit_spot_time ? ? e.sell_spot_time,
+                            b = e.entry_tick_display_value ?? e.entry_spot_display_value ?? e.entry_tick ?? e.entry_spot,
+                            _ = e.exit_tick_display_value ?? e.exit_spot_display_value ?? e.sell_spot_display_value ?? e.exit_tick ?? e.exit_spot ?? e.sell_spot,
+                            f = e.entry_tick_time ?? e.entry_spot_time,
+                            h = e.exit_tick_time ?? e.exit_spot_time ?? e.sell_spot_time,
                             v = { ...e,
                                 is_completed: u,
                                 run_id: m,
@@ -17957,7 +17957,7 @@ Based on last ${r} digits`,
                             client: e
                         } = this.core, t = (0, s.U5)(() => this.elements[null == e ? void 0 : e.loginid], t => {
                             let n = tc(this.TRANSACTION_CACHE, {});
-                            n[e.loginid] = (null == t ? void 0 : t.slice(0, 5e3)) ? ? [], tu(this.TRANSACTION_CACHE, n)
+                            n[e.loginid] = (null == t ? void 0 : t.slice(0, 5e3)) ?? [], tu(this.TRANSACTION_CACHE, n)
                         }), n = (0, s.U5)(() => this.transactions.length, () => this.recoverPendingContracts());
                         return () => {
                             t(), n()
@@ -18141,7 +18141,7 @@ Based on last ${r} digits`,
                 let k = (0, h.Pi)(() => {
                     let {
                         ui: e
-                    } = (0, v.oR)() ? ? {
+                    } = (0, v.oR)() ?? {
                         ui: {
                             show_prompt: !1
                         }
@@ -18229,10 +18229,10 @@ Based on last ${r} digits`,
                     }, []);
                     return (0, o.useEffect)(() => {
                         let e = new URL(window.location.href),
-                            n = e.searchParams.get("code") ? ? "",
-                            i = e.searchParams.get("state") ? ? "",
-                            o = e.searchParams.get("error") ? ? "",
-                            s = e.searchParams.get("error_description") ? ? "",
+                            n = e.searchParams.get("code") ?? "",
+                            i = e.searchParams.get("state") ?? "",
+                            o = e.searchParams.get("error") ?? "",
+                            s = e.searchParams.get("error_description") ?? "",
                             c = !!(o && (i || s));
                         if (!n && !c) {
                             t(!1);
@@ -18366,7 +18366,7 @@ Based on last ${r} digits`,
                     } = (0, V.il)({
                         OAuth2EnabledApps: n,
                         OAuth2EnabledAppsInitialised: a
-                    }, e ? ? (() => Promise.resolve()));
+                    }, e ?? (() => Promise.resolve()));
                     return {
                         isOAuth2Enabled: i,
                         oAuthLogout: async () => {
@@ -18397,7 +18397,7 @@ Based on last ${r} digits`,
                         } = (0, j.T)(), p = (0, o.useRef)(!1), b = (0, o.useRef)(!1), _ = (0, o.useRef)(null), f = (0, o.useRef)(null), {
                             client: h,
                             common: y
-                        } = (0, v.oR)() ? ? {}, {
+                        } = (0, v.oR)() ?? {}, {
                             currentLang: k
                         } = (0, u.T_)(), {
                             oAuthLogout: g,
@@ -18412,7 +18412,7 @@ Based on last ${r} digits`,
                         let x = (0, o.useMemo)(() => null == c ? void 0 : c.find(e => e.loginid === m), [m, c]);
                         (0, o.useEffect)(() => {
                             var e, t;
-                            let n = null == h ? void 0 : null === (t = h.all_accounts_balance) || void 0 === t ? void 0 : null === (e = t.accounts) || void 0 === e ? void 0 : e[(null == x ? void 0 : x.loginid) ? ? ""];
+                            let n = null == h ? void 0 : null === (t = h.all_accounts_balance) || void 0 === t ? void 0 : null === (e = t.accounts) || void 0 === e ? void 0 : e[(null == x ? void 0 : x.loginid) ?? ""];
                             if (n) null == h || h.setBalance(n.balance.toFixed((0, T.i4S)(n.currency))), null == h || h.setCurrency(n.currency);
                             else if (x) {
                                 let e = Number(x.balance) || 0,
@@ -18634,8 +18634,8 @@ Based on last ${r} digits`,
                             element: (0, i.jsx)(() => {
                                 let e = (0, C.TA)({
                                     initialValues: {
-                                        appId: localStorage.getItem(m.sE.configAppId) ? ? (0, T.rhL)(),
-                                        serverUrl: localStorage.getItem(m.sE.configServerURL) ? ? (0, T.wmM)()
+                                        appId: localStorage.getItem(m.sE.configAppId) ?? (0, T.rhL)(),
+                                        serverUrl: localStorage.getItem(m.sE.configServerURL) ?? (0, T.wmM)()
                                     },
                                     onSubmit: t => {
                                         localStorage.setItem(m.sE.configServerURL, t.serverUrl), localStorage.setItem(m.sE.configAppId, t.appId.toString()), e.resetForm({
@@ -18787,10 +18787,10 @@ Based on last ${r} digits`,
                                 }
                                 let s = null,
                                     r = null == a ? void 0 : a.toUpperCase();
-                                if (("DEMO" === r ? g(o) : !g(o) && (null === (i = o.currency) || void 0 === i ? void 0 : i.toUpperCase()) === r) ? s = o : "DEMO" === r && (s = l.find(e => g(e)) ? ? null), !s && (s = l.find(e => {
+                                if (("DEMO" === r ? g(o) : !g(o) && (null === (i = o.currency) || void 0 === i ? void 0 : i.toUpperCase()) === r) ? s = o : "DEMO" === r && (s = l.find(e => g(e)) ?? null), !s && (s = l.find(e => {
                                         var t;
                                         return !g(e) && (null === (t = e.currency) || void 0 === t ? void 0 : t.toUpperCase()) === r
-                                    }) ? ? null), s) {
+                                    }) ?? null), s) {
                                     if (s.loginid !== n) {
                                         let n = e[s.loginid] || String(s.token || "");
                                         if ((0, d.ii)({
@@ -18992,7 +18992,7 @@ Based on last ${r} digits`,
                         let {
                             max_payout: t,
                             max_ticks: n
-                        } = e ? ? {
+                        } = e ?? {
                             max_payout: 0,
                             max_ticks: 0
                         };
@@ -19830,7 +19830,7 @@ Based on last ${r} digits`,
                             accountsList: t,
                             clientAccounts: d
                         }) : (t && localStorage.setItem(o, JSON.stringify(t)), d && localStorage.setItem(u, JSON.stringify(d)));
-                        let h = d ? ? y(),
+                        let h = d ?? y(),
                             v = g(n, h),
                             k = localStorage.getItem(s);
                         return localStorage.setItem(s, n), localStorage.setItem("account_type", A(v || n)), k !== n && window.dispatchEvent(new CustomEvent("deriv:account-switch", {
@@ -19891,7 +19891,7 @@ Based on last ${r} digits`,
                     },
                     p = (e, t) => t && m(t) && e.find(e => e.account_id !== t && (!e.status || "active" === e.status) && h.isDemoAccount(e.account_id, e.account_type)) || null,
                     b = e => {
-                        let t = Number(e ? ? 0);
+                        let t = Number(e ?? 0);
                         return Number.isFinite(t) ? t : 0
                     },
                     _ = () => {
@@ -19972,7 +19972,7 @@ Based on last ${r} digits`,
                                         throw Error(`[DerivWS] Failed to fetch accounts: ${n.status} ${n.statusText}${e?` - ${e}`:""}`)
                                     }
                                     let a = await n.json(),
-                                        i = (null == a ? void 0 : null === (t = a.data) || void 0 === t ? void 0 : t.data) ? ? (null == a ? void 0 : a.data) ? ? [];
+                                        i = (null == a ? void 0 : null === (t = a.data) || void 0 === t ? void 0 : t.data) ?? (null == a ? void 0 : a.data) ?? [];
                                     return this.storeAccounts(i), i
                                 }, {
                                     retries: 1,
@@ -20007,7 +20007,7 @@ Based on last ${r} digits`,
                                     }
                                     let l = await i.json(),
                                         s = "string" == typeof(null == l ? void 0 : l.data) ? JSON.parse(l.data) : null == l ? void 0 : l.data,
-                                        r = (null == s ? void 0 : null === (a = s.data) || void 0 === a ? void 0 : a.url) ? ? (null == s ? void 0 : s.url) ? ? "";
+                                        r = (null == s ? void 0 : null === (a = s.data) || void 0 === a ? void 0 : a.url) ?? (null == s ? void 0 : s.url) ?? "";
                                     if (!r) throw Error("[DerivWS] OTP response did not contain a WebSocket URL");
                                     return this.storeWebSocketURL(r, t, n), r
                                 }, {
@@ -20051,7 +20051,7 @@ Based on last ${r} digits`,
                         if (!(null == a ? void 0 : a.length)) return;
                         let i = !1,
                             l = Number(t),
-                            o = Number.isFinite(l) ? String(l) : String(t ? ? "0"),
+                            o = Number.isFinite(l) ? String(l) : String(t ?? "0"),
                             s = a.map(t => t.account_id !== e ? t : (i = !0, { ...t,
                                 balance: o,
                                 currency: n || t.currency
@@ -20059,9 +20059,9 @@ Based on last ${r} digits`,
                         i && this.storeAccounts(s)
                     }
                     static getDefaultAccount(e) {
-                        let t = e ? ? this.getStoredAccounts() ? ? [],
+                        let t = e ?? this.getStoredAccounts() ?? [],
                             n = f(t);
-                        return t.find(e => e.account_id === n) ? ? t.find(e => "active" === e.status && !this.isDemoAccount(e.account_id, e.account_type)) ? ? t.find(e => !this.isDemoAccount(e.account_id, e.account_type)) ? ? t[0]
+                        return t.find(e => e.account_id === n) ?? t.find(e => "active" === e.status && !this.isDemoAccount(e.account_id, e.account_type)) ?? t.find(e => !this.isDemoAccount(e.account_id, e.account_type)) ?? t[0]
                     }
                     static clearStoredAccounts() {
                         sessionStorage.removeItem(r), sessionStorage.removeItem(c), localStorage.removeItem(d), this.clearWebSocketURLStorage(), this.clearCache()
@@ -20074,37 +20074,37 @@ Based on last ${r} digits`,
                     }
                     static isDemoAccount(e, t) {
                         var n;
-                        let a = (null == e ? void 0 : null === (n = e.toUpperCase) || void 0 === n ? void 0 : n.call(e)) ? ? "";
+                        let a = (null == e ? void 0 : null === (n = e.toUpperCase) || void 0 === n ? void 0 : n.call(e)) ?? "";
                         return "demo" === t || u.some(e => a.startsWith(e))
                     }
                     static toLegacyAccountList(e) {
-                        return (e ? ? this.getStoredAccounts() ? ? []).map(e => {
+                        return (e ?? this.getStoredAccounts() ?? []).map(e => {
                             let t = m(e.account_id),
                                 n = t ? 0 : this.isDemoAccount(e.account_id, e.account_type) ? 1 : 0;
                             return {
                                 account_category: "trading",
-                                account_type: t ? "real" : e.account_type ? ? (n ? "demo" : "real"),
+                                account_type: t ? "real" : e.account_type ?? (n ? "demo" : "real"),
                                 balance: b(e.balance),
-                                broker: e.group ? ? "",
+                                broker: e.group ?? "",
                                 created_at: 0,
-                                currency: e.currency ? ? "",
+                                currency: e.currency ?? "",
                                 currency_type: e.currency ? "fiat" : "",
                                 is_disabled: e.status && "active" !== e.status ? 1 : 0,
                                 is_virtual: n,
-                                landing_company_name: e.group ? ? "",
+                                landing_company_name: e.group ?? "",
                                 linked_to: [],
                                 loginid: e.account_id
                             }
                         })
                     }
                     static syncClientAccounts(e) {
-                        let t = (e ? ? this.getStoredAccounts() ? ? []).reduce((e, t) => {
+                        let t = (e ?? this.getStoredAccounts() ?? []).reduce((e, t) => {
                             let n = m(t.account_id),
                                 a = !n && this.isDemoAccount(t.account_id, t.account_type);
                             return e[t.account_id] = {
                                 loginid: t.account_id,
-                                currency: t.currency ? ? "",
-                                account_type: n ? "real" : t.account_type ? ? (a ? "demo" : "real"),
+                                currency: t.currency ?? "",
+                                account_type: n ? "real" : t.account_type ?? (a ? "demo" : "real"),
                                 balance: b(t.balance),
                                 is_virtual: a
                             }, e
@@ -20358,7 +20358,7 @@ Based on last ${r} digits`,
                     }
                     static getAccessToken() {
                         var e;
-                        return (null === (e = this.getAuthInfo()) || void 0 === e ? void 0 : e.access_token) ? ? null
+                        return (null === (e = this.getAuthInfo()) || void 0 === e ? void 0 : e.access_token) ?? null
                     }
                     static clearAuthInfo() {
                         (0, l.W7)()
@@ -20489,7 +20489,7 @@ Based on last ${r} digits`,
                     let a = new MutationObserver(() => {
                         document.querySelector(e) && (n(document.querySelector(e)), a.disconnect())
                     });
-                    a.observe(t ? ? document.body, {
+                    a.observe(t ?? document.body, {
                         childList: !0,
                         subtree: !0
                     })
@@ -20566,7 +20566,7 @@ Based on last ${r} digits`,
                         onTransactionClosed: e => {
                             n({
                                 event: "dbot_run_transaction",
-                                reference_id: (null == e ? void 0 : e.contract_id) ? ? ""
+                                reference_id: (null == e ? void 0 : e.contract_id) ?? ""
                             })
                         },
                         onRunBot: i

@@ -89,7 +89,7 @@
                                     let e = n.shift();
                                     n.forEach(e => {
                                         s.set(e, !1)
-                                    }), n = [e ? ? ""], l({
+                                    }), n = [e ?? ""], l({
                                         modal: e
                                     })
                                 } else 1 === n.length ? l({
@@ -621,7 +621,7 @@
             let ec = (0, U.Pi)(() => {
                 let {
                     save_modal: e
-                } = (0, p.oR)() ? ? {}, {
+                } = (0, p.oR)() ?? {}, {
                     localize: t
                 } = (0, d.T_)();
                 if (!e) return null;
@@ -649,7 +649,7 @@
                         isDesktop: e
                     } = (0, u.F)(), {
                         common: t
-                    } = (0, p.oR)() ? ? {
+                    } = (0, p.oR)() ?? {
                         common: {
                             server_time: eu()()
                         }
@@ -880,7 +880,7 @@
                 };
             var ej = n("79649");
             let ef = e => {
-                    let t = Number(e ? ? 0);
+                    let t = Number(e ?? 0);
                     return Number.isFinite(t) ? t : 0
                 },
                 ew = e => {
@@ -890,7 +890,7 @@
                     } = e, {
                         accountList: a,
                         activeLoginid: o
-                    } = (0, ej.T)(), s = (0, i.useMemo)(() => null == a ? void 0 : a.find(e => e.loginid === o), [o, a]), c = null == n ? void 0 : null === (t = n.accounts) || void 0 === t ? void 0 : t[(null == s ? void 0 : s.loginid) ? ? ""], u = ef(null == s ? void 0 : s.balance), h = (null == c ? void 0 : c.currency) || (null == s ? void 0 : s.currency) || "USD", m = (null == c ? void 0 : c.balance) ? ? u;
+                    } = (0, ej.T)(), s = (0, i.useMemo)(() => null == a ? void 0 : a.find(e => e.loginid === o), [o, a]), c = null == n ? void 0 : null === (t = n.accounts) || void 0 === t ? void 0 : t[(null == s ? void 0 : s.loginid) ?? ""], u = ef(null == s ? void 0 : s.balance), h = (null == c ? void 0 : c.currency) || (null == s ? void 0 : s.currency) || "USD", m = (null == c ? void 0 : c.balance) ?? u;
                     return {
                         data: (0, i.useMemo)(() => {
                             var e;
@@ -1237,20 +1237,20 @@
                                 let t = await (0, eG.hl)(o, e),
                                     s = Number(null == t ? void 0 : t.balance);
                                 if (t && Number.isFinite(s)) {
-                                    let o = (null === (n = h.all_accounts_balance) || void 0 === n ? void 0 : n.accounts) ? ? {},
+                                    let o = (null === (n = h.all_accounts_balance) || void 0 === n ? void 0 : n.accounts) ?? {},
                                         r = o[e];
                                     h.setAllAccountsBalance({
-                                        balance: (null === (l = h.all_accounts_balance) || void 0 === l ? void 0 : l.balance) ? ? s,
-                                        currency: (null === (i = h.all_accounts_balance) || void 0 === i ? void 0 : i.currency) ? ? t.currency ? ? "",
-                                        loginid: (null === (a = h.all_accounts_balance) || void 0 === a ? void 0 : a.loginid) ? ? e,
+                                        balance: (null === (l = h.all_accounts_balance) || void 0 === l ? void 0 : l.balance) ?? s,
+                                        currency: (null === (i = h.all_accounts_balance) || void 0 === i ? void 0 : i.currency) ?? t.currency ?? "",
+                                        loginid: (null === (a = h.all_accounts_balance) || void 0 === a ? void 0 : a.loginid) ?? e,
                                         accounts: { ...o,
                                             [e]: {
                                                 balance: s,
                                                 converted_amount: s,
-                                                currency: t.currency ? ? (null == r ? void 0 : r.currency) ? ? "",
-                                                demo_account: (null == r ? void 0 : r.demo_account) ? ? 1,
-                                                status: (null == r ? void 0 : r.status) ? ? 1,
-                                                type: (null == r ? void 0 : r.type) ? ? "deriv"
+                                                currency: t.currency ?? (null == r ? void 0 : r.currency) ?? "",
+                                                demo_account: (null == r ? void 0 : r.demo_account) ?? 1,
+                                                status: (null == r ? void 0 : r.status) ?? 1,
+                                                type: (null == r ? void 0 : r.type) ?? "deriv"
                                             }
                                         }
                                     }), e === h.loginid && (h.setBalance(String(s)), t.currency && h.setCurrency(t.currency))
@@ -1426,7 +1426,7 @@
                     real: (0, d.NC)("Real")
                 },
                 tn = e => {
-                    let t = Number(e ? ? 0);
+                    let t = Number(e ?? 0);
                     return Number.isFinite(t) ? t : 0
                 },
                 tl = e => {
@@ -1444,7 +1444,7 @@
                         switchAccount: r,
                         activeLoginId: c,
                         client: d
-                    } = e, u = (0, eP.a)(), h = (0, e5.Gz)().includes((null === (t = d.account_settings) || void 0 === t ? void 0 : t.country_code) ? ? ""), m = !!n;
+                    } = e, u = (0, eP.a)(), h = (0, e5.Gz)().includes((null === (t = d.account_settings) || void 0 === t ? void 0 : t.country_code) ?? ""), m = !!n;
                     return ((0, i.useEffect)(() => {
                         var e, t;
                         let l = null === (e = document.getElementsByClassName("account-switcher-panel")) || void 0 === e ? void 0 : e[0];
@@ -1498,22 +1498,22 @@
                     } = (0, eO.u)(), f = a ? { ...a,
                         balance: (() => {
                             var e, t, n, l, i, o;
-                            let s = (null === (n = h.all_accounts_balance) || void 0 === n ? void 0 : null === (t = n.accounts) || void 0 === t ? void 0 : null === (e = t[a.loginid]) || void 0 === e ? void 0 : e.balance) ? ? tn(a.balance),
+                            let s = (null === (n = h.all_accounts_balance) || void 0 === n ? void 0 : null === (t = n.accounts) || void 0 === t ? void 0 : null === (e = t[a.loginid]) || void 0 === e ? void 0 : e.balance) ?? tn(a.balance),
                                 c = j(s, (null === (o = h.all_accounts_balance) || void 0 === o ? void 0 : null === (i = o.accounts) || void 0 === i ? void 0 : null === (l = i[a.loginid]) || void 0 === l ? void 0 : l.currency) || a.currency || "USD");
                             return (0, r.oC5)(c.amount.toFixed(2))
                         })(),
                         currency: (() => {
                             var e, t, n, l, i, o;
-                            let s = (null === (n = h.all_accounts_balance) || void 0 === n ? void 0 : null === (t = n.accounts) || void 0 === t ? void 0 : null === (e = t[a.loginid]) || void 0 === e ? void 0 : e.balance) ? ? tn(a.balance);
+                            let s = (null === (n = h.all_accounts_balance) || void 0 === n ? void 0 : null === (t = n.accounts) || void 0 === t ? void 0 : null === (e = t[a.loginid]) || void 0 === e ? void 0 : e.balance) ?? tn(a.balance);
                             return j(s, (null === (o = h.all_accounts_balance) || void 0 === o ? void 0 : null === (i = o.accounts) || void 0 === i ? void 0 : null === (l = i[a.loginid]) || void 0 === l ? void 0 : l.currency) || a.currency || "USD").currency
                         })()
                     } : void 0, w = (0, i.useMemo)(() => null == s ? void 0 : s.map(e => {
                         var t, n, i, o, s, c, d, u, m, g;
-                        let x = (null === (i = h.all_accounts_balance) || void 0 === i ? void 0 : null === (n = i.accounts) || void 0 === n ? void 0 : null === (t = n[null == e ? void 0 : e.loginid]) || void 0 === t ? void 0 : t.balance) ? ? tn(e.balance),
+                        let x = (null === (i = h.all_accounts_balance) || void 0 === i ? void 0 : null === (n = i.accounts) || void 0 === n ? void 0 : null === (t = n[null == e ? void 0 : e.loginid]) || void 0 === t ? void 0 : t.balance) ?? tn(e.balance),
                             p = j(x, (null === (c = h.all_accounts_balance) || void 0 === c ? void 0 : null === (s = c.accounts) || void 0 === s ? void 0 : null === (o = s[null == e ? void 0 : e.loginid]) || void 0 === o ? void 0 : o.currency) || e.currency || "USD");
                         return { ...e,
                             balance: (0, r.oC5)(p.amount.toFixed(2)),
-                            currencyLabel: (null == e ? void 0 : e.is_virtual) ? tt.demo : (null === (m = h.website_status) || void 0 === m ? void 0 : null === (u = m.currencies_config) || void 0 === u ? void 0 : null === (d = u[p.currency]) || void 0 === d ? void 0 : d.name) ? ? p.currency,
+                            currencyLabel: (null == e ? void 0 : e.is_virtual) ? tt.demo : (null === (m = h.website_status) || void 0 === m ? void 0 : null === (u = m.currencies_config) || void 0 === u ? void 0 : null === (d = u[p.currency]) || void 0 === d ? void 0 : d.name) ?? p.currency,
                             icon: (0, l.jsx)(ev, {
                                 currency: null === (g = e.currency) || void 0 === g ? void 0 : g.toLowerCase(),
                                 isVirtual: !!(null == e ? void 0 : e.is_virtual)
@@ -1521,7 +1521,7 @@
                             isVirtual: !!(null == e ? void 0 : e.is_virtual),
                             isActive: (null == e ? void 0 : e.loginid) === (null == a ? void 0 : a.loginid)
                         }
-                    }), [s, null === (t = h.all_accounts_balance) || void 0 === t ? void 0 : t.accounts, null === (n = h.website_status) || void 0 === n ? void 0 : n.currencies_config, null == a ? void 0 : a.loginid, j]), y = (0, i.useMemo)(() => (null == w ? void 0 : w.filter(e => !e.isVirtual && !tl(e))) ? ? [], [w]), C = (0, i.useMemo)(() => (null == w ? void 0 : w.filter(e => !e.isVirtual && tl(e))) ? ? [], [w]), N = (0, i.useMemo)(() => (null == w ? void 0 : w.filter(e => e.isVirtual)) ? ? [], [w]), I = async e => {
+                    }), [s, null === (t = h.all_accounts_balance) || void 0 === t ? void 0 : t.accounts, null === (n = h.website_status) || void 0 === n ? void 0 : n.currencies_config, null == a ? void 0 : a.loginid, j]), y = (0, i.useMemo)(() => (null == w ? void 0 : w.filter(e => !e.isVirtual && !tl(e))) ?? [], [w]), C = (0, i.useMemo)(() => (null == w ? void 0 : w.filter(e => !e.isVirtual && tl(e))) ?? [], [w]), N = (0, i.useMemo)(() => (null == w ? void 0 : w.filter(e => e.isVirtual)) ?? [], [w]), I = async e => {
                         let t = e.toString();
                         if (t === (null == a ? void 0 : a.loginid)) return;
                         let {
@@ -2013,7 +2013,7 @@
                         activeLoginid: n
                     } = (0, ej.T)(), {
                         client: i
-                    } = (0, p.oR)() ? ? {}, {
+                    } = (0, p.oR)() ?? {}, {
                         data: o
                     } = ew({
                         allBalanceData: null == i ? void 0 : i.all_accounts_balance
@@ -2060,9 +2060,9 @@
                 tL = e => {
                     let {
                         children: t
-                    } = e, n = localStorage.getItem("theme") ? ? "dark", {
+                    } = e, n = localStorage.getItem("theme") ?? "dark", {
                         ui: a
-                    } = (0, p.oR)() ? ? {
+                    } = (0, p.oR)() ?? {
                         ui: {
                             setDevice: () => {}
                         }
@@ -2086,7 +2086,7 @@
                 tS = () => {
                     let {
                         isDesktop: e
-                    } = (0, u.F)(), t = "/callback" === window.location.pathname, n = "true" === o.Z.get("logged_state"), h = window.location.pathname.includes("endpoint"), m = Object.keys(JSON.parse(localStorage.getItem("accountsList") ? ? "{}")).length > 0, g = (0, c.M8)();
+                    } = (0, u.F)(), t = "/callback" === window.location.pathname, n = "true" === o.Z.get("logged_state"), h = window.location.pathname.includes("endpoint"), m = Object.keys(JSON.parse(localStorage.getItem("accountsList") ?? "{}")).length > 0, g = (0, c.M8)();
                     return (0, i.useEffect)(() => {
                         n && !m && !g && !h && !t && (0, r.iJV)((0, d.Jb)(), window.location.href)
                     }, [n, m, g, h, t]), (0, l.jsxs)("div", {

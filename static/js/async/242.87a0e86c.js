@@ -168,7 +168,7 @@
                         minWidth: l,
                         clientX: o,
                         self: c
-                    } = e, d = (null == s ? void 0 : s.left) ? ? 0, u = (null == s ? void 0 : s.width) ? ? 0, m = d + a + 5, h = (null == c ? void 0 : c.left) ? ? 0, p = d + u - 7;
+                    } = e, d = (null == s ? void 0 : s.left) ?? 0, u = (null == s ? void 0 : s.width) ?? 0, m = d + a + 5, h = (null == c ? void 0 : c.left) ?? 0, p = d + u - 7;
                     if (n.includes("left")) return r >= l && o > m ? r : o < m + 10 ? p - m - (p - i) - 10 : t;
                     if (n.includes("right")) {
                         if (r >= l && o < p) return r;
@@ -187,7 +187,7 @@
                         minHeight: l,
                         clientY: o,
                         self: c
-                    } = e, d = (null == s ? void 0 : s.top) ? ? 0, u = (null == s ? void 0 : s.height) ? ? 0, m = d + a + 5, h = (null == c ? void 0 : c.top) ? ? 0, p = d + u - 7;
+                    } = e, d = (null == s ? void 0 : s.top) ?? 0, u = (null == s ? void 0 : s.height) ?? 0, m = d + a + 5, h = (null == c ? void 0 : c.top) ?? 0, p = d + u - 7;
                     if (n.includes("top")) return r >= l && o > m ? r : o < m + 10 ? p - m - (p - i) - 10 : t;
                     if (n.includes("bottom")) {
                         if (r >= l && o < p) return r;
@@ -217,7 +217,7 @@
                     }), [p, _] = (0, r.useState)({
                         width: s.width,
                         height: s.height
-                    }), [x, v] = (0, r.useState)(100), g = (0, r.useRef)(!1), [b, y] = (0, r.useState)(!1), j = (0, r.useRef)(null), [f, N] = (0, r.useState)(document.querySelector(a ? ? R.BODY_REF));
+                    }), [x, v] = (0, r.useState)(100), g = (0, r.useRef)(!1), [b, y] = (0, r.useState)(!1), j = (0, r.useRef)(null), [f, N] = (0, r.useState)(document.querySelector(a ?? R.BODY_REF));
                     (0, r.useEffect)(() => {
                         _({
                             width: s.width,
@@ -227,7 +227,7 @@
                             y: s.yAxis
                         })
                     }, [s.height, s.width, s.xAxis, s.yAxis]), (0, r.useEffect)(() => {
-                        N(document.querySelector(a ? ? R.BODY_REF)), I({
+                        N(document.querySelector(a ?? R.BODY_REF)), I({
                             setZIndex: v
                         })
                     }, [a]);
@@ -238,16 +238,16 @@
                             }), !t) return;
                         g.current = t !== R.MOVE && o, y(t === R.MOVE && c);
                         let x = null == f ? void 0 : f.getBoundingClientRect(),
-                            b = (null == f ? void 0 : f.offsetTop) ? ? 0,
-                            N = (null == f ? void 0 : f.offsetLeft) ? ? 0,
-                            k = (null == e ? void 0 : e.clientX) ? ? 0,
-                            w = (null == e ? void 0 : e.clientY) ? ? 0,
-                            T = (null == p ? void 0 : p.width) ? ? s.width,
-                            C = (null == p ? void 0 : p.height) ? ? s.height,
-                            E = (null == m ? void 0 : m.x) ? ? 0,
-                            S = (null == m ? void 0 : m.y) ? ? 0,
-                            M = (null === (n = j.current) || void 0 === n ? void 0 : null === (a = n.getBoundingClientRect()) || void 0 === a ? void 0 : a.right) ? ? p.width,
-                            O = (null === (d = j.current) || void 0 === d ? void 0 : null === (r = d.getBoundingClientRect()) || void 0 === r ? void 0 : r.bottom) ? ? p.height,
+                            b = (null == f ? void 0 : f.offsetTop) ?? 0,
+                            N = (null == f ? void 0 : f.offsetLeft) ?? 0,
+                            k = (null == e ? void 0 : e.clientX) ?? 0,
+                            w = (null == e ? void 0 : e.clientY) ?? 0,
+                            T = (null == p ? void 0 : p.width) ?? s.width,
+                            C = (null == p ? void 0 : p.height) ?? s.height,
+                            E = (null == m ? void 0 : m.x) ?? 0,
+                            S = (null == m ? void 0 : m.y) ?? 0,
+                            M = (null === (n = j.current) || void 0 === n ? void 0 : null === (a = n.getBoundingClientRect()) || void 0 === a ? void 0 : a.right) ?? p.width,
+                            O = (null === (d = j.current) || void 0 === d ? void 0 : null === (r = d.getBoundingClientRect()) || void 0 === r ? void 0 : r.bottom) ?? p.height,
                             L = {},
                             P = null === (u = j.current) || void 0 === u ? void 0 : u.querySelector("#draggable-content-body");
                         if (P) {
@@ -271,8 +271,8 @@
                             },
                             F = (e, a, s, n) => {
                                 var r;
-                                let o = (null == m ? void 0 : m.x) ? ? 0,
-                                    c = (null == m ? void 0 : m.y) ? ? 0,
+                                let o = (null == m ? void 0 : m.x) ?? 0,
+                                    c = (null == m ? void 0 : m.y) ?? 0,
                                     d = T,
                                     u = C;
                                 t.includes(R.RIGHT) ? d += e : t.includes(R.LEFT) && (o = e + E, d -= e), t.includes(R.BOTTOM) ? u += a : t.includes(R.TOP) && (c = a + S, u -= a), h(e => {
@@ -310,10 +310,10 @@
                                 }))
                             },
                             B = (e, t) => {
-                                let a = Math.min(Math.max(e + E, N + 5), N + ((null == x ? void 0 : x.width) ? ? 0) - p.width - 9);
+                                let a = Math.min(Math.max(e + E, N + 5), N + ((null == x ? void 0 : x.width) ?? 0) - p.width - 9);
                                 h({
                                     x: a,
-                                    y: Math.min(Math.max(t + S, b + 5), b + ((null == x ? void 0 : x.height) ? ? 0) - p.height - 9)
+                                    y: Math.min(Math.max(t + S, b + 5), b + ((null == x ? void 0 : x.height) ?? 0) - p.height - 9)
                                 })
                             },
                             z = () => {
@@ -803,7 +803,7 @@
                     return (0, n.jsx)(r.Suspense, {
                         fallback: null,
                         children: (0, n.jsx)(s, {
-                            iconSize: a ? ? "xs"
+                            iconSize: a ?? "xs"
                         })
                     })
                 };
@@ -915,7 +915,7 @@
                     return (0, n.jsx)(r.Suspense, {
                         fallback: null,
                         children: (0, n.jsx)(i, {
-                            iconSize: a ? ? "xs",
+                            iconSize: a ?? "xs",
                             className: s
                         })
                     })
@@ -1032,14 +1032,14 @@
                                         label: null == t ? void 0 : t.exit_tick,
                                         loader: !t.exit_tick
                                     }), (0, n.jsx)(G, {
-                                        label: Math.abs((null == t ? void 0 : t.buy_price) ? ? 0).toFixed(2)
+                                        label: Math.abs((null == t ? void 0 : t.buy_price) ?? 0).toFixed(2)
                                     }), (0, n.jsx)(G, {
                                         label: (0, n.jsx)("div", {
                                             className: P()({
                                                 [`${H}__profit--win`]: (null == t ? void 0 : t.profit) > 0,
                                                 [`${H}__profit--loss`]: (null == t ? void 0 : t.profit) < 0
                                             }),
-                                            children: Math.abs((null == t ? void 0 : t.profit) ? ? 0).toFixed(2)
+                                            children: Math.abs((null == t ? void 0 : t.profit) ?? 0).toFixed(2)
                                         }),
                                         loader: !t.is_completed
                                     })]
@@ -1067,9 +1067,9 @@
                             }), (0, n.jsx)(G, {
                                 label: null == t ? void 0 : t.number_of_runs
                             }), (0, n.jsx)(G, {
-                                label: Math.abs((null == t ? void 0 : t.total_stake) ? ? 0).toFixed(2)
+                                label: Math.abs((null == t ? void 0 : t.total_stake) ?? 0).toFixed(2)
                             }), (0, n.jsx)(G, {
-                                label: Math.abs((null == t ? void 0 : t.total_payout) ? ? 0).toFixed(2)
+                                label: Math.abs((null == t ? void 0 : t.total_payout) ?? 0).toFixed(2)
                             }), (0, n.jsx)(G, {
                                 label: null == t ? void 0 : t.won_contracts
                             }), (0, n.jsx)(G, {
@@ -1082,7 +1082,7 @@
                                         [`${H}__profit--loss`]: (null == t ? void 0 : t.total_profit) < 0
                                     }),
                                     "data-testid": "transaction_details_table_profit",
-                                    children: Math.abs((null == t ? void 0 : t.total_profit) ? ? 0).toFixed(2)
+                                    children: Math.abs((null == t ? void 0 : t.total_profit) ?? 0).toFixed(2)
                                 })
                             }), (0, n.jsx)(G, {
                                 label: l
@@ -1174,8 +1174,8 @@
                                 transactions: o,
                                 result_columns: ee(),
                                 result: c,
-                                account: t ? ? "",
-                                balance: a ? ? 0
+                                account: t ?? "",
+                                balance: a ?? 0
                             })
                         })
                     })
@@ -3514,7 +3514,7 @@
                             required: R || void 0,
                             inputMode: g,
                             type: "number" === A ? "text" : A,
-                            value: h ? ? "",
+                            value: h ?? "",
                             "aria-label": t,
                             "data-lpignore": "password" !== A
                         })]
@@ -4703,7 +4703,7 @@
                         getCardLabels: a,
                         is_sell_requested: s,
                         onClickSell: i
-                    } = e, l = (0, p.iBr)(t), o = ((0, p._mr)(t) || (0, p.s0r)((null == t ? void 0 : t.shortcode) ? ? "", t.purchase_time)) && (0, p.FJ7)(t);
+                    } = e, l = (0, p.iBr)(t), o = ((0, p._mr)(t) || (0, p.s0r)((null == t ? void 0 : t.shortcode) ?? "", t.purchase_time)) && (0, p.FJ7)(t);
                     return o ? (0, n.jsx)(r.Fragment, {
                         children: l ? (0, n.jsx)(tw.z, {
                             className: P()("dc-btn--sell", {
@@ -5036,7 +5036,7 @@
                                 "dc-contract-card__underlying-name--accumulator": E
                             }),
                             children: [(0, n.jsx)(V, {
-                                type: g ? ? "",
+                                type: g ?? "",
                                 size: "md"
                             }), (0, n.jsx)(ea.Z, {
                                 size: "xxs",
@@ -5383,7 +5383,7 @@
                         S = (0, n.jsx)(tW.Body, {
                             addToast: y,
                             contract_info: t,
-                            currency: (null == t ? void 0 : t.currency) ? ? "",
+                            currency: (null == t ? void 0 : t.currency) ?? "",
                             current_focus: j,
                             error_message_alignment: "left",
                             getCardLabels: p.gk9,
@@ -5962,7 +5962,7 @@
                                         width: 10
                                     }),
                                     title: (0, f.NC)("Entry spot"),
-                                    message: (null == a ? void 0 : a.entry_tick) ? ? (0, n.jsx)(t9, {})
+                                    message: (null == a ? void 0 : a.entry_tick) ?? (0, n.jsx)(t9, {})
                                 })
                             }), (0, n.jsx)("div", {
                                 className: "transactions__cell transactions__exit-spot",
@@ -5972,7 +5972,7 @@
                                         width: 10
                                     }),
                                     title: (0, f.NC)("Exit spot"),
-                                    message: (null == a ? void 0 : a.exit_tick) ? ? (0, n.jsx)(t9, {})
+                                    message: (null == a ? void 0 : a.exit_tick) ?? (0, n.jsx)(t9, {})
                                 })
                             }), (0, n.jsx)("div", {
                                 className: "transactions__cell transactions__stake",
@@ -6630,7 +6630,7 @@
                                         })
                                     }), j && j(), (0, n.jsx)("div", {
                                         className: "dc-mobile-full-page-modal__header-text",
-                                        children: f ? ? (0, n.jsx)(ea.Z, {
+                                        children: f ?? (0, n.jsx)(ea.Z, {
                                             as: "p",
                                             color: "prominent",
                                             lineHeight: "m",
@@ -6765,7 +6765,7 @@
                         className: `${ax}__card__row`,
                         children: [(0, n.jsx)(ag, {
                             title: "Buy Price",
-                            label: Math.abs((null == a ? void 0 : a.buy_price) ? ? 0).toFixed(2)
+                            label: Math.abs((null == a ? void 0 : a.buy_price) ?? 0).toFixed(2)
                         }), (0, n.jsx)(ag, {
                             title: "Exit Spot",
                             label: null == a ? void 0 : a.exit_tick,
@@ -6783,7 +6783,7 @@
                                     [`${ax}__card__profit--win`]: (null == a ? void 0 : a.profit) > 0,
                                     [`${ax}__card__profit--loss`]: (null == a ? void 0 : a.profit) < 0
                                 }),
-                                children: Math.abs((null == a ? void 0 : a.profit) ? ? 0).toFixed(2)
+                                children: Math.abs((null == a ? void 0 : a.profit) ?? 0).toFixed(2)
                             }),
                             right_aligned: !0,
                             loader: !a.is_completed
@@ -6836,12 +6836,12 @@
                             children: (0, n.jsx)(ao, {
                                 is_mobile: !0,
                                 currency: null == e ? void 0 : e.currency,
-                                lost_contracts: (null == l ? void 0 : l.lost_contracts) ? ? 0,
-                                number_of_runs: (null == l ? void 0 : l.number_of_runs) ? ? 0,
-                                total_payout: (null == l ? void 0 : l.total_payout) ? ? 0,
-                                total_profit: (null == l ? void 0 : l.total_profit) ? ? 0,
-                                total_stake: (null == l ? void 0 : l.total_stake) ? ? 0,
-                                won_contracts: (null == l ? void 0 : l.won_contracts) ? ? 0,
+                                lost_contracts: (null == l ? void 0 : l.lost_contracts) ?? 0,
+                                number_of_runs: (null == l ? void 0 : l.number_of_runs) ?? 0,
+                                total_payout: (null == l ? void 0 : l.total_payout) ?? 0,
+                                total_profit: (null == l ? void 0 : l.total_profit) ?? 0,
+                                total_stake: (null == l ? void 0 : l.total_stake) ?? 0,
+                                won_contracts: (null == l ? void 0 : l.won_contracts) ?? 0,
                                 toggleStatisticsInfoModal: o
                             })
                         })]
@@ -7112,7 +7112,7 @@
                                     symbol: s,
                                     ask: i,
                                     quote: n
-                                } = a.tick, r = i ? ? n;
+                                } = a.tick, r = i ?? n;
                                 t(e => {
                                     let t = e.get(s);
                                     if (!t) return e;
@@ -8561,7 +8561,7 @@
                     return (0, r.useEffect)(() => {
                         if (1 === j) {
                             var e;
-                            h((null == l ? void 0 : null === (e = l[0]) || void 0 === e ? void 0 : e.name) ? ? "")
+                            h((null == l ? void 0 : null === (e = l[0]) || void 0 === e ? void 0 : e.name) ?? "")
                         }
                     }, [j, l, h]), y ? (0, n.jsx)(a_, {
                         is_modal_open: d,
@@ -9606,7 +9606,7 @@
                         ui: r
                     } = (0, v.oR)(), {
                         is_dark_mode_on: l
-                    } = r, o = (null == s ? void 0 : s.className) ? ? "";
+                    } = r, o = (null == s ? void 0 : s.className) ?? "";
                     switch (s.type) {
                         case "text":
                             {
@@ -9641,7 +9641,7 @@
                                     className: e,
                                     style: null == s ? void 0 : s.styles,
                                     children: (0, n.jsx)("img", {
-                                        src: l ? s.dark_src ? ? s.src : s.src,
+                                        src: l ? s.dark_src ?? s.src : s.src,
                                         alt: s.alt
                                     })
                                 })
@@ -9676,7 +9676,7 @@
                     return (0, n.jsx)(n.Fragment, {
                         children: Array.isArray(a) && a.map(e => {
                             var t, a, r, l;
-                            let o = (null == e ? void 0 : null === (a = e[0]) || void 0 === a ? void 0 : null === (t = a.content) || void 0 === t ? void 0 : t[0]) ? ? "";
+                            let o = (null == e ? void 0 : null === (a = e[0]) || void 0 === a ? void 0 : null === (t = a.content) || void 0 === t ? void 0 : t[0]) ?? "";
                             return (0, n.jsx)(s6, {
                                 content_data: {
                                     header: o,
@@ -9711,7 +9711,7 @@
                         if ("subtitle_italic" === t.type || "subtitle" === t.type) {
                             let a, s;
                             e.push([]);
-                            c[a = t, s = o, `${a.content[0]}__${s}`.split(" ").join("_").toLowerCase()] = (null == t ? void 0 : t.expanded) ? ? !1
+                            c[a = t, s = o, `${a.content[0]}__${s}`.split(" ").join("_").toLowerCase()] = (null == t ? void 0 : t.expanded) ?? !1
                         }
                         return e[e.length - 1].push({ ...t,
                             id: a
@@ -9917,10 +9917,10 @@
                     return {
                         handleSubmit: async () => {
                             var e;
-                            let i = Number((null == r ? void 0 : r.loss) ? ? 0),
-                                n = Number((null == r ? void 0 : r.profit) ? ? 0),
-                                l = JSON.parse((null === (e = localStorage) || void 0 === e ? void 0 : e.getItem("qs-dont-show-loss-threshold-warning")) ? ? "false");
-                            !h.already_shown && (i > .5 * Number(a ? ? 0) || i > 2 * n) && s && !l ? m({
+                            let i = Number((null == r ? void 0 : r.loss) ?? 0),
+                                n = Number((null == r ? void 0 : r.profit) ?? 0),
+                                l = JSON.parse((null === (e = localStorage) || void 0 === e ? void 0 : e.getItem("qs-dont-show-loss-threshold-warning")) ?? "false");
+                            !h.already_shown && (i > .5 * Number(a ?? 0) || i > 2 * n) && s && !l ? m({
                                 show: !0,
                                 loss_amount: i,
                                 currency: t,
@@ -10260,7 +10260,7 @@
                             label: (0, f.NC)("Do not show this message again."),
                             onChange: () => {
                                 var e, t;
-                                let a = JSON.parse((null === (e = localStorage) || void 0 === e ? void 0 : e.getItem("qs-dont-show-loss-threshold-warning")) ? ? "false");
+                                let a = JSON.parse((null === (e = localStorage) || void 0 === e ? void 0 : e.getItem("qs-dont-show-loss-threshold-warning")) ?? "false");
                                 null === (t = localStorage) || void 0 === t || t.setItem("qs-dont-show-loss-threshold-warning", `${!a}`)
                             }
                         })]
@@ -10771,7 +10771,7 @@
                         var e, t, s;
                         let {
                             active_symbols: i
-                        } = (null === B.ApiHelpers || void 0 === B.ApiHelpers ? void 0 : B.ApiHelpers.instance) ? ? {}, n = null == i ? void 0 : null === (e = i.getSymbolsForBot) || void 0 === e ? void 0 : e.call(i);
+                        } = (null === B.ApiHelpers || void 0 === B.ApiHelpers ? void 0 : B.ApiHelpers.instance) ?? {}, n = null == i ? void 0 : null === (e = i.getSymbolsForBot) || void 0 === e ? void 0 : e.call(i);
                         l(n), !(null == n ? void 0 : n.find(e => (null == e ? void 0 : e.value) === (null == _ ? void 0 : _.symbol))) && (p("symbol", null == n ? void 0 : null === (t = n[0]) || void 0 === t ? void 0 : t.value), a("symbol", null == n ? void 0 : null === (s = n[0]) || void 0 === s ? void 0 : s.value))
                     }, []), (0, r.useEffect)(() => {
                         let e = g.find(e => e.value === _.symbol);
@@ -10886,7 +10886,7 @@
                                 n = d ? "ACCU" : "",
                                 {
                                     contracts_for: r
-                                } = (null === B.ApiHelpers || void 0 === B.ApiHelpers ? void 0 : B.ApiHelpers.instance) ? ? {};
+                                } = (null === B.ApiHelpers || void 0 === B.ApiHelpers ? void 0 : B.ApiHelpers.instance) ?? {};
                             (async () => {
                                 var i, l;
                                 let c = await (null == r ? void 0 : null === (i = r.getTradeTypesForQuickStrategy) || void 0 === i ? void 0 : i.call(r, null == s ? void 0 : s.symbol, n));
@@ -10960,7 +10960,7 @@
                                 var a, s, n;
                                 let {
                                     contracts_for: r
-                                } = (null === B.ApiHelpers || void 0 === B.ApiHelpers ? void 0 : B.ApiHelpers.instance) ? ? {}, l = await (null == r ? void 0 : null === (a = r.getContractTypes) || void 0 === a ? void 0 : a.call(r, m));
+                                } = (null === B.ApiHelpers || void 0 === B.ApiHelpers ? void 0 : B.ApiHelpers.instance) ?? {}, l = await (null == r ? void 0 : null === (a = r.getContractTypes) || void 0 === a ? void 0 : a.call(r, m));
                                 i(l), !(null == l ? void 0 : l.some(t => t.value === e)) && (null == c || c(t, null == l ? void 0 : null === (s = l[0]) || void 0 === s ? void 0 : s.value), o(t, null == l ? void 0 : null === (n = l[0]) || void 0 === n ? void 0 : n.value))
                             })()
                         }
@@ -11039,9 +11039,9 @@
                             var e, t, a, n, r, d;
                             let {
                                 contracts_for: h
-                            } = (null === B.ApiHelpers || void 0 === B.ApiHelpers ? void 0 : B.ApiHelpers.instance) ? ? {}, _ = await (null == h ? void 0 : null === (e = h.getDurations) || void 0 === e ? void 0 : e.call(h, g, b)), v = null == _ ? void 0 : _.map(e => ({
-                                text: e.display ? ? "",
-                                value: e.unit ? ? "",
+                            } = (null === B.ApiHelpers || void 0 === B.ApiHelpers ? void 0 : B.ApiHelpers.instance) ?? {}, _ = await (null == h ? void 0 : null === (e = h.getDurations) || void 0 === e ? void 0 : e.call(h, g, b)), v = null == _ ? void 0 : _.map(e => ({
+                                text: e.display ?? "",
+                                value: e.unit ?? "",
                                 min: e.min,
                                 max: e.max
                             }));
@@ -11050,7 +11050,7 @@
                             if ((null == v ? void 0 : v.some(e => e.value === y)) && i === g && o === b) {
                                 let e = null == v ? void 0 : v.find(e => e.value === y);
                                 m(null == e ? void 0 : e.min, null == e ? void 0 : e.max)
-                            } else m(null == _ ? void 0 : null === (t = _[0]) || void 0 === t ? void 0 : t.min, null == _ ? void 0 : null === (a = _[0]) || void 0 === a ? void 0 : a.max), null == p || p("durationtype", null == _ ? void 0 : null === (n = _[0]) || void 0 === n ? void 0 : n.unit, !0), null == p || p("duration", null == _ ? void 0 : null === (r = _[0]) || void 0 === r ? void 0 : r.min, !0), u("durationtype", (null == _ ? void 0 : null === (d = _[0]) || void 0 === d ? void 0 : d.unit) ? ? "");
+                            } else m(null == _ ? void 0 : null === (t = _[0]) || void 0 === t ? void 0 : t.min, null == _ ? void 0 : null === (a = _[0]) || void 0 === a ? void 0 : a.max), null == p || p("durationtype", null == _ ? void 0 : null === (n = _[0]) || void 0 === n ? void 0 : n.unit, !0), null == p || p("duration", null == _ ? void 0 : null === (r = _[0]) || void 0 === r ? void 0 : r.min, !0), u("durationtype", (null == _ ? void 0 : null === (d = _[0]) || void 0 === d ? void 0 : d.unit) ?? "");
                             l(g), c(b)
                         })()
                     }, [g, b]), (0, r.useEffect)(() => {
@@ -11335,7 +11335,7 @@
                         }]), null == m || m("tradetype", "accumulator"), d("tradetype", "accumulator")
                     }, []), r.useEffect(() => {
                         var e, t;
-                        h.boolean_tick_count ? (m("take_profit", 0), p("tick_count", (null === (e = b.current) || void 0 === e ? void 0 : e.tick_count) ? ? void 0), p("take_profit", void 0)) : (m("tick_count", 0), p("take_profit", (null === (t = b.current) || void 0 === t ? void 0 : t.take_profit) ? ? void 0), p("tick_count", void 0))
+                        h.boolean_tick_count ? (m("take_profit", 0), p("tick_count", (null === (e = b.current) || void 0 === e ? void 0 : e.tick_count) ?? void 0), p("take_profit", void 0)) : (m("tick_count", 0), p("take_profit", (null === (t = b.current) || void 0 === t ? void 0 : t.take_profit) ?? void 0), p("tick_count", void 0))
                     }, [h, _.take_profit, _.tick_count, h.boolean_tick_count, m, p]);
                     let y = async e => {
                             var t, a, i, n, r, l, o, c, d, m, h;
@@ -11367,7 +11367,7 @@
                                 let c = Number(e.tick_count);
                                 !isNaN(c) && c > r ? (o = `Maximum tick count is: ${r}`, p("tick_count", o), b.current.tick_count = o) : !isNaN(c) && c < 1 ? (l = "Minimum tick count is: 1", p("tick_count", l), b.current.tick_count = l) : (b.current.tick_count = null, p("tick_count", void 0)), b.current.take_profit = null
                             } catch (a) {
-                                let t = (null == a ? void 0 : a.message) ? ? (null == a ? void 0 : null === (r = a.error) || void 0 === r ? void 0 : r.message);
+                                let t = (null == a ? void 0 : a.message) ?? (null == a ? void 0 : null === (r = a.error) || void 0 === r ? void 0 : r.message);
                                 e.boolean_tick_count ? (p("tick_count", t), b.current.tick_count = t) : ((null == a ? void 0 : null === (o = a.error) || void 0 === o ? void 0 : null === (l = o.details) || void 0 === l ? void 0 : l.field) === "take_profit" && (t = 0 === Number(e.take_profit) ? null == a ? void 0 : null === (m = a.error) || void 0 === m ? void 0 : m.message : `Your total payout is ${Number(e.take_profit)+Number(e.stake)}. Enter amount less than ${g.current} ${(0,f.NC)("By changing your initial stake and/or take profit.")}`), (null == a ? void 0 : null === (d = a.error) || void 0 === d ? void 0 : null === (c = d.details) || void 0 === c ? void 0 : c.field) === "stake" && (t = `${null==a?void 0:null===(h=a.error)||void 0===h?void 0:h.message} ${(0,f.NC)("Update your initial stake.")}`), p("take_profit", t), b.current.take_profit = t)
                             }
                         },
@@ -11503,12 +11503,12 @@
                     } = (0, eP.u6)(), {
                         current_duration_min_max: m,
                         additional_data: h
-                    } = t, [p, _] = r.useState((null == c ? void 0 : c.boolean_max_stake) ? ? !1);
+                    } = t, [p, _] = r.useState((null == c ? void 0 : c.boolean_max_stake) ?? !1);
                     r.useEffect(() => {
                         window.addEventListener("keydown", g);
                         let e = null;
                         try {
-                            e = JSON.parse(localStorage.getItem("qs-fields") ? ? "{}")
+                            e = JSON.parse(localStorage.getItem("qs-fields") ?? "{}")
                         } catch {
                             e = null
                         }
@@ -11584,7 +11584,7 @@
                                             if (!b(t) && a) return null;
                                             return (0, n.jsx)(iX, {
                                                 label: e.label,
-                                                description: e.description ? ? "",
+                                                description: e.description ?? "",
                                                 additional_data: h
                                             }, l)
                                         }
@@ -11671,7 +11671,7 @@
                     } = s, c = null === (t = (0, s0.j)()[i]) || void 0 === t ? void 0 : t.fields, [d, u] = (0, r.useState)(sK.Ry().shape({})), m = (0, r.useRef)(!0), h = null, p = () => {
                         let e = null;
                         try {
-                            e = JSON.parse(localStorage.getItem("qs-fields") ? ? "{}")
+                            e = JSON.parse(localStorage.getItem("qs-fields") ?? "{}")
                         } catch {
                             e = null
                         }
@@ -11704,7 +11704,7 @@
                                         let s = null == e ? void 0 : null === (a = e[t.key]) || void 0 === a ? void 0 : a.toString();
                                         return t.multiple ? t.multiple.includes(s) : (null == e ? void 0 : e[t.key]) === t.value
                                     }));
-                                    p && "max_stake" === a.name && (isNaN(r = +(null == l ? void 0 : l.stake)) && (r = +((null == h ? void 0 : h.stake) ? ? 0)), c = iK("MIN", r)), p && "last_digit_prediction" === a.name && (r = 0, d = iK("MAX", o = 9, "LAST_DIGIT_PREDICTION"), u = "Enter a value from 0 to 9."), p && a.validation.forEach(e => {
+                                    p && "max_stake" === a.name && (isNaN(r = +(null == l ? void 0 : l.stake)) && (r = +((null == h ? void 0 : h.stake) ?? 0)), c = iK("MIN", r)), p && "last_digit_prediction" === a.name && (r = 0, d = iK("MAX", o = 9, "LAST_DIGIT_PREDICTION"), u = "Enter a value from 0 to 9."), p && a.validation.forEach(e => {
                                         if ("string" == typeof e) switch (e) {
                                             case "required":
                                                 i = i.required((0, f.NC)("Field cannot be empty"));
@@ -11733,26 +11733,26 @@
                         initialValues: (() => {
                             let e = p();
                             return h = {
-                                symbol: (null == e ? void 0 : e.symbol) ? ? (0, B.config)().QUICK_STRATEGY.DEFAULT.symbol,
-                                tradetype: (null == e ? void 0 : e.tradetype) ? ? "",
-                                type: (null == e ? void 0 : e.type) ? ? "",
-                                durationtype: (null == e ? void 0 : e.durationtype) ? ? (0, B.config)().QUICK_STRATEGY.DEFAULT.durationtype,
-                                duration: (null == e ? void 0 : e.duration) ? ? "1",
-                                stake: (null == e ? void 0 : e.stake) ? ? "1",
-                                loss: (null == e ? void 0 : e.loss) ? ? "",
-                                profit: (null == e ? void 0 : e.profit) ? ? "",
-                                size: (null == e ? void 0 : e.size) ? ? String((0, B.config)().QUICK_STRATEGY.DEFAULT.size),
-                                unit: (null == e ? void 0 : e.unit) ? ? String((0, B.config)().QUICK_STRATEGY.DEFAULT.unit),
-                                action: (null == e ? void 0 : e.action) ? ? "RUN",
-                                max_stake: (null == e ? void 0 : e.max_stake) ? ? 10,
-                                boolean_max_stake: (null == e ? void 0 : e.boolean_max_stake) ? ? !1,
-                                last_digit_prediction: (null == e ? void 0 : e.last_digit_prediction) ? ? 1,
-                                growth_rate: (null == e ? void 0 : e.growth_rate) ? ? "0.01",
-                                tick_count: (null == e ? void 0 : e.tick_count) ? ? 0,
-                                take_profit: (null == e ? void 0 : e.take_profit) ? ? 0,
-                                boolean_tick_count: (null == e ? void 0 : e.boolean_tick_count) ? ? !1,
-                                max_payout: (null == e ? void 0 : e.max_payout) ? ? 0,
-                                max_ticks: (null == e ? void 0 : e.max_ticks) ? ? 0
+                                symbol: (null == e ? void 0 : e.symbol) ?? (0, B.config)().QUICK_STRATEGY.DEFAULT.symbol,
+                                tradetype: (null == e ? void 0 : e.tradetype) ?? "",
+                                type: (null == e ? void 0 : e.type) ?? "",
+                                durationtype: (null == e ? void 0 : e.durationtype) ?? (0, B.config)().QUICK_STRATEGY.DEFAULT.durationtype,
+                                duration: (null == e ? void 0 : e.duration) ?? "1",
+                                stake: (null == e ? void 0 : e.stake) ?? "1",
+                                loss: (null == e ? void 0 : e.loss) ?? "",
+                                profit: (null == e ? void 0 : e.profit) ?? "",
+                                size: (null == e ? void 0 : e.size) ?? String((0, B.config)().QUICK_STRATEGY.DEFAULT.size),
+                                unit: (null == e ? void 0 : e.unit) ?? String((0, B.config)().QUICK_STRATEGY.DEFAULT.unit),
+                                action: (null == e ? void 0 : e.action) ?? "RUN",
+                                max_stake: (null == e ? void 0 : e.max_stake) ?? 10,
+                                boolean_max_stake: (null == e ? void 0 : e.boolean_max_stake) ?? !1,
+                                last_digit_prediction: (null == e ? void 0 : e.last_digit_prediction) ?? 1,
+                                growth_rate: (null == e ? void 0 : e.growth_rate) ?? "0.01",
+                                tick_count: (null == e ? void 0 : e.tick_count) ?? 0,
+                                take_profit: (null == e ? void 0 : e.take_profit) ?? 0,
+                                boolean_tick_count: (null == e ? void 0 : e.boolean_tick_count) ?? !1,
+                                max_payout: (null == e ? void 0 : e.max_payout) ?? 0,
+                                max_ticks: (null == e ? void 0 : e.max_ticks) ?? 0
                             }
                         })(),
                         validationSchema: d,
@@ -16086,7 +16086,7 @@
                                 return
                             }
                             let t = JSON.parse(e),
-                                a = n1(Number(t.x ? ? 0), Number(t.y ? ? 0));
+                                a = n1(Number(t.x ?? 0), Number(t.y ?? 0));
                             d(a), m.current = a
                         } catch {
                             let e = n0();
@@ -16318,7 +16318,7 @@
                         activeAccountId: n,
                         accounts: s.map(e => ({
                             account_id: e.account_id,
-                            balance: String(e.balance ? ? "0"),
+                            balance: String(e.balance ?? "0"),
                             currency: e.currency || i.currency || "USD",
                             group: e.group || "",
                             status: e.status || "active",
@@ -16367,7 +16367,7 @@
                             o.current = (async () => {
                                 var e, n, r, u;
                                 try {
-                                    let r = await (c.current ? ? rr(t, i));
+                                    let r = await (c.current ?? rr(t, i));
                                     if (c.current = null, !r || s !== d.current || r.activeAccountId !== localStorage.getItem("active_loginid")) return;
                                     null === (n = l.current) || void 0 === n || null === (e = n.contentWindow) || void 0 === e || e.postMessage(r, a)
                                 } catch (e) {
@@ -16601,7 +16601,7 @@
                         let i = this.audio_context.createOscillator(),
                             n = this.audio_context.createGain(),
                             r = t + e.slice(0, s).reduce((e, t) => e + t.duration, 0);
-                        i.type = a.type ? ? "sine", i.frequency.setValueAtTime(a.frequency, r), n.gain.setValueAtTime(1e-4, r), n.gain.exponentialRampToValueAtTime(a.gain ? ? .03, r + .02), n.gain.exponentialRampToValueAtTime(1e-4, r + a.duration), i.connect(n), n.connect(this.audio_context.destination), i.start(r), i.stop(r + a.duration)
+                        i.type = a.type ?? "sine", i.frequency.setValueAtTime(a.frequency, r), n.gain.setValueAtTime(1e-4, r), n.gain.exponentialRampToValueAtTime(a.gain ??.03, r + .02), n.gain.exponentialRampToValueAtTime(1e-4, r + a.duration), i.connect(n), n.connect(this.audio_context.destination), i.start(r), i.stop(r + a.duration)
                     })
                 }
                 async playScanStart() {
@@ -16698,7 +16698,7 @@
                 ry = e => {
                     var t;
                     let a = e.toString();
-                    return a.includes(".") ? Math.min(Math.max((null === (t = a.split(".")[1]) || void 0 === t ? void 0 : t.length) ? ? 2, 0), 5) : 2
+                    return a.includes(".") ? Math.min(Math.max((null === (t = a.split(".")[1]) || void 0 === t ? void 0 : t.length) ?? 2, 0), 5) : 2
                 },
                 rj = (e, t) => {
                     let a = e.toFixed(t),
@@ -16828,7 +16828,7 @@
                             try {
                                 let e = ((await B.api_base4.api.send({
                                     active_symbols: "brief"
-                                })).active_symbols ? ? []).filter(e => "random_index" === e.submarket);
+                                })).active_symbols ?? []).filter(e => "random_index" === e.submarket);
                                 if (!e.length) {
                                     d("No random index markets found.");
                                     return
@@ -16854,7 +16854,7 @@
                                                 end: "latest",
                                                 style: "ticks"
                                             }),
-                                            s = ((null === (c = e.history) || void 0 === c ? void 0 : c.prices) ? ? []).map(e => rb(e)).filter(e => null !== e);
+                                            s = ((null === (c = e.history) || void 0 === c ? void 0 : c.prices) ?? []).map(e => rb(e)).filter(e => null !== e);
                                         if (s.length < 100) continue;
                                         let n = ry(s[s.length - 1]),
                                             r = s.map(e => rj(e, n)).filter(e => null !== e);
@@ -16951,7 +16951,7 @@
                                             }), (0, n.jsx)("input", {
                                                 type: "text",
                                                 readOnly: !0,
-                                                value: (null == _ ? void 0 : _.profile.label) ? ? "Waiting for scan"
+                                                value: (null == _ ? void 0 : _.profile.label) ?? "Waiting for scan"
                                             })]
                                         }), (0, n.jsxs)("label", {
                                             className: "entry-scanner__field",
@@ -17466,9 +17466,9 @@
                 handleBalancePayload(e) {
                     var t;
                     let a = null == e ? void 0 : null === (t = e.accounts) || void 0 === t ? void 0 : t[this.loginid],
-                        s = (null == a ? void 0 : a.balance) ? ? (null == e ? void 0 : e.balance),
-                        i = (null == a ? void 0 : a.currency) ? ? (null == e ? void 0 : e.currency),
-                        n = a ? this.loginid : (null == e ? void 0 : e.loginid) ? ? this.loginid;
+                        s = (null == a ? void 0 : a.balance) ?? (null == e ? void 0 : e.balance),
+                        i = (null == a ? void 0 : a.currency) ?? (null == e ? void 0 : e.currency),
+                        n = a ? this.loginid : (null == e ? void 0 : e.loginid) ?? this.loginid;
                     n === this.loginid && void 0 !== s && this.onUpdate({
                         loginid: n,
                         balance: Number(s),
@@ -17575,17 +17575,17 @@
                         a = new rF(h.loginid, t, e => {
                             D(e);
                             let t = d.all_accounts_balance,
-                                a = (null == t ? void 0 : t.accounts) ? ? {},
-                                s = a[e.loginid] ? ? {};
+                                a = (null == t ? void 0 : t.accounts) ?? {},
+                                s = a[e.loginid] ?? {};
                             d.setAllAccountsBalance({
-                                balance: (null == t ? void 0 : t.balance) ? ? e.balance,
-                                currency: (null == t ? void 0 : t.currency) ? ? e.currency,
-                                loginid: (null == t ? void 0 : t.loginid) ? ? e.loginid,
+                                balance: (null == t ? void 0 : t.balance) ?? e.balance,
+                                currency: (null == t ? void 0 : t.currency) ?? e.currency,
+                                loginid: (null == t ? void 0 : t.loginid) ?? e.loginid,
                                 accounts: { ...a,
                                     [e.loginid]: { ...s,
                                         balance: e.balance,
                                         currency: e.currency,
-                                        demo_account: s.demo_account ? ? 0
+                                        demo_account: s.demo_account ?? 0
                                     }
                                 }
                             }), d.loginid === e.loginid && (d.setBalance(e.balance.toFixed(2)), d.setCurrency(e.currency))
@@ -17653,11 +17653,11 @@
                                 size: 18
                             }), (0, n.jsx)("span", {
                                 className: "ct-account-card__id",
-                                children: (null == h ? void 0 : h.loginid) ? ? "CR*****"
+                                children: (null == h ? void 0 : h.loginid) ?? "CR*****"
                             }), (0, n.jsx)("span", {
                                 className: "ct-account-card__balance",
                                 children: em ? (0, n.jsx)(e3.Z, {
-                                    amount: eu ? ? 0,
+                                    amount: eu ?? 0,
                                     currency: em,
                                     show_currency: !0
                                 }) : "------"
@@ -19579,12 +19579,12 @@
                             r = JSON.parse(n),
                             l = "u" === r.p ? "DIGITUNDER" : "o" === r.p ? "DIGITOVER" : void 0,
                             o = { ...r,
-                                symbol: r.symbol ? ? r.s,
-                                contractType: r.contractType ? ? l,
-                                entryPointDigit: r.entryPointDigit ? ? r.e,
-                                score: r.score ? ? r.sc,
-                                winRate: r.winRate ? ? r.wr,
-                                stake: r.stake ? ? r.st
+                                symbol: r.symbol ?? r.s,
+                                contractType: r.contractType ?? l,
+                                entryPointDigit: r.entryPointDigit ?? r.e,
+                                score: r.score ?? r.sc,
+                                winRate: r.winRate ?? r.wr,
+                                stake: r.stake ?? r.st
                             };
                         if (!o.symbol) return null;
                         let c = r1(o.contractType),
@@ -21147,7 +21147,7 @@
                 lp = (e, t) => Number(e.toFixed(t).slice(-1)),
                 l_ = (e, t) => t > 0 ? e / t * 100 : 0,
                 lx = e => ({ ...e,
-                    id: e.id ? ? String(e.contract_id)
+                    id: e.id ?? String(e.contract_id)
                 }),
                 lv = (0, l.Pi)(() => {
                     var e, t;
@@ -21179,9 +21179,9 @@
                                     data: n
                                 } = e;
                                 if ("active_symbols" === n.msg_type) {
-                                    let e = (n.active_symbols ? ? []).filter(e => "synthetics" === e.subgroup).sort((e, t) => e.display_order - t.display_order);
+                                    let e = (n.active_symbols ?? []).filter(e => "synthetics" === e.subgroup).sort((e, t) => e.display_order - t.display_order);
                                     x(e);
-                                    let a = (null === (t = e[0]) || void 0 === t ? void 0 : t.symbol) ? ? g;
+                                    let a = (null === (t = e[0]) || void 0 === t ? void 0 : t.symbol) ?? g;
                                     b(a), B.api_base4.api.send({
                                         ticks_history: a,
                                         adjust_start_time: 1,
@@ -21192,15 +21192,15 @@
                                     })
                                 }
                                 if ("history" === n.msg_type) {
-                                    let e = n.pip_size ? ? 2,
-                                        t = (null === (a = n.history) || void 0 === a ? void 0 : a.prices) ? ? [];
-                                    O(e), P(t.map(t => lp(t, e))), D(t.at(-1) ? ? null), B.api_base4.api.send({
+                                    let e = n.pip_size ?? 2,
+                                        t = (null === (a = n.history) || void 0 === a ? void 0 : a.prices) ?? [];
+                                    O(e), P(t.map(t => lp(t, e))), D(t.at(-1) ?? null), B.api_base4.api.send({
                                         ticks: n.echo_req.ticks_history,
                                         subscribe: 1
                                     })
                                 }
                                 if ("tick" === n.msg_type) {
-                                    let e = (null === (s = n.tick) || void 0 === s ? void 0 : s.pip_size) ? ? M,
+                                    let e = (null === (s = n.tick) || void 0 === s ? void 0 : s.pip_size) ?? M,
                                         t = null === (i = n.tick) || void 0 === i ? void 0 : i.ask;
                                     if ("number" != typeof t) return;
                                     O(e), D(t), P(a => [...a.slice(-4999), lp(t, e)])
@@ -21239,7 +21239,7 @@
                             digit: t,
                             percent: e
                         })).sort((e, t) => t.percent - e.percent), [V]),
-                        K = (null === (e = _.find(e => e.symbol === g)) || void 0 === e ? void 0 : e.display_name) ? ? g,
+                        K = (null === (e = _.find(e => e.symbol === g)) || void 0 === e ? void 0 : e.display_name) ?? g,
                         J = e => {
                             var t, a, s, i;
                             return e === (null === (t = Y[0]) || void 0 === t ? void 0 : t.digit) ? "teal" : e === (null === (a = Y[1]) || void 0 === a ? void 0 : a.digit) ? "blue" : e === (null === (s = Y.at(-1)) || void 0 === s ? void 0 : s.digit) ? "red" : e === (null === (i = Y.at(-2)) || void 0 === i ? void 0 : i.digit) ? "yellow" : "neutral"
@@ -21250,7 +21250,7 @@
                             var a;
                             let s = "" === T ? 0 : Number(T),
                                 i = "" === E ? 1 : Number(E),
-                                n = (null === (a = B.api_base.account_info) || void 0 === a ? void 0 : a.currency) ? ? "USD";
+                                n = (null === (a = B.api_base.account_info) || void 0 === a ? void 0 : a.currency) ?? "USD";
                             if (!s || s <= 0) {
                                 F("Enter a valid stake before buying.");
                                 return
@@ -21270,7 +21270,7 @@
                             };
                             void 0 !== t && (r.barrier = t.toString());
                             let l = "" === R ? 1 : Math.max(1, Math.floor(Number(R))),
-                                o = localStorage.getItem("active_loginid") ? ? "",
+                                o = localStorage.getItem("active_loginid") ?? "",
                                 c = (0, aN.k9)(o) ? (0, aN.D6)(o) : null,
                                 d = () => B.api_base.api.send({
                                     buy: "1",
@@ -21322,7 +21322,7 @@
                         }],
                         es = $.at(-1),
                         ei = $.slice(-8),
-                        en = (null === (t = lm.find(e => e.value === y)) || void 0 === t ? void 0 : t.label) ? ? "Even/Odd",
+                        en = (null === (t = lm.find(e => e.value === y)) || void 0 === t ? void 0 : t.label) ?? "Even/Odd",
                         er = "DIGITEVEN" !== y;
                     return (0, n.jsxs)("div", {
                         className: `bulk-trader ${o?"bulk-trader--dark":"bulk-trader--light"}`,
@@ -21581,7 +21581,7 @@
                         },
                         tr = () => {
                             var e;
-                            return eD.current || ((null === (e = B.api_base.account_info) || void 0 === e ? void 0 : e.currency) ? ? "USD")
+                            return eD.current || ((null === (e = B.api_base.account_info) || void 0 === e ? void 0 : e.currency) ?? "USD")
                         },
                         tl = e => {
                             e$.current = e, el(e)
@@ -21671,8 +21671,8 @@
                             let s = null === (t = e.contract_id) || void 0 === t ? void 0 : t.toString();
                             if (!s || !e.is_sold || eq.current !== s || eG.current.includes(s)) return;
                             eG.current = [...eG.current.slice(-49), s], ex.current.push(s), eK.current = null, eq.current = null, e_.current = !1, h(!1), eI.current = null;
-                            let i = Number(e.buy_price ? ? (null === (a = eH.current) || void 0 === a ? void 0 : a.stake) ? ? eN.current),
-                                n = Number(e.profit ? ? 0),
+                            let i = Number(e.buy_price ?? (null === (a = eH.current) || void 0 === a ? void 0 : a.stake) ?? eN.current),
+                                n = Number(e.profit ?? 0),
                                 r = e.status,
                                 l = {
                                     contractId: s,
@@ -21760,7 +21760,7 @@
                                 });
                                 B.api_base.pushSubscription(e)
                             }
-                            y((null === (a = B.api_base.account_info) || void 0 === a ? void 0 : a.currency) ? ? "USD")
+                            y((null === (a = B.api_base.account_info) || void 0 === a ? void 0 : a.currency) ?? "USD")
                         },
                         tg = async (e, t) => {
                             var a, s;
@@ -21768,7 +21768,7 @@
                                 id: "contract.purchase_sent",
                                 data: 0
                             }), ["CALL", "PUT"].includes(e) && "Updating..." !== eM.current && "number" == typeof eM.current && (eI.current = eM.current);
-                            let i = localStorage.getItem("active_loginid") ? ? "",
+                            let i = localStorage.getItem("active_loginid") ?? "",
                                 n = (0, aN.D6)(i),
                                 r = async () => {
                                     if (!B.api_base.api) return;
@@ -23345,10 +23345,10 @@
                         dashboard_strategies: i
                     } = a, l = !!(null == i ? void 0 : i.length), {
                         authData: o
-                    } = (0, x.T)(), c = ((null == o ? void 0 : o.fullname) ? ? "").trim(), {
+                    } = (0, x.T)(), c = ((null == o ? void 0 : o.fullname) ?? "").trim(), {
                         name: d,
                         ready: u
-                    } = lq(c, ((null == s ? void 0 : s.loginid) ? ? "").trim()), {
+                    } = lq(c, ((null == s ? void 0 : s.loginid) ?? "").trim()), {
                         quote: m,
                         visible: h
                     } = lG(lH, 4500), {
@@ -23806,7 +23806,7 @@
                                 if (!s) return;
                                 if ("RECOVERY" === ea) {
                                     var i, n;
-                                    ((null === (i = s.conditions) || void 0 === i ? void 0 : i.overMet) || (null === (n = s.conditions) || void 0 === n ? void 0 : n.underMet)) && (e += 1), eW(s.prices ? ? [], s.pipSize ? ? a.pip, eh) && (t += 1);
+                                    ((null === (i = s.conditions) || void 0 === i ? void 0 : i.overMet) || (null === (n = s.conditions) || void 0 === n ? void 0 : n.underMet)) && (e += 1), eW(s.prices ?? [], s.pipSize ?? a.pip, eh) && (t += 1);
                                     return
                                 }
                                 let r = s.mkulimaConditions;
@@ -23831,7 +23831,7 @@
                             let a = t.proposal_open_contract;
                             if (!a) return;
                             let s = { ...a,
-                                id: a.id ? ? String(a.contract_id)
+                                id: a.id ?? String(a.contract_id)
                             };
                             if (m(s), u(s), h(s), a.is_sold ? d({
                                     id: "contract.sold",
@@ -23968,7 +23968,7 @@
                                     o = e$(n.prices, i, r.lookback),
                                     c = e$(n.prices, i, 3),
                                     d = e$(n.prices, i, 4),
-                                    u = eG(n.prices, i, l) ? ? void 0,
+                                    u = eG(n.prices, i, l) ?? void 0,
                                     m = ez(s, i);
                                 n.lastDigit = m;
                                 let h = !1,
@@ -24380,21 +24380,21 @@
                                             })]
                                         }), eP.map(e => {
                                             let t = Z.get(e.symbol),
-                                                a = (null == t ? void 0 : t.entryDigits) ? ? [],
-                                                s = (null == t ? void 0 : t.mkulimaDigits4) ? ? [],
-                                                i = (null == t ? void 0 : t.mkulimaDigits3) ? ? [],
+                                                a = (null == t ? void 0 : t.entryDigits) ?? [],
+                                                s = (null == t ? void 0 : t.mkulimaDigits4) ?? [],
+                                                i = (null == t ? void 0 : t.mkulimaDigits3) ?? [],
                                                 r = null == t ? void 0 : t.recoveryPattern,
                                                 l = null == t ? void 0 : t.conditions,
                                                 o = null == t ? void 0 : t.mkulimaConditions,
-                                                c = (null == l ? void 0 : l.overMet) ? ? !1,
-                                                d = (null == l ? void 0 : l.underMet) ? ? !1,
+                                                c = (null == l ? void 0 : l.overMet) ?? !1,
+                                                d = (null == l ? void 0 : l.underMet) ?? !1,
                                                 u = null == t ? void 0 : t.lastPrice,
                                                 m = eI.current,
                                                 h = eA.current,
                                                 p = a.length === m.lookback ? a.join(",") : "-",
                                                 _ = 3 === i.length ? i.join(",") : "-",
                                                 v = 4 === s.length ? s.join(",") : "-",
-                                                g = x && eC.current && !!r && !!eW((null == t ? void 0 : t.prices) ? ? [], (null == t ? void 0 : t.pipSize) ? ? e.pip, h);
+                                                g = x && eC.current && !!r && !!eW((null == t ? void 0 : t.prices) ?? [], (null == t ? void 0 : t.pipSize) ?? e.pip, h);
                                             return (0, n.jsxs)("div", {
                                                 className: P()("market-row", {
                                                     "market-row--recovery": "RECOVERY" === ea,
@@ -24752,7 +24752,7 @@
                     }
                 },
                 os = e => ({ ...e,
-                    id: e.id ? ? String(e.contract_id)
+                    id: e.id ?? String(e.contract_id)
                 }),
                 oi = (0, l.Pi)(() => {
                     let [e, t] = (0, r.useState)("R_100"), [a, s] = (0, r.useState)([]), [i, l] = (0, r.useState)("Updating..."), [o, c] = (0, r.useState)(2), [d, u] = (0, r.useState)([]), [m, h] = (0, r.useState)(!1), [p, _] = (0, r.useState)(!1), [x, g] = (0, r.useState)(.5), [b, y] = (0, r.useState)(1), [j, f] = (0, r.useState)(""), [k, w] = (0, r.useState)(null), [T, C] = (0, r.useState)(!1), [E, S] = (0, r.useState)("single"), [R, I] = (0, r.useState)(!0), [A, D] = (0, r.useState)(2), [M, O] = (0, r.useState)(5), [L, U] = (0, r.useState)(30), [F, z] = (0, r.useState)(!0), [$, V] = (0, r.useState)(!1), Z = (0, r.useRef)(A), X = (0, r.useRef)([]), q = (0, r.useRef)(0), H = (0, r.useRef)(.5), G = (0, r.useRef)(x), W = (0, r.useRef)(0), Y = (0, r.useRef)(!1), K = (0, r.useRef)(R), J = (0, r.useRef)(F), Q = (0, r.useRef)(M), ee = (0, r.useRef)(L), et = (0, r.useRef)("R_100"), {
@@ -24774,7 +24774,7 @@
                         updateResultsCompletedContract: eh
                     } = en, {
                         onBotContractEvent: ep
-                    } = (0, v.oR)().summary_card, e_ = (0, r.useMemo)(() => k ? l4.find(e => e.id === k) ? ? null : null, [k]), ex = (0, r.useMemo)(() => d.slice(-10), [d]), ev = (0, r.useMemo)(() => e_ ? e_.conditions.map(e => {
+                    } = (0, v.oR)().summary_card, e_ = (0, r.useMemo)(() => k ? l4.find(e => e.id === k) ?? null : null, [k]), ex = (0, r.useMemo)(() => d.slice(-10), [d]), ev = (0, r.useMemo)(() => e_ ? e_.conditions.map(e => {
                         let t = d.slice(-e.digits),
                             a = t.length === e.digits,
                             s = !!a && oe(e, t);
@@ -24786,7 +24786,7 @@
                         }
                     }) : [], [d, e_]), eg = (0, r.useMemo)(() => {
                         var e;
-                        return (null === (e = ev.find(e => e.isMatch)) || void 0 === e ? void 0 : e.condition) ? ? null
+                        return (null === (e = ev.find(e => e.isMatch)) || void 0 === e ? void 0 : e.condition) ?? null
                     }, [ev]), eb = (0, r.useMemo)(() => e_ && ev.every(e => e.isReady) ? ev.some(e => e.isMatch) : null, [e_, ev]);
                     (0, r.useEffect)(() => (el(), ey(), () => {
                         eo()
@@ -24896,14 +24896,14 @@
                                 });
                                 B.api_base.pushSubscription(e)
                             }
-                            f((null === (e = B.api_base.account_info) || void 0 === e ? void 0 : e.currency) ? ? "USD")
+                            f((null === (e = B.api_base.account_info) || void 0 === e ? void 0 : e.currency) ?? "USD")
                         },
                         ej = (t, a) => {
                             ec({
                                 id: "contract.purchase_sent",
                                 data: 0
                             }), Y.current = !0;
-                            let s = localStorage.getItem("active_loginid") ? ? "",
+                            let s = localStorage.getItem("active_loginid") ?? "",
                                 i = (0, aN.D6)(s),
                                 n = {
                                     amount: G.current,
@@ -25366,7 +25366,7 @@
                                 }
                             }
                         }, [q, el, Q, l, b, es]),
-                        ec = (null == Q ? void 0 : Q.score) ? Math.min(100, Math.round(Q.score / 100 * 100)) : Math.round(((null == Q ? void 0 : Q.confidence) ? ? 0) * 100),
+                        ec = (null == Q ? void 0 : Q.score) ? Math.min(100, Math.round(Q.score / 100 * 100)) : Math.round(((null == Q ? void 0 : Q.confidence) ?? 0) * 100),
                         ed = (null == Q ? void 0 : Q.profileLabel) || "Digit scanner signal";
                     r.useEffect(() => {
                         O && w(!1), H.current ? (b(Number(er)), !W && eu(Number(er)), H.current = !1) : K(`#${G[_]||G[0]}`), "" !== g && j("")
@@ -25697,7 +25697,7 @@
                                             children: [(0, n.jsx)("span", {
                                                 children: "Entry digit"
                                             }), (0, n.jsx)("strong", {
-                                                children: (null == Q ? void 0 : Q.entryPointDigit) ? ? "--"
+                                                children: (null == Q ? void 0 : Q.entryPointDigit) ?? "--"
                                             })]
                                         })]
                                     }), (0, n.jsxs)("div", {
@@ -25712,7 +25712,7 @@
                                             children: [(0, n.jsx)("span", {
                                                 children: "Win rate"
                                             }), (0, n.jsxs)("strong", {
-                                                children: [Math.round(((null == Q ? void 0 : Q.winRate) ? ? 0) * 100), "%"]
+                                                children: [Math.round(((null == Q ? void 0 : Q.winRate) ?? 0) * 100), "%"]
                                             })]
                                         })]
                                     }), (0, n.jsxs)("div", {
@@ -25822,7 +25822,7 @@
                     email: null == k ? void 0 : null === (s = k.account_settings) || void 0 === s ? void 0 : s.email,
                     first_name: null == k ? void 0 : null === (i = k.account_settings) || void 0 === i ? void 0 : i.first_name,
                     last_name: null == k ? void 0 : null === (l = k.account_settings) || void 0 === l ? void 0 : l.last_name
-                }), aS((0, aN.PO)() ? ? null), (0, r.useEffect)(() => {
+                }), aS((0, aN.PO)() ?? null), (0, r.useEffect)(() => {
                     V === ak.cR.OPENED ? (u(!0), N.setSocketOpened(!0)) : V !== ak.cR.OPENED && N.setSocketOpened(!1)
                 }, [N, V]);
                 let {
@@ -25878,7 +25878,7 @@
                         let t = () => {
                             let {
                                 active_symbols: e
-                            } = B.ApiHelpers.instance ? ? {};
+                            } = B.ApiHelpers.instance ?? {};
                             if (!!e) e.retrieveActiveSymbols(!0).catch(e => {
                                 console.warn("Active symbols initialization failed, continuing with available data.", e)
                             }).finally(() => {

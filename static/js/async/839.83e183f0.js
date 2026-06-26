@@ -79,7 +79,7 @@
                             "data-testid": "dt_popover_relative_container"
                         })
                     }), (X || !I) && (0, s.jsx)(o.Popover, {
-                        isOpen: S ? ? (W || E && H),
+                        isOpen: S ?? (W || E && H),
                         positions: [t],
                         padding: R + 8,
                         containerClassName: r()({
@@ -487,7 +487,7 @@
             let i = () => {
                 let {
                     ui: e
-                } = (0, n.oR)() ? ? {
+                } = (0, n.oR)() ?? {
                     ui: {
                         setDarkMode: () => {},
                         is_dark_mode_on: !1
@@ -549,7 +549,7 @@
                     });
                     if (!a.ok) throw Error(`Reset demo balance request failed with status ${a.status}`);
                     let i = await a.json();
-                    return (null == i ? void 0 : i.data) ? ? null
+                    return (null == i ? void 0 : i.data) ?? null
                 }
         }
     }

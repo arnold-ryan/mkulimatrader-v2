@@ -7761,8 +7761,8 @@
                                         }) : this[e] = t, this.lang = n
                                     }
                                     setLanguage(e, t) {
-                                        n[e] || "en" === e ? (this.lang = e, t ? .()) : r(6648)(`./${e}.json`).then(r => {
-                                            r ? (n[e] = r.default, this.lang = e, t ? .()) : console.error("Unsupported language:", e)
+                                        n[e] || "en" === e ? (this.lang = e, t ?.()) : r(6648)(`./${e}.json`).then(r => {
+                                            r ? (n[e] = r.default, this.lang = e, t ?.()) : console.error("Unsupported language:", e)
                                         })
                                     }
                                     translate() {
@@ -14004,8 +14004,8 @@
                         },
                         nc = (e, t) => {
                             let r = t.find(t => t.items.some(t => t.interval === e)),
-                                n = r ? .items ? .find(t => t.interval === e) ? .num,
-                                i = 1 === n ? r ? .single : r ? .plural;
+                                n = r ?.items ?.find(t => t.interval === e) ?.num,
+                                i = 1 === n ? r ?.single : r ?.plural;
                             return i ? `${n} ${i}` : ""
                         },
                         nu = () => -1 !== navigator.userAgent.indexOf("Firefox") && -1 === navigator.userAgent.indexOf("Seamonkey"),
@@ -14018,7 +14018,7 @@
                         if (navigator.msSaveBlob) return void navigator.msSaveBlob(i, e);
                         let a = "image/png;" === r ? t : URL.createObjectURL(i),
                             o = document.createElement("a");
-                        if (void 0 !== o.download) return o.setAttribute("href", a), o.setAttribute("download", e), o.style.visibility = "hidden", document.body.appendChild(o), o.click(), void document.body ? .removeChild ? .(o);
+                        if (void 0 !== o.download) return o.setAttribute("href", a), o.setAttribute("download", e), o.style.visibility = "hidden", document.body.appendChild(o), o.click(), void document.body ?.removeChild ?.(o);
                         if (n) {
                             if ("image/png;" === r) n.document.write(`<iframe src="${a}" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe>`);
                             else {
@@ -14127,7 +14127,7 @@
                             }
                             return e
                         },
-                        nE = (e, t, r) => (e = e ? ? 0) * (1 - r) + (t = t ? ? 0) * r,
+                        nE = (e, t, r) => (e = e ?? 0) * (1 - r) + (t = t ?? 0) * r,
                         nC = (e, t) => {
                             if ("string" == typeof e && (e.startsWith("#") || e.toLowerCase().startsWith("0x"))) return "light" === t && "#FFFFFF" === e ? "#000000" : "dark" === t && "#000000" === e ? "#FFFFFF" : e;
                             if (nk(e)) Object.keys(e).forEach(r => {
@@ -14179,7 +14179,7 @@
                             this._line && e && (this._line.style.zIndex = e.toString())
                         }
                         get pip() {
-                            return this.mainStore.chart.currentActiveSymbol ? .decimal_places
+                            return this.mainStore.chart.currentActiveSymbol ?.decimal_places
                         }
                         constructor(e) {
                             nO(this, "__top", 0), nO(this, "_emitter", void 0), nO(this, "_line", void 0), nO(this, "_priceConstrainer", 0), nO(this, "_startDragPrice", "0"), nO(this, "className", void 0), nO(this, "hideBarrierLine", void 0), nO(this, "hideOffscreenLine", void 0), nO(this, "mainStore", void 0), nO(this, "opacityOnOverlap", 0), nO(this, "showOffscreenArrows", !1), nO(this, "_relative", !1), nO(this, "draggable", !0), nO(this, "isDragging", !1), nO(this, "visible", !0), nO(this, "_price", "0"), nO(this, "_dragPrice", "0"), nO(this, "offScreen", !1), nO(this, "title", void 0), nO(this, "isOverlapping", !1), nO(this, "isOverlappingWithPriceLine", !1), nO(this, "offScreenDirection", null), nO(this, "disposeDrawReaction", void 0), nO(this, "onChartLoaded", () => {
@@ -14198,16 +14198,16 @@
                                         onDragReleased: a
                                     } = r;
                                     e.addEventListener("mousedown", function(e) {
-                                        window.addEventListener("mousemove", s), t.addEventListener("mouseup", l), o = !0, n ? .(e)
+                                        window.addEventListener("mousemove", s), t.addEventListener("mouseup", l), o = !0, n ?.(e)
                                     });
                                     let o = !1;
 
                                     function s(e) {
-                                        o && i ? .(e)
+                                        o && i ?.(e)
                                     }
 
                                     function l(e) {
-                                        o = !1, a ? .(e), window.removeEventListener("mousemove", s), t.removeEventListener("mouseup", l)
+                                        o = !1, a ?.(e), window.removeEventListener("mousemove", s), t.removeEventListener("mouseup", l)
                                     }
                                 })(this._line, t, {
                                     onDragStart: t => e(t, this._startDrag),
@@ -14227,7 +14227,7 @@
                             }), nO(this, "_calculateTop", e => {
                                 if (null === this.mainStore.chart.currentCloseQuote() || !this.mainStore.chartAdapter.isChartLoaded) return;
                                 let t = this._locationFromPrice(e || +this.realPrice),
-                                    r = window.flutterChartElement ? .clientHeight || 0;
+                                    r = window.flutterChartElement ?.clientHeight || 0;
                                 return t < 0 ? (t < -2 && (this.offScreenDirection = ny.UP), t = 0) : t + 4 > r ? (t + 4 - r > 2 && (this.offScreenDirection = ny.DOWN), t = r - 4) : this.offScreenDirection = null, this.offScreen = !!this.offScreenDirection, t + 30 > r ? t = r - 30 : t < 10 && (t = 10), this.offScreenDirection && this.showOffscreenArrows && (t += this.offScreenDirection === ny.UP ? 41 : -41), this.opacityOnOverlap && (this.isOverlapping = this.overlapCheck(t)), this.isOverlappingWithPriceLine = this.isContractOngoing && 25 > this._distanceFromCurrentPrice(), 0 | Math.round(t)
                             }), nO(this, "_draw", () => {
                                 this.visible && this._line && (this.top = this._calculateTop())
@@ -14257,14 +14257,14 @@
                         }
                         drawBarrier(e) {
                             if (this.isDragging) return;
-                            let t = this.mainStore.chart.feed ? .quotes;
+                            let t = this.mainStore.chart.feed ?.quotes;
                             if (!t || t.length < 2) return;
                             let r = this._getPrice(t[t.length - 1].Close),
                                 n = nE(this._getPrice(t[t.length - 2].Close), r, e);
                             this.top = this._calculateTop(n)
                         }
                         destructor() {
-                            this.disposeDrawReaction ? .(), this.mainStore.chartAdapter.painter.unregisterCallback(this.drawBarrier)
+                            this.disposeDrawReaction ?.(), this.mainStore.chartAdapter.painter.unregisterCallback(this.drawBarrier)
                         }
                         static get EVENT_PRICE_CHANGED() {
                             return "EVENT_PRICE_CHANGED"
@@ -14305,13 +14305,13 @@
                             this._priceConstrainer = e
                         }
                         get realPrice() {
-                            return this._getPrice(this.mainStore.chart.currentCloseQuote() ? .Close).toString()
+                            return this._getPrice(this.mainStore.chart.currentCloseQuote() ?.Close).toString()
                         }
                         get currentClosePrice() {
-                            return this.mainStore.chart.currentCloseQuote() ? .Close || 0
+                            return this.mainStore.chart.currentCloseQuote() ?.Close || 0
                         }
                         get priceLineWidth() {
-                            return window.flutterChart ? .app.getCurrentTickWidth() || 60
+                            return window.flutterChart ?.app.getCurrentTickWidth() || 60
                         }
                         get overlappedBarrierWidth() {
                             return 16
@@ -14444,7 +14444,7 @@
                             return "BARRIER_CHANGED"
                         }
                         get pip() {
-                            return this.mainStore.chart.currentActiveSymbol ? .decimal_places
+                            return this.mainStore.chart.currentActiveSymbol ?.decimal_places
                         }
                         constructor(e) {
                             nP(this, "_high_barrier", void 0), nP(this, "_low_barrier", void 0), nP(this, "aboveShadeStore", void 0), nP(this, "belowShadeStore", void 0), nP(this, "betweenShadeStore", void 0), nP(this, "mainStore", void 0), nP(this, "title", void 0), nP(this, "shadeColor", void 0), nP(this, "color", void 0), nP(this, "foregroundColor", void 0), nP(this, "isBetweenShadeVisible", !1), nP(this, "isTopShadeVisible", !1), nP(this, "isBottomShadeVisible", !1), nP(this, "hidePriceLines", !1), nP(this, "lineStyle", void 0), nP(this, "isInitialized", !1), nP(this, "initializePromise", nt()), nP(this, "hideBarrierLine", !1), nP(this, "hideOffscreenLine", !1), nP(this, "hideOffscreenBarrier", !1), nP(this, "isSingleBarrier", !1), nP(this, "_shadeState", ""), nP(this, "disposeDrawReaction", void 0), nP(this, "onChartLoaded", () => {
@@ -14512,7 +14512,7 @@
                         }
                         destructor() {
                             if (!this.context) return;
-                            this._high_barrier.destructor(), this._low_barrier.destructor(), this.disposeDrawReaction ? .(), this.mainStore.chartAdapter.painter.unregisterCallback(this._drawShadedArea);
+                            this._high_barrier.destructor(), this._low_barrier.destructor(), this.disposeDrawReaction ?.(), this.mainStore.chartAdapter.painter.unregisterCallback(this._drawShadedArea);
                             let e = this.mainStore.chart._barriers.findIndex(e => e === this); - 1 !== e && this.mainStore.chart._barriers.splice(e, 1)
                         }
                         get high_barrier() {
@@ -15159,7 +15159,7 @@
                                 ...i
                             } = t;
                             r = `ic-icon ${r||""}`;
-                            let a = e.viewBox ? .split(" ").slice(2) || [];
+                            let a = e.viewBox ?.split(" ").slice(2) || [];
                             return rZ().createElement("span", df({
                                 className: r,
                                 "tooltip-title": n
@@ -17221,7 +17221,7 @@
                             this.clockStarted = !0, this.getTimeInterval && clearInterval(this.getTimeInterval), await this.requestTime(), this.getTimeInterval = setInterval(this.requestTime.bind(this), 3e4)
                         }
                         async requestTime() {
-                            this.clientTimeAtRequest = nf(new Date), this.serverTimeAtResponse ? await this._api ? .getServerTime().then(this._timeResponse) : this._timeResponse({
+                            this.clientTimeAtRequest = nf(new Date), this.serverTimeAtResponse ? await this._api ?.getServerTime().then(this._timeResponse) : this._timeResponse({
                                 time: Math.floor((new Date).getTime() / 1e3)
                             }), this.clockStartedPromise.resolve()
                         }
@@ -17493,16 +17493,16 @@
                             this.remain = null, this.clearCountdown();
                             let e = () => {
                                 if (this.isTick || !this.isSymbolOpen) return void this.clearCountdown();
-                                let e = this.mainStore.chart ? .feed ? .quotes;
+                                let e = this.mainStore.chart ?.feed ?.quotes;
                                 if (e && e.length) {
                                     let t = [...e].filter(e => e && e.Close);
                                     if (t && t.length) {
                                         let e = t[t.length - 1];
                                         if (e.DT) {
-                                            let t = this._serverTime ? .getLocalDate() ? .getTime() - e.DT.getTime(),
+                                            let t = this._serverTime ?.getLocalDate() ?.getTime() - e.DT.getTime(),
                                                 r = 1e3 * (this.mainStore.chart.granularity || 1),
                                                 n = t > r ? Math.floor(t / r) + 1 : 1;
-                                            this.remain = nm(n * r - t), this.mainStore.chartAdapter.flutterChart ? .config.setRemainingTime(this.remain || "")
+                                            this.remain = nm(n * r - t), this.mainStore.chartAdapter.flutterChart ?.config.setRemainingTime(this.remain || "")
                                         }
                                     }
                                 }
@@ -17510,14 +17510,14 @@
                             this.mainStore.chartSetting.countdown && !this.isTick && (this.countdownInterval || (this.countdownInterval = setInterval(e, 1e3), e()))
                         }
                         setGranularity(e) {
-                            fl(fo.ChartControl, fs.Interval, e ? .toString()), this.onGranularityChange ? this.onGranularityChange(e) : this.mainStore.chart.changeSymbol(void 0, e)
+                            fl(fo.ChartControl, fs.Interval, e ?.toString()), this.onGranularityChange ? this.onGranularityChange(e) : this.mainStore.chart.changeSymbol(void 0, e)
                         }
                         updateProps(e) {
                             void 0 !== this.mainStore.state.granularity && (this.onGranularityChange = e)
                         }
                         changeGranularity(e) {
                             if (e) {
-                                let t = h9.find(e => e.id === this.mainStore.chartType.type.id) ? .text ? ? "";
+                                let t = h9.find(e => e.id === this.mainStore.chartType.type.id) ?.text ?? "";
                                 this.mainStore.state.stateChange("CHART_INTERVAL_CHANGE", {
                                     time_interval_name: nc(e, h8),
                                     chart_type_name: "colored_bar" === this.mainStore.chartType.type.id ? t : t.toLowerCase()
@@ -17642,14 +17642,14 @@
                                 }),
                                 a = n(r),
                                 o = i(r);
-                            for (let r of e) o.categoryName !== r.market_display_name && o.categoryName !== r.subgroup_display_name && (o.data.push(a), t.push(o), a = n(r), o = i(r)), o.hasSubgroup && (o.subgroups ? .some(e => e.categoryId === r.subgroup) || o.subgroups ? .push({
+                            for (let r of e) o.categoryName !== r.market_display_name && o.categoryName !== r.subgroup_display_name && (o.data.push(a), t.push(o), a = n(r), o = i(r)), o.hasSubgroup && (o.subgroups ?.some(e => e.categoryId === r.subgroup) || o.subgroups ?.push({
                                 data: [],
                                 categoryName: r.subgroup_display_name,
                                 categoryId: r.subgroup,
                                 hasSubcategory: !0,
                                 hasSubgroup: !1,
                                 subgroups: []
-                            }), o.subgroups ? .find(e => e.categoryId === r.subgroup) ? .data.find(e => e.subcategoryName === r.submarket_display_name) || (a = n(r), o.subgroups ? .find(e => e.categoryId === r.subgroup) ? .data.push(a), a = n(r)), o.subgroups ? .find(e => e.categoryId === r.subgroup) ? .data.find(e => e.subcategoryName === r.submarket_display_name) ? .data.push({
+                            }), o.subgroups ?.find(e => e.categoryId === r.subgroup) ?.data.find(e => e.subcategoryName === r.submarket_display_name) || (a = n(r), o.subgroups ?.find(e => e.categoryId === r.subgroup) ?.data.push(a), a = n(r)), o.subgroups ?.find(e => e.categoryId === r.subgroup) ?.data.find(e => e.subcategoryName === r.submarket_display_name) ?.data.push({
                                 enabled: !0,
                                 itemId: r.symbol,
                                 display: r.name,
@@ -17691,7 +17691,7 @@
                             return "chartonly"
                         }
                         constructor(e, t) {
-                            fM(this, "_api", void 0), fM(this, "_emitter", void 0), fM(this, "_params", void 0), fM(this, "_serverTime", void 0), fM(this, "_shouldFetchTradingTimes", void 0), fM(this, "_tradingTimesMap", void 0), fM(this, "_updateTimer", void 0), fM(this, "lastUpdateDate", void 0), fM(this, "isInitialized", !1), fM(this, "tradingTimesPromise", nt()), fM(this, "timeUpdateCallback", void 0), this._params = t || {}, this._shouldFetchTradingTimes = !1 !== t ? .shouldFetchTradingTimes, this._api = e, this._serverTime = ff.getInstance(), this._emitter = new(nn())({
+                            fM(this, "_api", void 0), fM(this, "_emitter", void 0), fM(this, "_params", void 0), fM(this, "_serverTime", void 0), fM(this, "_shouldFetchTradingTimes", void 0), fM(this, "_tradingTimesMap", void 0), fM(this, "_updateTimer", void 0), fM(this, "lastUpdateDate", void 0), fM(this, "isInitialized", !1), fM(this, "tradingTimesPromise", nt()), fM(this, "timeUpdateCallback", void 0), this._params = t || {}, this._shouldFetchTradingTimes = !1 !== t ?.shouldFetchTradingTimes, this._api = e, this._serverTime = ff.getInstance(), this._emitter = new(nn())({
                                 emitDelay: 0
                             })
                         }
@@ -17738,7 +17738,7 @@
                                 if (!1 === this._params.enable) return void console.error("TradingTimes feed is not enable nor has initial data!");
                                 e = await this._api.getTradingTimes(this.lastUpdateDate)
                             }
-                            if ("error" in e && e ? .error) {
+                            if ("error" in e && e ?.error) {
                                 let t = e.error;
                                 console.error(`Error getting trading times on ${this.lastUpdateDate}: [${t.code}] "${t.message}"`)
                             } else this._calculatingTradingTime(e.trading_times)
@@ -17824,10 +17824,10 @@
                             Object.keys(a).length > 0 && this._emitter.emit(fD.EVENT_MARKET_OPEN_CLOSE_CHANGE, a)
                         }
                         isFeedUnavailable(e) {
-                            if (this._tradingTimesMap) return e in this._tradingTimesMap ? this._tradingTimesMap[e] ? .feed_license === fD.FEED_UNAVAILABLE : (console.error("Symbol not in _tradingTimesMap:", e, " trading map:", this._tradingTimesMap), !1)
+                            if (this._tradingTimesMap) return e in this._tradingTimesMap ? this._tradingTimesMap[e] ?.feed_license === fD.FEED_UNAVAILABLE : (console.error("Symbol not in _tradingTimesMap:", e, " trading map:", this._tradingTimesMap), !1)
                         }
                         getDelayedMinutes(e) {
-                            return this._tradingTimesMap ? .[e].delay_amount
+                            return this._tradingTimesMap ?.[e].delay_amount
                         }
                         isMarketOpened(e) {
                             if (this._tradingTimesMap) return e in this._tradingTimesMap ? this._tradingTimesMap[e].isOpened : (console.error("Symbol not in _tradingTimesMap:", e, " trading map:", this._tradingTimesMap), !1)
@@ -18075,11 +18075,11 @@
                         }
                         static formatAllTicks(e) {
                             let t = t => {
-                                let r = e ? .[t + 1],
-                                    n = e ? .[t - 1];
-                                return n ? .tick && r ? .tick ? nE(n ? .tick, r ? .tick, .5) : r ? .tick || n ? .tick
+                                let r = e ?.[t + 1],
+                                    n = e ?.[t - 1];
+                                return n ?.tick && r ?.tick ? nE(n ?.tick, r ?.tick, .5) : r ?.tick || n ?.tick
                             };
-                            return e ? .map((e, r) => ({
+                            return e ?.map((e, r) => ({
                                 Date: np(+e.epoch),
                                 Close: +(e.tick || t(r))
                             }))
@@ -18102,7 +18102,7 @@
                                         epoch: t,
                                         quote: n || 0,
                                         symbol: r,
-                                        pip_size: i ? .split(".")[1] ? .length || 0
+                                        pip_size: i ?.split(".")[1] ?.length || 0
                                     }
                                 }
                             }) : null
@@ -18216,7 +18216,7 @@
                                             },
                                             t = await this._binaryApi.getTickHistory(e),
                                             r = this._processHistoryResponse(t);
-                                        this._emitter ? .emit(fq.EVENT_CHART_DATA, r)
+                                        this._emitter ?.emit(fq.EVENT_CHART_DATA, r)
                                     } else console.error("Unable to update delayed feed without epoch from last tick"), this._endTimer()
                                 }), this._request = { ...this._request,
                                     start: this._request.start - 60 * r
@@ -18304,7 +18304,7 @@
                             _getProcessTickHistoryClosure() {
                                 let e = nt();
                                 return [e, t => {
-                                    this._mainStore.chart.isDestroyed && t.subscription ? .id ? this._binaryApi.forgetStream(t.subscription ? .id) : ["tick", "ohlc"].includes(t.msg_type) ? this._onTick(t) : e.resolve(t)
+                                    this._mainStore.chart.isDestroyed && t.subscription ?.id ? this._binaryApi.forgetStream(t.subscription ?.id) : ["tick", "ohlc"].includes(t.msg_type) ? this._onTick(t) : e.resolve(t)
                                 }]
                             }
                             _onTick(e) {
@@ -18408,10 +18408,10 @@
                             this.processQuotes([e]), this.quotes.push(e)
                         }
                         getQuoteForEpoch(e) {
-                            return this.quotes.find(t => t.DT ? .getTime() == e)
+                            return this.quotes.find(t => t.DT ?.getTime() == e)
                         }
                         getQuoteIndexForEpoch(e) {
-                            return this.quotes.findIndex(t => t.DT ? .getTime() == e)
+                            return this.quotes.findIndex(t => t.DT ?.getTime() == e)
                         }
                         getClosestValidEpoch(e, t) {
                             return Math.round(e / t) * t
@@ -18439,7 +18439,7 @@
                                 r = this.quotes.length;
                             for (; r - t > 1;) {
                                 let n = Math.trunc((t + r) / 2),
-                                    i = this.quotes[n].DT ? .getTime();
+                                    i = this.quotes[n].DT ?.getTime();
                                 if (!i) return n;
                                 if (e < i) r = n;
                                 else {
@@ -18447,12 +18447,12 @@
                                     t = n
                                 }
                             }
-                            return t >= 0 && e == this.quotes[t].DT ? .getTime() ? t : r < this.quotes.length && e == this.quotes[r].DT ? .getTime() ? r : (t + r) / 2
+                            return t >= 0 && e == this.quotes[t].DT ?.getTime() ? t : r < this.quotes.length && e == this.quotes[r].DT ?.getTime() ? r : (t + r) / 2
                         }
                         getQuotesInterval() {
                             return this.quotes.length <= 1 ? 1 : Math.round(this.quotes.reduce((e, t, r, n) => {
-                                let i = t.DT ? .getTime(),
-                                    a = n[r - 1] ? .DT ? .getTime();
+                                let i = t.DT ?.getTime(),
+                                    a = n[r - 1] ?.DT ?.getTime();
                                 return a && i ? e + (i - a) / 1e3 : e
                             }, 0) / (this.quotes.length - 1))
                         }
@@ -18500,7 +18500,7 @@
                                     }), void this.paginationLoader.updateOnPagination(!1)
                                 }
                                 if (t.onChartData(t => {
-                                        e !== this._mainStore.chart.currentActiveSymbol ? .symbol || this.hasAlternativeSource || this._appendChartData(t, a)
+                                        e !== this._mainStore.chart.currentActiveSymbol ?.symbol || this.hasAlternativeSource || this._appendChartData(t, a)
                                     }), this._mainStore.chart.isDestroyed || this._mainStore.state.symbol && this._mainStore.state.symbol !== e) return r({
                                     quotes: []
                                 }), void t.forget();
@@ -18566,7 +18566,7 @@
                                 if (s.quotes = fV.formatHistory(l), o <= a && (i({
                                         moreAvailable: !1,
                                         quotes: []
-                                    }), this.setHasReachedEndOfData(!0)), s.quotes ? .length && s.quotes.length < r) return i({
+                                    }), this.setHasReachedEndOfData(!0)), s.quotes ?.length && s.quotes.length < r) return i({
                                     moreAvailable: !1,
                                     quotes: s.quotes
                                 }), void this.setHasReachedEndOfData(!0)
@@ -18593,14 +18593,14 @@
                                 r = !0;
                             if (!t) return;
                             let n = t.lastStreamEpoch;
-                            return this.endEpoch && void 0 !== n && void 0 !== this.granularity && n + this.granularity > this.endEpoch ? (this._activeStreams[e] && 0 === this.granularity && !this._mainStore.state.isStaticChart && fu(np(this.endEpoch)).valueOf() >= this.quotes.slice(-1)[0] ? .Date.valueOf() && (r = !1), this._forgetStream(e)) : r = !1, r
+                            return this.endEpoch && void 0 !== n && void 0 !== this.granularity && n + this.granularity > this.endEpoch ? (this._activeStreams[e] && 0 === this.granularity && !this._mainStore.state.isStaticChart && fu(np(this.endEpoch)).valueOf() >= this.quotes.slice(-1)[0] ?.Date.valueOf() && (r = !1), this._forgetStream(e)) : r = !1, r
                         }
                         _appendChartData(e, t) {
                             let r = arguments.length > 2 && void 0 !== arguments[2] && arguments[2];
                             if (!this._forgetIfEndEpoch(t) || this._activeStreams[t]) {
                                 if ((!this.hasAlternativeSource || r) && r) {
                                     if (!this.tickQueue.length) return void(this.tickQueue = [e[e.length - 1]]);
-                                    if (this.tickQueue[0].tick ? .epoch === e[e.length - 1].tick ? .epoch) return;
+                                    if (this.tickQueue[0].tick ?.epoch === e[e.length - 1].tick ?.epoch) return;
                                     this.tickQueue = [e[e.length - 1]], e = [e[e.length - 1]]
                                 }
                                 this._emitDataUpdate(e)
@@ -18726,13 +18726,13 @@
                                 granularity: 0,
                                 chartType: "line"
                             }), fY(this, "granularity", void 0), fY(this, "enableRouting", null), fY(this, "chartNode", null), fY(this, "chartControlsNode", null), fY(this, "state", void 0), fY(this, "onMessage", null), fY(this, "_barriers", []), fY(this, "tradingTimes", void 0), fY(this, "activeSymbols", void 0), fY(this, "whitespace", void 0), fY(this, "isDestroyed", !1), fY(this, "currentCloseQuote", () => {
-                                let e = this.mainStore.chart.feed ? .quotes,
-                                    t = e ? .[e.length - 1];
+                                let e = this.mainStore.chart.feed ?.quotes,
+                                    t = e ?.[e.length - 1];
                                 if (t && !t.Close) {
-                                    let r = e ? .filter(e => e && e.Close);
+                                    let r = e ?.filter(e => e && e.Close);
                                     if (r && r.length) t = r[r.length - 1];
                                     else {
-                                        let r = e ? .filter(e => e && e.Close);
+                                        let r = e ?.filter(e => e && e.Close);
                                         r && r.length && (t = r[r.length - 1])
                                     }
                                 }
@@ -18764,7 +18764,7 @@
                                     window.ResizeObserver = r, this.rootNode && (this.resizeObserver = new r(e), this.resizeObserver.observe(this.rootNode))
                                 })
                             }), fY(this, "onMarketOpenClosedChange", e => {
-                                let t = this.activeSymbols ? .processedSymbols || [],
+                                let t = this.activeSymbols ?.processedSymbols || [],
                                     r = !1;
                                 for (let {
                                         symbol: n,
@@ -18818,31 +18818,31 @@
                             return this.mainStore.studies
                         }
                         get pip() {
-                            return this.currentActiveSymbol ? .decimal_places
+                            return this.currentActiveSymbol ?.decimal_places
                         }
                         get rootElement() {
                             return this.chartId ? document.getElementById(this.chartId) : null
                         }
                         get currentClose() {
-                            return this.currentCloseQuote() ? .Close
+                            return this.currentCloseQuote() ?.Close
                         }
                         get xAxisHeight() {
-                            return window.flutterChart ? .app.getXAxisHeight() || 24
+                            return window.flutterChart ?.app.getXAxisHeight() || 24
                         }
                         get yAxisWidth() {
-                            return window.flutterChart ? .app.getYAxisWidth() || 60
+                            return window.flutterChart ?.app.getYAxisWidth() || 60
                         }
                         updateHeight(e) {
                             let t = this.mainStore.chartSetting.historical && this.isMobile,
                                 r = e || this.mainStore.chartSetting.position,
                                 n = 0;
-                            this.stateStore.enabledChartFooter ? n = 32 : "bottom" === r && this.stateStore.chartControlsWidgets && (n = 40), this.chartHeight = this.chartNode ? .offsetHeight, this.chartContainerHeight = (this.chartHeight || 0) - n - (t ? 45 : 0)
+                            this.stateStore.enabledChartFooter ? n = 32 : "bottom" === r && this.stateStore.chartControlsWidgets && (n = 40), this.chartHeight = this.chartNode ?.offsetHeight, this.chartContainerHeight = (this.chartHeight || 0) - n - (t ? 45 : 0)
                         }
                         resizeScreen() {
                             this.rootNode && this.rootNode.clientWidth >= 1280 ? this.containerWidth = 1280 : this.rootNode && this.rootNode.clientWidth >= 900 ? this.containerWidth = 900 : this.containerWidth = 480, this.updateHeight()
                         }
                         _initChart(e, t) {
-                            this.rootNode = e, this.chartNode = this.rootNode ? .querySelector(".ciq-chart-area"), this.chartControlsNode = this.rootNode ? .querySelector(".cq-chart-controls");
+                            this.rootNode = e, this.chartNode = this.rootNode ?.querySelector(".ciq-chart-area"), this.chartControlsNode = this.rootNode ?.querySelector(".cq-chart-controls");
                             let {
                                 symbol: r,
                                 granularity: n,
@@ -18863,14 +18863,14 @@
                                 startWithDataFitMode: y,
                                 leftMargin: b
                             } = t;
-                            this.feedCall = g || {}, this.api = new fz(i, a, o, s), this.currentLanguage = localStorage.getItem("current_chart_lang") ? ? d ? .language ? .toLowerCase(), this.tradingTimes = fX.tradingTimes || (fX.tradingTimes = new fD(this.api, {
+                            this.feedCall = g || {}, this.api = new fz(i, a, o, s), this.currentLanguage = localStorage.getItem("current_chart_lang") ?? d ?.language ?.toLowerCase(), this.tradingTimes = fX.tradingTimes || (fX.tradingTimes = new fD(this.api, {
                                 enable: this.feedCall.tradingTimes,
                                 shouldFetchTradingTimes: this.mainStore.state.shouldFetchTradingTimes,
-                                tradingTimes: p ? .tradingTimes
-                            })), this.activeSymbols = this.currentLanguage === d ? .language && fX.activeSymbols || (fX.activeSymbols = new fN(this.api, this.tradingTimes, {
+                                tradingTimes: p ?.tradingTimes
+                            })), this.activeSymbols = this.currentLanguage === d ?.language && fX.activeSymbols || (fX.activeSymbols = new fN(this.api, this.tradingTimes, {
                                 enable: this.feedCall.activeSymbols,
                                 getMarketsOrder: f,
-                                activeSymbols: p ? .activeSymbols,
+                                activeSymbols: p ?.activeSymbols,
                                 chartData: m
                             }));
                             let {
@@ -18878,16 +18878,16 @@
                             } = this.mainStore;
                             _.setSettings(d), _.onSettingsChange = h, this.isMobile = l, this.whitespace = l ? 50 : 150, this.state = this.mainStore.state, this.mainStore.notifier.onMessage = u, this.granularity = void 0 !== n ? n : this.defaults.granularity, this.isLive = v || !1, this.startWithDataFitMode = y || !1, this.leftMargin = b, fX.chartCount += 1, this.feed = new fK(this.api, this.mainStore, this.tradingTimes), this.enableRouting = c, this.enableRouting && this.routingStore.handleRouting();
                             let S = new fB(this.rootNode);
-                            this.stateStore.stateChange("INITIAL"), this.loader.setState("market-symbol"), this.activeSymbols ? .retrieveActiveSymbols().then(() => {
-                                this.loader.setState("trading-time"), this.tradingTimes ? .initialize().then(tT(() => {
+                            this.stateStore.stateChange("INITIAL"), this.loader.setState("market-symbol"), this.activeSymbols ?.retrieveActiveSymbols().then(() => {
+                                this.loader.setState("trading-time"), this.tradingTimes ?.initialize().then(tT(() => {
                                     if (this.isDestroyed) return;
-                                    this.startWithDataFitMode ? this.state ? .clearLayout() : this.state ? .restoreLayout();
-                                    let e = this.state ? .symbol || r;
-                                    this.changeSymbol(e || this.activeSymbols && Object.keys(this.activeSymbols.symbolMap)[0], this.granularity), this.context = S, this.chartClosedOpenThemeChange(!this.currentActiveSymbol ? .exchange_is_open), this.mainStore.chart.tradingTimes ? .onMarketOpenCloseChanged(tT(e => {
-                                        for (let t in e) this.currentActiveSymbol ? .symbol === t && this.chartClosedOpenThemeChange(!e[t])
-                                    })), this.contextPromise ? .resolve ? .(this.context), this.resizeScreen(), tN(() => [this.state ? .symbol, this.state ? .granularity], () => {
-                                        void 0 === this.state ? .symbol && void 0 === this.state ? .granularity || this.changeSymbol(this.state.symbol, this.state.granularity)
-                                    }), this.tradingTimes ? .onTimeChanged(this.onServerTimeChange), setTimeout(tT(() => {
+                                    this.startWithDataFitMode ? this.state ?.clearLayout() : this.state ?.restoreLayout();
+                                    let e = this.state ?.symbol || r;
+                                    this.changeSymbol(e || this.activeSymbols && Object.keys(this.activeSymbols.symbolMap)[0], this.granularity), this.context = S, this.chartClosedOpenThemeChange(!this.currentActiveSymbol ?.exchange_is_open), this.mainStore.chart.tradingTimes ?.onMarketOpenCloseChanged(tT(e => {
+                                        for (let t in e) this.currentActiveSymbol ?.symbol === t && this.chartClosedOpenThemeChange(!e[t])
+                                    })), this.contextPromise ?.resolve ?.(this.context), this.resizeScreen(), tN(() => [this.state ?.symbol, this.state ?.granularity], () => {
+                                        void 0 === this.state ?.symbol && void 0 === this.state ?.granularity || this.changeSymbol(this.state.symbol, this.state.granularity)
+                                    }), this.tradingTimes ?.onTimeChanged(this.onServerTimeChange), setTimeout(tT(() => {
                                         this.shouldRenderDialogs = !0
                                     }), 500)
                                 }))
@@ -18898,14 +18898,14 @@
                         }
                         get categorizedSymbols() {
                             return this.activeSymbols && 0 !== this.activeSymbols.categorizedSymbols.length ? nv(this.activeSymbols.activeSymbols, e => {
-                                let t = e.dataObject.symbol === this.currentActiveSymbol ? .symbol;
+                                let t = e.dataObject.symbol === this.currentActiveSymbol ?.symbol;
                                 return { ...e,
                                     selected: t
                                 }
                             }) : []
                         }
                         onServerTimeChange() {
-                            this.tradingTimes ? ._serverTime && (this.serverTime = fk()(1e3 * this.tradingTimes._serverTime.getEpoch()).format("DD MMM YYYY HH:mm:ss [GMT]"))
+                            this.tradingTimes ?._serverTime && (this.serverTime = fk()(1e3 * this.tradingTimes._serverTime.getEpoch()).format("DD MMM YYYY HH:mm:ss [GMT]"))
                         }
                         updateCurrentActiveSymbol(e) {
                             this.currentActiveSymbol = e
@@ -18915,19 +18915,19 @@
                         }
                         changeSymbol(e, t) {
                             let r = arguments.length > 2 && void 0 !== arguments[2] && arguments[2];
-                            "string" == typeof e && (e = this.activeSymbols ? .getSymbolObj(e)), e && this.currentActiveSymbol && e ? .symbol === this.currentActiveSymbol ? .symbol && void 0 !== t && t === this.granularity && !r || (this.newChart(e), void 0 !== t && (this.granularity = t), e && this.updateCurrentActiveSymbol(e))
+                            "string" == typeof e && (e = this.activeSymbols ?.getSymbolObj(e)), e && this.currentActiveSymbol && e ?.symbol === this.currentActiveSymbol ?.symbol && void 0 !== t && t === this.granularity && !r || (this.newChart(e), void 0 !== t && (this.granularity = t), e && this.updateCurrentActiveSymbol(e))
                         }
                         newChart() {
                             let e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : this.currentActiveSymbol;
                             if (!e) return;
-                            this.currentActiveSymbol && this.feed ? .unsubscribe({
+                            this.currentActiveSymbol && this.feed ?.unsubscribe({
                                 symbol: this.currentActiveSymbol.symbol,
                                 granularity: this.granularity
                             }), this.loader.show(), this.mainStore.state.setChartIsReady(!1);
                             let t = t => {
                                 this.loader.hide(), this.chartClosedOpenThemeChange(!e.exchange_is_open), this.mainStore.paginationLoader.updateOnPagination(!1), this.mainStore.state.setChartIsReady(!0)
                             };
-                            this.mainStore.chartAdapter.newChart(), this.feed ? .fetchInitialData(e.symbol, {
+                            this.mainStore.chartAdapter.newChart(), this.feed ?.fetchInitialData(e.symbol, {
                                 granularity: this.mainStore.state.granularity,
                                 symbolObject: e
                             }, e => {
@@ -18935,7 +18935,7 @@
                                     quotes: r,
                                     error: n
                                 } = e;
-                                this.mainStore.chartAdapter.onTickHistory(r || []), this.mainStore.chart.feed ? .offMasterDataUpdate(this.mainStore.chartAdapter.onTick), this.mainStore.chart.feed ? .onMasterDataUpdate(this.mainStore.chartAdapter.onTick), t()
+                                this.mainStore.chartAdapter.onTickHistory(r || []), this.mainStore.chart.feed ?.offMasterDataUpdate(this.mainStore.chartAdapter.onTick), this.mainStore.chart.feed ?.onMasterDataUpdate(this.mainStore.chartAdapter.onTick), t()
                             })
                         }
                         updateScaledOneOne(e) {
@@ -18956,7 +18956,7 @@
                                 t = e.element.some(e => document[e] && null !== document[e]),
                                 r = t ? document : document.documentElement,
                                 n = e[t ? "fnc_exit" : "fnc_enter"].find(e => r[e]);
-                            n && r[n]() ? .catch(() => {})
+                            n && r[n]() ?.catch(() => {})
                         }
                     }
                     fY(fX, "chartCount", 0), fY(fX, "tradingTimes", void 0), fY(fX, "activeSymbols", void 0);
@@ -19290,12 +19290,12 @@
                                         title: (e.short_name_and_index + (e.bars ? ` (${e.bars})` : "")).toUpperCase(),
                                         ...this.transform(r)
                                     };
-                                this.mainStore.chartAdapter.flutterChart ? .app.addOrUpdateIndicator(JSON.stringify(n), t)
+                                this.mainStore.chartAdapter.flutterChart ?.app.addOrUpdateIndicator(JSON.stringify(n), t)
                             }), pr(this, "renderLegend", () => {
                                 this.context && this.updateStyle()
                             }), pr(this, "getIndicatorProps", e => {
                                 var t, r;
-                                return (t = hJ(), r = e => e.items, t.reduce((e, t) => [...e, ...r(t)], [])).find(t => t ? .flutter_chart_id === e)
+                                return (t = hJ(), r = e => e.items, t.reduce((e, t) => [...e, ...r(t)], [])).find(t => t ?.flutter_chart_id === e)
                             }), t6(this, {
                                 selectedTab: eL,
                                 filterText: eL,
@@ -19341,7 +19341,7 @@
                             return [...hJ()].map(e => ("trend" === e.name && (e.icon = "light" === this.mainStore.chartSetting.theme ? d9 : d8), e))
                         }
                         get searchedItems() {
-                            return [...hJ()].map(e => (e.foundItems = e.items.filter(e => -1 !== e.name.toLowerCase().indexOf(this.filterText.toLowerCase().trim())), e)).filter(e => e.foundItems ? .length)
+                            return [...hJ()].map(e => (e.foundItems = e.items.filter(e => -1 !== e.name.toLowerCase().indexOf(this.filterText.toLowerCase().trim())), e)).filter(e => e.foundItems ?.length)
                         }
                         get hasPredictionIndicator() {
                             return (this.activeItems || []).filter(e => e.isPrediction).length > 0
@@ -19404,7 +19404,7 @@
                         }
                         deleteStudyById(e) {
                             let t = this.activeItems.findIndex(t => t.id === e);
-                            this.mainStore.chartAdapter.flutterChart ? .indicators.removeIndicator(t), this.deleteStudy(t)
+                            this.mainStore.chartAdapter.flutterChart ?.indicators.removeIndicator(t), this.deleteStudy(t)
                         }
                         deleteStudy(e) {
                             fl(fo.ChartControl, fs.Indicator, `Remove ${e}`), this.activeItems.splice(e, 1), this.mainStore.bottomWidgetsContainer.updateChartHeight(), this.mainStore.crosshair.removeIndicatorToolTip(), this.renderLegend(), this.mainStore.state.saveLayout()
@@ -19447,7 +19447,7 @@
                             localStorage.getItem("predictionIndicators") && localStorage.removeItem("predictionIndicators")
                         }
                         deleteAllStudies() {
-                            this.activeItems = [], window.flutterChart ? .indicators.clearIndicators(), this.mainStore.state.saveLayout()
+                            this.activeItems = [], window.flutterChart ?.indicators.clearIndicators(), this.mainStore.state.saveLayout()
                         }
                         onSelectTab(e) {
                             this.setFilterText(""), this.selectedTab = e, this.onInfoItem(null)
@@ -19519,10 +19519,10 @@
                             pa(this, "_pervDrawingObjectCount", 0), pa(this, "mainStore", void 0), pa(this, "menuStore", void 0), pa(this, "settingsDialog", void 0), pa(this, "activeToolsGroup", []), pa(this, "portalNodeIdChanged", void 0), pa(this, "seletedDrawToolConfig", null), pa(this, "getDrawToolsItems", () => {
                                 let e = hX();
                                 return Object.keys(e).map(t => e[t])
-                            }), pa(this, "drawingToolsRepoArray", () => this.mainStore.chartAdapter.flutterChart ? .drawingTool.getDrawingToolsRepoItems().map(e => na(e)).filter(e => e).filter(e => 0 != e.drawingData.isDrawingFinished)), pa(this, "onContextReady", () => {
+                            }), pa(this, "drawingToolsRepoArray", () => this.mainStore.chartAdapter.flutterChart ?.drawingTool.getDrawingToolsRepoItems().map(e => na(e)).filter(e => e).filter(e => 0 != e.drawingData.isDrawingFinished)), pa(this, "onContextReady", () => {
                                 document.addEventListener("keydown", this.closeOnEscape, !1), document.addEventListener("dblclick", this.doubleClick)
                             }), pa(this, "closeOnEscape", e => {
-                                27 === e.keyCode && (this.mainStore.chartAdapter.flutterChart ? .drawingTool.clearDrawingToolSelect(), this.seletedDrawToolConfig = null, this.drawingFinished())
+                                27 === e.keyCode && (this.mainStore.chartAdapter.flutterChart ?.drawingTool.clearDrawingToolSelect(), this.seletedDrawToolConfig = null, this.drawingFinished())
                             }), pa(this, "doubleClick", () => this.drawingFinished()), pa(this, "transform", e => {
                                 if ("string" == typeof e && (e.startsWith("#") || e.toLowerCase().startsWith("0x"))) return f8(e);
                                 if (nk(e)) Object.keys(e).forEach(t => {
@@ -19553,7 +19553,7 @@
                                 mainStore: e,
                                 onDeleted: e => {
                                     let t = this.drawingToolsRepoArray(),
-                                        r = t ? .findIndex(t => t.configId === e);
+                                        r = t ?.findIndex(t => t.configId === e);
                                     void 0 !== r && r > -1 && this.onDeleted(r)
                                 },
                                 onChanged: e => this.onChanged(e)
@@ -19601,7 +19601,7 @@
                             this.stateStore && this.crosshairStore.setCrosshairState(this.stateStore.crosshairState)
                         }
                         clearAll() {
-                            this.activeToolsGroup = [], window.flutterChart ? .drawingTool.clearDrawingTool(), fl(fo.ChartControl, fs.DrawTools, "Clear All")
+                            this.activeToolsGroup = [], window.flutterChart ?.drawingTool.clearDrawingTool(), fl(fo.ChartControl, fs.DrawTools, "Clear All")
                         }
                         selectTool(e) {
                             this.menuStore.setOpen(!1), fl(fo.ChartControl, fs.DrawTools, `Add ${e}`);
@@ -19610,7 +19610,7 @@
                                 color: t.lineStyle
                             }, t.fillStyle && (t.fillStyle = {
                                 color: t.fillStyle
-                            }), delete t.parameters, t && this.mainStore.chartAdapter.flutterChart ? .drawingTool.addOrUpdateDrawing(JSON.stringify(t))
+                            }), delete t.parameters, t && this.mainStore.chartAdapter.flutterChart ?.drawingTool.addOrUpdateDrawing(JSON.stringify(t))
                         }
                         processDrawTool(e) {
                             let t = hX()[e],
@@ -19680,7 +19680,7 @@
                                                 if (e[t.index]) {
                                                     let r = e[t.index];
                                                     if (r) {
-                                                        if (this.seletedDrawToolConfig ? .id && "channel" === this.seletedDrawToolConfig.id && this.seletedDrawToolConfig.index === t.index) {
+                                                        if (this.seletedDrawToolConfig ?.id && "channel" === this.seletedDrawToolConfig.id && this.seletedDrawToolConfig.index === t.index) {
                                                             let n = r.edgePoints;
                                                             if (n && 2 === n.length) {
                                                                 let r = e[t.index + 1];
@@ -19699,16 +19699,16 @@
                         }
                         onChanged(e, t) {
                             let r;
-                            this.mainStore.chartAdapter.flutterChart ? .drawingTool.clearDrawingToolSelect();
+                            this.mainStore.chartAdapter.flutterChart ?.drawingTool.clearDrawingToolSelect();
                             let n = this.drawingToolsRepoArray();
                             if (!n || -1 === (r = t || 0 === t ? t : n.findIndex(e => e.configId === this.settingsDialog.id))) return;
                             let i = n[r];
                             e.forEach(e => {
                                 e.path && ("colorpicker" == e.type ? i[e.path].color = f8(e.value) : "switch" == e.type && (i[e.path] = e.value))
-                            }), this.mainStore.chartAdapter.flutterChart ? .drawingTool.editDrawing(JSON.stringify(i), r)
+                            }), this.mainStore.chartAdapter.flutterChart ?.drawingTool.editDrawing(JSON.stringify(i), r)
                         }
                         onDeleted(e) {
-                            void 0 !== e && (this.mainStore.chartAdapter.flutterChart ? .drawingTool.removeDrawingTool(e), this.onUpdate(), this.mainStore.crosshair.removeDrawingToolToolTip(), e && fl(fo.ChartControl, fs.DrawTools, `Remove ${e}`))
+                            void 0 !== e && (this.mainStore.chartAdapter.flutterChart ?.drawingTool.removeDrawingTool(e), this.onUpdate(), this.mainStore.crosshair.removeDrawingToolToolTip(), e && fl(fo.ChartControl, fs.DrawTools, `Remove ${e}`))
                         }
                         onSetting(e) {
                             if (void 0 !== e) {
@@ -19921,7 +19921,7 @@
                                 if (!n) return;
                                 let i = this.filteredItems.indexOf(r) * (r.hasSubgroup ? r.subgroups.length + 57 : 57),
                                     a = n.getBoundingClientRect();
-                                a.top - e - i < 0 && (t = r.hasSubgroup ? r.subgroups[r.subgroups.length > 1 ? +(a.top < 0) : 0] ? .categoryId : r ? .categoryId)
+                                a.top - e - i < 0 && (t = r.hasSubgroup ? r.subgroups[r.subgroups.length > 1 ? +(a.top < 0) : 0] ?.categoryId : r ?.categoryId)
                             }
                             let r = this.scrollPanel.getBoundingClientRect().top;
                             this.scrollTop && this.scrollTop > r ? this.scrollUp() : this.scrollDown(), this.scrollTop = r, this.focusedCategoryKey = t || this.filteredItems[0].categoryId, this.activeHeadKey = 0 === this.scrollTop ? null : this.focusedCategoryKey
@@ -19957,7 +19957,7 @@
                         }
                         handleTitleClick(e) {
                             for (let t of (this.activeCategories = [], this.filteredItems)) {
-                                if (t.hasSubgroup ? t.subgroups ? .filter(t => t.categoryId === e).length > 0 : t.categoryId === e) {
+                                if (t.hasSubgroup ? t.subgroups ?.filter(t => t.categoryId === e).length > 0 : t.categoryId === e) {
                                     if (t.hasSubgroup)
                                         for (let r of t.subgroups) r.categoryId === e && (r.active = !r.active);
                                     t.active = !t.active, setTimeout(() => this.handleFilterClick(t.categoryId), 250)
@@ -19972,9 +19972,9 @@
                             this.focusedCategoryKey = null, this.activeCategoryKey = this.getCurrentActiveCategory ? this.getCurrentActiveCategory() : "favorite", this.activeSubCategory = this.getCurrentActiveSubCategory ? this.getCurrentActiveSubCategory() : "", this.activeMarket = this.getCurrentActiveMarket ? this.getCurrentActiveMarket() : "";
                             let e = this.categoryElements[this.activeCategoryKey],
                                 t = `.sc-mcd__category--${this.activeCategoryKey}  .sc-mcd__category__content--${this.activeSubCategory}`,
-                                r = this.scrollPanel ? .querySelector(t),
+                                r = this.scrollPanel ?.querySelector(t),
                                 n = `${t} .sc-mcd__item--${this.activeMarket}`,
-                                i = this.scrollPanel ? .querySelector(n);
+                                i = this.scrollPanel ?.querySelector(n);
                             if (this.activeHeadKey = this.activeCategoryKey || null, this.pauseScrollSpy = !0, this.isUserScrolling = !1, this.scrollPanel && e && this.scrollPanel) {
                                 if (this.scrollPanel.scrollTop = e.offsetTop, i) {
                                     let t = this.mainStore.chart.isMobile ? 100 : 40;
@@ -20019,8 +20019,8 @@
                     class pp {
                         constructor(e) {
                             pf(this, "animatedPrice", void 0), pf(this, "categoricalDisplay", void 0), pf(this, "mainStore", void 0), pf(this, "menuStore", void 0), pf(this, "serverTime", void 0), pf(this, "todayChange", null), pf(this, "todayChangePercent", null), pf(this, "isVisible", !1), pf(this, "openMarket", {}), pf(this, "enableShowPrice", !1), pf(this, "searchInputClassName", void 0), pf(this, "onContextReady", () => {
-                                this.chart.feed ? .onMasterDataUpdate(this.update), this.update(), this.tradingTimes ? .onMarketOpenCloseChanged(tT(e => {
-                                    for (let t in e) this.currentSymbol ? .symbol === t && (this.currentSymbol.exchange_is_open = e[t])
+                                this.chart.feed ?.onMasterDataUpdate(this.update), this.update(), this.tradingTimes ?.onMarketOpenCloseChanged(tT(e => {
+                                    for (let t in e) this.currentSymbol ?.symbol === t && (this.currentSymbol.exchange_is_open = e[t])
                                 }))
                             }), pf(this, "onMouseEnter", () => this.crosshairStore.updateVisibility(!1)), pf(this, "onMouseLeave", () => this.crosshairStore.updateVisibility(!0)), t6(this, {
                                 todayChange: eL,
@@ -20068,10 +20068,10 @@
                             return this.mainStore.chart.currentActiveSymbol
                         }
                         get isSymbolOpen() {
-                            return this.currentSymbol ? .exchange_is_open
+                            return this.currentSymbol ?.exchange_is_open
                         }
                         get decimalPlaces() {
-                            return this.mainStore.chart.currentActiveSymbol ? .decimal_places || 2
+                            return this.mainStore.chart.currentActiveSymbol ?.decimal_places || 2
                         }
                         get isShowChartPrice() {
                             return this.mainStore.chart.isChartAvailable
@@ -20080,7 +20080,7 @@
                             return this.mainStore.chart.tradingTimes
                         }
                         get symbolOpenTime() {
-                            let e = this.tradingTimes ? ._tradingTimesMap && this.tradingTimes._tradingTimesMap.length && this.currentSymbol ? this.tradingTimes._tradingTimesMap[this.currentSymbol.symbol].times : [],
+                            let e = this.tradingTimes ?._tradingTimesMap && this.tradingTimes._tradingTimesMap.length && this.currentSymbol ? this.tradingTimes._tradingTimesMap[this.currentSymbol.symbol].times : [],
                                 t = this.serverTime.getLocalDate().getTime(),
                                 r = e ? e.find(e => e.open.getTime() > t) : null;
                             return r instanceof Date || (r = null), {
@@ -20089,7 +20089,7 @@
                         }
                         get currentActiveCategory() {
                             let e = this.mainStore.chart.currentActiveSymbol;
-                            return this.openMarket.category ? this.openMarket.category : "none" !== e ? .subgroup ? e ? .subgroup : e ? e.market : "favorite"
+                            return this.openMarket.category ? this.openMarket.category : "none" !== e ?.subgroup ? e ?.subgroup : e ? e.market : "favorite"
                         }
                         get currentActiveSubCategory() {
                             return this.openMarket.subcategory ? this.openMarket.subcategory : this.mainStore.chart.currentActiveSymbol ? this.mainStore.chart.currentActiveSymbol.symbol : ""
@@ -20104,10 +20104,10 @@
                             if (!this.currentSymbol) return;
                             let t = e || !this.isShowChartPrice;
                             if (!t) return;
-                            let r = e ? .Close;
+                            let r = e ?.Close;
                             if (r) {
                                 r = +r.toFixed(this.decimalPlaces);
-                                let t = e ? .prevClose || this.animatedPrice.price;
+                                let t = e ?.prevClose || this.animatedPrice.price;
                                 this.animatedPrice.setPrice(r, t), t && (this.todayChange = Math.abs(r - t).toFixed(this.decimalPlaces), this.todayChangePercent = (Number(this.todayChange) / t * 100).toFixed(2))
                             }
                             this.isVisible || !t || this.enableShowPrice ? this.isVisible = t : this.enableShowPrice = !0
@@ -20308,15 +20308,15 @@
                             }), pv(this, "renderCrosshairTooltip", (e, t) => {
                                 if (2 !== this.state || !this.mainStore.chartAdapter.isChartLoaded) return;
                                 let r = this.mainStore.chartAdapter.getEpochFromX(e),
-                                    n = this.mainStore.chart.feed ? .quotes || [],
+                                    n = this.mainStore.chart.feed ?.quotes || [],
                                     i = n[n.length - 1],
-                                    a = i ? .DT ? .getTime(),
+                                    a = i ?.DT ?.getTime(),
                                     o = this.mainStore.chartAdapter.getGranularityInMs(),
-                                    s = r <= (a ? a + o / 2 : r) ? this.mainStore.chart.feed ? .getClosestQuoteForEpoch(r) : void 0,
+                                    s = r <= (a ? a + o / 2 : r) ? this.mainStore.chart.feed ?.getClosestQuoteForEpoch(r) : void 0,
                                     l = [];
                                 s && (l = this.calculateRows(s));
-                                let c = this.mainStore.chart.feed ? .getClosestValidEpoch(r, o),
-                                    u = this.getIndicatorRows(s ? .DT ? .getTime() || c || r);
+                                let c = this.mainStore.chart.feed ?.getClosestValidEpoch(r, o),
+                                    u = this.getIndicatorRows(s ?.DT ?.getTime() || c || r);
                                 l.push(...u), 0 !== l.length && this.isChartReady ? this.updateTooltipPosition({
                                     left: e,
                                     top: t,
@@ -20332,23 +20332,23 @@
                                 if (null !== this.drawingTooltip) this.drawingTooltip.style.top = r - 100 + "px", this.drawingTooltip.style.left = t - 150 + "px";
                                 else {
                                     if (null != document.querySelector(".draw-tool-tooltip")) return;
-                                    let n = this.context ? .topNode ? .querySelector(".chartContainer"),
+                                    let n = this.context ?.topNode ?.querySelector(".chartContainer"),
                                         i = document.createElement("div");
                                     i.classList.add("draw-tool-tooltip", "mSticky"), i.style.display = "inline-block", i.style.position = "absolute", i.style.top = r - 100 + "px", i.style.left = t - 150 + "px", i.innerHTML = `
                         <span class='mStickyInterior' style='display:inline-block'>${e}</span>
                         <span class='mouseDeleteInstructions'>Double click to manage</span>
-            `, this.drawingTooltip = i, n ? .appendChild(i)
+            `, this.drawingTooltip = i, n ?.appendChild(i)
                                 }
                             }), pv(this, "renderIndicatorToolTip", (e, t, r) => {
                                 if (null !== this.indicatorTooltip) this.indicatorTooltip.style.top = r - 100 + "px", this.indicatorTooltip.style.left = t - 150 + "px";
                                 else {
                                     if (null != document.querySelector(".indicator-tooltip")) return;
-                                    let n = this.context ? .topNode ? .querySelector(".chartContainer"),
+                                    let n = this.context ?.topNode ?.querySelector(".chartContainer"),
                                         i = document.createElement("div");
                                     i.classList.add("indicator-tooltip", "mSticky"), i.style.display = "inline-block", i.style.position = "absolute", i.style.top = r - 100 + "px", i.style.left = t - 150 + "px", i.innerHTML = `
                     <span class='mStickyInterior' style='display:inline-block'>${e}</span>
                     <span class='mouseDeleteInstructions'>Double click to manage</span>
-        `, this.indicatorTooltip = i, n ? .appendChild(i)
+        `, this.indicatorTooltip = i, n ?.appendChild(i)
                                 }
                             }), pv(this, "removeDrawingToolToolTip", () => {
                                 document.getElementsByClassName("draw-tool-tooltip").length > 0 && (document.getElementsByClassName("draw-tool-tooltip")[0].remove(), this.drawingTooltip = null)
@@ -20360,7 +20360,7 @@
                                     n = this.mainStore.studies.activeItems || [];
                                 return r.filter(e => e).forEach((e, r) => {
                                     r < n.length && (((e, t) => {
-                                        let r = () => (t ? .bars ? `(${t.bars})` : "").toUpperCase();
+                                        let r = () => (t ?.bars ? `(${t.bars})` : "").toUpperCase();
                                         return ({
                                             AwesomeOscillator: {
                                                 labels: ["AWESOME_HIST"]
@@ -20426,7 +20426,7 @@
                                                 labels: [`FRACTAL HIGH FRACTAL CHAOS BANDS ${r()}`, `FRACTAL LOW FRACTAL CHAOS BANDS ${r()}`]
                                             }
                                         })[e]
-                                    })(e.name, n[r]) ? .labels || []).forEach((r, n) => {
+                                    })(e.name, n[r]) ?.labels || []).forEach((r, n) => {
                                         let i = e.values[n];
                                         i && t.push({
                                             name: r,
@@ -20435,7 +20435,7 @@
                                     })
                                 }), t
                             }), pv(this, "updateVisibility", e => {
-                                let t = this.refs ? .crosshairRef.current;
+                                let t = this.refs ?.crosshairRef.current;
                                 t && (e ? t.classList.add("active") : t.classList.remove("active"))
                             }), pv(this, "getDateTimeFormat", () => {
                                 switch (this.mainStore.timeperiod.timeUnit) {
@@ -20461,7 +20461,7 @@
                             return this.mainStore.chart.currentActiveSymbol
                         }
                         get decimalPlaces() {
-                            return this.activeSymbol ? .decimal_places || 2
+                            return this.activeSymbol ?.decimal_places || 2
                         }
                         get showOhl() {
                             return "tick" !== this.mainStore.timeperiod.timeUnit && this.mainStore.chartType.isCandle
@@ -20485,7 +20485,7 @@
                         setCrosshairState(e) {
                             if (!!this.context) {
                                 this.state = e, this.mainStore.state.crosshairState = e, this.mainStore.state.saveLayout(), this.onCrosshairChanged(this.state);
-                                this.mainStore.chartAdapter.flutterChart ? .config.updateCrosshairVisibility(0 !== e)
+                                this.mainStore.chartAdapter.flutterChart ?.config.updateCrosshairVisibility(0 !== e)
                             }
                         }
                         calculateRows(e) {
@@ -20504,8 +20504,8 @@
                                 });
                                 t.Open = t.High = t.Low = 1
                             }
-                            if (this.activeSymbol ? .name) {
-                                let e = this.activeSymbol ? .name;
+                            if (this.activeSymbol ?.name) {
+                                let e = this.activeSymbol ?.name;
                                 r.push({
                                     member: "Close",
                                     display: e
@@ -20518,7 +20518,7 @@
                                     display: i
                                 } = t, a = e[r];
                                 ["Open", "Close", "High", "Low"].includes(r) && (a = Number(a).toFixed(this.mainStore.chart.pip));
-                                let o = i ? .replace(/^(Result )(.*)/, "$2");
+                                let o = i ?.replace(/^(Result )(.*)/, "$2");
                                 if (a && ("DT" === r || "object" != typeof a)) {
                                     let t = "";
                                     t = a.constructor === Number ? a.toString() : a.constructor === Date ? fk()(e.Date).format(this.getDateTimeFormat()) : a, n.push({
@@ -20534,7 +20534,7 @@
                                 top: t,
                                 left: r,
                                 rows: n
-                            } = e, i = this.context ? .topNode ? .querySelector(".cq-crosshair-tooltip");
+                            } = e, i = this.context ?.topNode ?.querySelector(".cq-crosshair-tooltip");
                             if (i) {
                                 i.style.transform = `translate(${r}px, ${t}px)`;
                                 let e = r <= (this.mainStore.state.crosshairTooltipLeftAllow || 315) ? "arrow-left" : "arrow-right";
@@ -20572,7 +20572,7 @@
                     class p_ {
                         constructor(e) {
                             pb(this, "mainStore", void 0), pb(this, "menuStore", void 0), pb(this, "screenshotArea", void 0), pb(this, "isLoadingPNG", !1), pb(this, "onContextReady", () => {
-                                this.screenshotArea = (this.context ? .topNode).querySelector(".ciq-chart")
+                                this.screenshotArea = (this.context ?.topNode).querySelector(".ciq-chart")
                             }), t6(this, {
                                 timeUnit: eF,
                                 timeperiodDisplay: eF,
@@ -20596,10 +20596,10 @@
                             return this.mainStore.timeperiod.display
                         }
                         get marketDisplayName() {
-                            return this.mainStore.chart.currentActiveSymbol ? .name
+                            return this.mainStore.chart.currentActiveSymbol ?.name
                         }
                         get decimalPlaces() {
-                            return this.mainStore.chart.currentActiveSymbol ? .decimal_places
+                            return this.mainStore.chart.currentActiveSymbol ?.decimal_places
                         }
                         createNewTab() {
                             return navigator.userAgent.match(/iPhone|iPad|iPod/i) ? window.open() : null
@@ -20608,10 +20608,10 @@
                             this.isLoadingPNG = !0;
                             let e = this.createNewTab();
                             f.e(526).then(f.t.bind(f, 2939, 23)).then(t => {
-                                this.screenshotArea ? .classList.add("ciq-chart--screenshot");
+                                this.screenshotArea ?.classList.add("ciq-chart--screenshot");
                                 let r = [],
                                     n = [];
-                                (this.screenshotArea ? .querySelectorAll("svg") || []).forEach(e => {
+                                (this.screenshotArea ?.querySelectorAll("svg") || []).forEach(e => {
                                     let t = e.parentNode,
                                         i = document.createElement("canvas");
                                     i.width = Number(getComputedStyle(e).width.match(/[0-9]+/)), i.height = Number(getComputedStyle(e).height.match(/[0-9]+/));
@@ -20622,21 +20622,21 @@
                                         a && t > "333333" && (a.fillStyle = getComputedStyle(e).fill, a.fillRect(0, 0, i.width, i.height), a.globalCompositeOperation = "destination-in")
                                     }
                                     let s = new Image;
-                                    s.src = e.querySelector("use") ? .getAttribute ? .("xlink:href") || "", s.onload = () => {
+                                    s.src = e.querySelector("use") ?.getAttribute ?.("xlink:href") || "", s.onload = () => {
                                         a && a.drawImage(s, 0, 0), nu() || nd() || (r.push({
                                             parent: t,
                                             child: e
-                                        }), t ? .removeChild(e), n.push({
+                                        }), t ?.removeChild(e), n.push({
                                             parent: t,
                                             child: i
-                                        }), t ? .appendChild(i))
+                                        }), t ?.appendChild(i))
                                     }
                                 }), setTimeout(() => {
                                     t.default(this.screenshotArea).then(t => {
                                         this._onCanvasReady(t, e), nu() || nd() || (n.forEach(e => {
-                                            e ? .parent ? .contains(e.child) && e.child instanceof HTMLCanvasElement && e.parent ? .removeChild ? .(e.child)
+                                            e ?.parent ?.contains(e.child) && e.child instanceof HTMLCanvasElement && e.parent ?.removeChild ?.(e.child)
                                         }), r.forEach(e => {
-                                            e.parent ? .appendChild(e.child)
+                                            e.parent ?.appendChild(e.child)
                                         }))
                                     })
                                 }, 100)
@@ -20644,12 +20644,12 @@
                         }
                         _onCanvasReady(e, t) {
                             let r = e.toDataURL("image/png");
-                            nh(`${(new Date).toUTCString()}.png`, r, "image/png;", t), this.isLoadingPNG = !1, this.screenshotArea ? .classList.remove("ciq-chart--screenshot")
+                            nh(`${(new Date).toUTCString()}.png`, r, "image/png;", t), this.isLoadingPNG = !1, this.screenshotArea ?.classList.remove("ciq-chart--screenshot")
                         }
                         downloadCSV() {
                             let e = "tick" === this.timeUnit,
                                 t = [`Date,Time,${e?this.marketDisplayName:"Open,High,Low,Close"}`],
-                                r = this.mainStore.chart.feed ? .quotes || [],
+                                r = this.mainStore.chart.feed ?.quotes || [],
                                 n = r.length;
                             (n <= 100 ? r : r.slice(n - 100, n)).forEach(r => {
                                 let {
@@ -20715,9 +20715,9 @@
                                 whitespace: eL
                             }), this.defaultLanguage = this.languages[0], this.mainStore = e, this.menuStore = new fb(e, {
                                 route: "setting"
-                            }), tN(() => this ? .language ? .key, () => {
-                                e ? .chart ? .activeSymbols ? .retrieveActiveSymbols ? .(!0).then(() => {
-                                    e ? .chart ? .changeSymbol ? .(e.state.symbol, e.state.granularity, !0)
+                            }), tN(() => this ?.language ?.key, () => {
+                                e ?.chart ?.activeSymbols ?.retrieveActiveSymbols ?.(!0).then(() => {
+                                    e ?.chart ?.changeSymbol ?.(e.state.symbol, e.state.granularity, !0)
                                 })
                             }), tK(() => !!this.context, () => {
                                 this.setSettings(e.state.settings)
@@ -20746,7 +20746,7 @@
                             this.onSettingsChange && this.language && this.onSettingsChange({
                                 countdown: this.countdown,
                                 historical: this.historical,
-                                language: this.language ? .key,
+                                language: this.language ?.key,
                                 position: this.position,
                                 isAutoScale: this.isAutoScale,
                                 isHighestLowestMarkerEnabled: this.isHighestLowestMarkerEnabled,
@@ -20756,7 +20756,7 @@
                             })
                         }
                         updateActiveLanguage(e) {
-                            this.languages = e ? e.map(e => fe.find(t => t.key.toUpperCase() === e) || "").filter(e => e) : fe, this.defaultLanguage = this.languages[0], (!this.language || this.languages.find(e => e.key === this.language ? .key)) && this.language || this.setLanguage(this.languages[0].key)
+                            this.languages = e ? e.map(e => fe.find(t => t.key.toUpperCase() === e) || "").filter(e => e) : fe, this.defaultLanguage = this.languages[0], (!this.language || this.languages.find(e => e.key === this.language ?.key)) && this.language || this.setLanguage(this.languages[0].key)
                         }
                         setLanguage(e) {
                             if (!this.languages.length) return;
@@ -20765,7 +20765,7 @@
                             this.language = this.languages.find(e => e.key === t) || this.defaultLanguage;
                             let r = this.language.key;
                             pS.setLanguage(r, () => {
-                                this ? .mainStore ? .loader ? .hide ? .()
+                                this ?.mainStore ?.loader ?.hide ?.()
                             }), fl(fo.ChartControl, fs.ChartSetting, `Change language to ${r}`), r !== localStorage.getItem("current_chart_lang") && localStorage.setItem("current_chart_lang", r), r !== this.mainStore.chart.currentLanguage && (this.mainStore.chart.currentLanguage = r), this.saveSetting()
                         }
                         setTheme(e) {
@@ -21133,7 +21133,7 @@
                                 startWithDataFitMode: F,
                                 leftMargin: B
                             } = e, V = !1, H = !1;
-                            j ? .tradingTimes && "object" == typeof j.tradingTimes && JSON.stringify(j.tradingTimes) !== this.tradingTimes && (this.mainStore.chart.tradingTimes ? ._calculatingTradingTime(j.tradingTimes), this.tradingTimes = JSON.stringify(j.tradingTimes)), j ? .activeSymbols && "object" == typeof j.activeSymbols && JSON.stringify(j.activeSymbols) !== this.activeSymbols && (this.activeSymbols = JSON.stringify(j.activeSymbols), this.mainStore.chart.activeSymbols ? .computeActiveSymbols(j.activeSymbols)), this.chartStatusListener = i, this.stateChangeListener = o, this.isAnimationEnabled = d, this.isConnectionOpened = h, this.isStaticChart = f, this.isVerticalScrollEnabled = p, this.margin = g, this.has_updated_settings = !fO(this.settings ? .whitespace, b ? .whitespace), this.settings = b, this.shouldFetchTradingTimes = _, this.shouldFetchTickHistory = S, this.allowTickChartTypeOnly = T, this.allTicks = x, this.contractInfo = E, this.showLastDigitStats = C, this.getIndicatorHeightRatio = s;
+                            j ?.tradingTimes && "object" == typeof j.tradingTimes && JSON.stringify(j.tradingTimes) !== this.tradingTimes && (this.mainStore.chart.tradingTimes ?._calculatingTradingTime(j.tradingTimes), this.tradingTimes = JSON.stringify(j.tradingTimes)), j ?.activeSymbols && "object" == typeof j.activeSymbols && JSON.stringify(j.activeSymbols) !== this.activeSymbols && (this.activeSymbols = JSON.stringify(j.activeSymbols), this.mainStore.chart.activeSymbols ?.computeActiveSymbols(j.activeSymbols)), this.chartStatusListener = i, this.stateChangeListener = o, this.isAnimationEnabled = d, this.isConnectionOpened = h, this.isStaticChart = f, this.isVerticalScrollEnabled = p, this.margin = g, this.has_updated_settings = !fO(this.settings ?.whitespace, b ?.whitespace), this.settings = b, this.shouldFetchTradingTimes = _, this.shouldFetchTickHistory = S, this.allowTickChartTypeOnly = T, this.allTicks = x, this.contractInfo = E, this.showLastDigitStats = C, this.getIndicatorHeightRatio = s;
                             let U = this.mainStore.chart.feed;
                             if (a && U && E.tick_stream && (this.shouldDrawTicksFromContractInfo = a, U.appendChartDataFromPOCResponse.call(U, E)), !t || this.mainStore.chart.networkStatus && t.class === this.mainStore.chart.networkStatus.class || (this.mainStore.chart.networkStatus = t), r !== this.chartControlsWidgets && (this.chartControlsWidgets = r), n !== this.enabledChartFooter && (this.enabledChartFooter = n), O !== this.symbol && (this.symbol = O, V = !0, this.mainStore.chartTitle.hidePrice()), l && l !== this.chartType && ("table" === l && (this.prevChartType = this.chartTypeStore.type.id), this.setChartType(l)), void 0 !== m && m !== this.granularity && (this.setChartGranularity(m), H = !0), this.chartStore.activeSymbols && v !== this.refreshActiveSymbols && (this.refreshActiveSymbols = v, this.refreshActiveSymbols && this.chartStore.activeSymbols.retrieveActiveSymbols(this.refreshActiveSymbols)), c !== this.clearChart && (this.clearChart = c, this.cleanChart()), this.startEpoch === k && this.endEpoch === u || (this.startEpoch = k, this.endEpoch = u, f && this.granularity === this.mainStore.chart.granularity ? this.mainStore.chart.newChart() : this.mainStore.chart.feed && (this.scrollToEpoch || V || H || this.mainStore.chart.feed.onRangeChanged())), f || y === this.scrollToEpoch || (this.scrollToEpoch = y, this.mainStore.chart && this.mainStore.chart.feed && !V && !H && (this.setIsChartScrollingToEpoch(!0), D ? setTimeout(() => this.stateChange(fi), 900) : this.stateChange(fi))), null != A && A !== this.crosshairState && (this.mainStore.crosshair.setCrosshairState(A), this.crosshairState = A), void 0 !== P && this.crosshairTooltipLeftAllow !== P && (this.crosshairTooltipLeftAllow = P), I && (1 === I ? this.mainStore.chartSize.zoomIn() : this.mainStore.chartSize.zoomOut()), this.mainStore.chartSetting.setSettings(this.settings), R && this.maxTick !== R && (this.maxTick = R), N && "object" == typeof N && (this.yAxisMargin = { ...this.yAxisMargin,
                                     ...N
@@ -21151,7 +21151,7 @@
                                         s = {
                                             height_factor: .8
                                         };
-                                    return o ? (n ? a && (t = r = i ? o * (a < 5 ? .3 : .25) : .27 * o) : t = r = i ? .33 * o : .27 * o, { ...s,
+                                    return o ? (n ? a && (t = r = i ? o * (a < 5 ?.3 : .25) : .27 * o) : t = r = i ?.33 * o : .27 * o, { ...s,
                                         ...t && r ? {
                                             yaxis_margin: {
                                                 top: t,
@@ -21162,7 +21162,7 @@
                                 })({
                                     is_contract_chart: a,
                                     is_mobile: this.mainStore.chart.isMobile,
-                                    ticks_length: this.mainStore.chart.feed ? .quotes.length,
+                                    ticks_length: this.mainStore.chart.feed ?.quotes.length,
                                     yaxis_height: this.mainStore.chart.chartContainerHeight
                                 });
                                 this.yAxisMargin = { ...this.yAxisMargin,
@@ -21181,7 +21181,7 @@
                             })
                         }
                         setChartTheme(e) {
-                            this.rootElement && ((this.rootElement ? .querySelector(".chartContainer")).style.backgroundColor = pN()[`${e}_chart_bg`])
+                            this.rootElement && ((this.rootElement ?.querySelector(".chartContainer")).style.backgroundColor = pN()[`${e}_chart_bg`])
                         }
                         stateChange(e, t) {
                             this.stateChangeListener && "function" == typeof this.stateChangeListener && this.stateChangeListener(e, t)
@@ -21219,7 +21219,7 @@
                             return e ? (this.mainStore.view.restoreLayout(e), !0) : (this.clearLayout(), !1)
                         }
                         clearLayout() {
-                            window.flutterChart ? .indicators.clearIndicators(), window.flutterChart ? .drawingTool.clearDrawingTool()
+                            window.flutterChart ?.indicators.clearIndicators(), window.flutterChart ?.drawingTool.clearDrawingTool()
                         }
                         saveDrawings() {
                             if (!this.chartStore.chartId) return;
@@ -21331,7 +21331,7 @@
                                 onMasterDataUpdate: tT.bound,
                                 updateBars: tT.bound
                             }), this.mainStore = e, tK(() => !!this.context, () => {
-                                this.lastSymbol = this.marketDisplayName, this.mainStore.chart.feed ? .onMasterDataUpdate(this.onMasterDataUpdate), this.mainStore.chart.feed ? .onMasterDataReinitialize(() => {
+                                this.lastSymbol = this.marketDisplayName, this.mainStore.chart.feed ?.onMasterDataUpdate(this.onMasterDataUpdate), this.mainStore.chart.feed ?.onMasterDataReinitialize(() => {
                                     this.context && this.mainStore.chart.feed && (this.mainStore.chart.feed.offMasterDataUpdate(this.onMasterDataUpdate), this.mainStore.chart.feed.onMasterDataUpdate(this.onMasterDataUpdate))
                                 })
                             })
@@ -21343,7 +21343,7 @@
                             return this.mainStore.chart.api
                         }
                         get decimalPlaces() {
-                            return this.mainStore.chart.currentActiveSymbol ? .decimal_places || 2
+                            return this.mainStore.chart.currentActiveSymbol ?.decimal_places || 2
                         }
                         get isVisible() {
                             return this.mainStore.state.showLastDigitStats
@@ -21361,11 +21361,11 @@
                                 height: 0,
                                 cName: ""
                             });
-                            let t = e || await this.api ? .getTickHistory({
+                            let t = e || await this.api ?.getTickHistory({
                                 symbol: this.mainStore.chart.currentActiveSymbol.symbol,
                                 count: this.count
                             });
-                            this.latestData = t ? .history ? .prices ? t.history.prices : [], this.context && this.mainStore.chart.currentActiveSymbol && (this.latestData.forEach(e => {
+                            this.latestData = t ?.history ?.prices ? t.history.prices : [], this.context && this.mainStore.chart.currentActiveSymbol && (this.latestData.forEach(e => {
                                 let t = (+e).toFixed(this.decimalPlaces).slice(-1);
                                 this.digits[+t]++
                             }), this.updateBars())
@@ -21474,7 +21474,7 @@
                             return this.mainStore.chartSetting.isHighestLowestMarkerEnabled
                         }
                         get decimalPlaces() {
-                            return this.mainStore.chart.currentActiveSymbol ? .decimal_places || 2
+                            return this.mainStore.chart.currentActiveSymbol ?.decimal_places || 2
                         }
                         constructor(e) {
                             pH(this, "highestRef", null), pH(this, "lowestRef", null), pH(this, "mainStore", void 0), pH(this, "highest", null), pH(this, "lowest", null), pH(this, "setHighestRef", e => {
@@ -21483,7 +21483,7 @@
                                 this.lowestRef = e, null != this.lowestRef && null !== e && (this.lowestRef.value = e.div.querySelector(".spot__value"))
                             }), pH(this, "calculateHighestLowestByNewData", () => {
                                 if (!this.highestRef || !this.lowestRef) return;
-                                let e = this.mainStore.chart.feed ? .quotes;
+                                let e = this.mainStore.chart.feed ?.quotes;
                                 if (e && e.length && (this.highest = null, this.lowest = null, e.forEach(e => {
                                         e && ((!this.highest || this.highest.Close <= e.Close) && (this.highest = e), (!this.lowest || this.lowest.Close >= e.Close) && (this.lowest = e))
                                     })), !this.highest || !this.lowest || this.highest.Close === this.lowest.Close) return this.highestRef.setPosition({
@@ -21538,7 +21538,7 @@
                         }
                         constructor(e) {
                             pq(this, "mainStore", void 0), pq(this, "ref", null), pq(this, "isOnPagination", !1), pq(this, "paginationEndEpoch", null), pq(this, "onContextReady", () => {
-                                this.feed ? .onStartPagination(this.setOnPagination), this.feed ? .onPagination(this.setOnPagination)
+                                this.feed ?.onStartPagination(this.setOnPagination), this.feed ?.onPagination(this.setOnPagination)
                             }), pq(this, "setRef", e => {
                                 this.ref = e, null !== this.ref && this.ref.setPosition({
                                     epoch: this.paginationEndEpoch,
@@ -21641,7 +21641,7 @@
                         }
                     }
                     let pK = () => {
-                        window._flutter.initState.isMounted && (window._flutter.appRunner ? .runApp(), window._flutter.initState.isInitialRunCompleted = !0)
+                        window._flutter.initState.isMounted && (window._flutter.appRunner ?.runApp(), window._flutter.initState.isInitialRunCompleted = !0)
                     };
 
                     function pY(e, t, r) {
@@ -21716,12 +21716,12 @@
                                 x: 0,
                                 y: 0
                             }), pJ(this, "isOverFlutterCharts", !1), pJ(this, "clearTouchDeltasTimer", void 0), pJ(this, "enableXScrollTimer", void 0), pJ(this, "enableYScrollTimer", void 0), pJ(this, "checkIndicatorHover", (e, t, r, n, i) => {
-                                let a = this.flutterChart ? .crosshair.getEpochFromX(r) || 0,
-                                    o = (this.flutterChart ? .crosshair.getQuoteFromY(n) || 0).toFixed(this.mainStore.crosshair.decimalPlaces);
+                                let a = this.flutterChart ?.crosshair.getEpochFromX(r) || 0,
+                                    o = (this.flutterChart ?.crosshair.getQuoteFromY(n) || 0).toFixed(this.mainStore.crosshair.decimalPlaces);
                                 this.mainStore.crosshair.onMouseMove(e, t, a, o);
-                                let s = this.mainStore.chart.feed ? .getClosestValidEpoch,
+                                let s = this.mainStore.chart.feed ?.getClosestValidEpoch,
                                     l = this.mainStore.chartAdapter.getGranularityInMs(),
-                                    c = this.flutterChart ? .app.getIndicatorHoverIndex(r, n, s, l, i);
+                                    c = this.flutterChart ?.app.getIndicatorHoverIndex(r, n, s, l, i);
                                 this.isScaled ? this.isScaled = !1 : this.mainStore.studies.highlightIndicator(c, e, t)
                             }), pJ(this, "debouncedIndicatorHover", fm()(this.checkIndicatorHover, 5)), pJ(this, "onWheel", e => {
                                 e.preventDefault(), e.stopPropagation();
@@ -21742,15 +21742,15 @@
                                 if (0 === e.deltaX && 0 === e.deltaZ) {
                                     let t = (100 - Math.min(10, Math.max(-10, e.deltaY))) / 100;
                                     this.scale(t)
-                                } else window.flutterChart ? .app.scroll(e.deltaX);
+                                } else window.flutterChart ?.app.scroll(e.deltaX);
                                 return !1
                             }), pJ(this, "onMouseMove", e => {
-                                this.isOverFlutterCharts = "flt-glass-pane" === e.target ? .tagName ? .toLowerCase()
+                                this.isOverFlutterCharts = "flt-glass-pane" === e.target ?.tagName ?.toLowerCase()
                             }), pJ(this, "onDoubleClick", () => {
                                 null != this.drawingHoverIndex ? (this.mainStore.drawTools.onSetting(this.drawingHoverIndex), this.mainStore.crosshair.removeDrawingToolToolTip()) : null != this.mainStore.studies.currentHoverIndex && (this.mainStore.studies.editStudyByIndex(this.mainStore.studies.currentHoverIndex), this.mainStore.studies.clearHoverItem(this.mainStore.studies.currentHoverIndex))
                             }), pJ(this, "newChart", async () => {
-                                this.isFeedLoaded = !1, this.isDataFitModeEnabled = this.mainStore.chart.startWithDataFitMode || !1, await tK(() => this.isChartLoaded), this.flutterChart ? .app.newChart({
-                                    symbol: this.mainStore.chart.currentActiveSymbol ? .symbol,
+                                this.isFeedLoaded = !1, this.isDataFitModeEnabled = this.mainStore.chart.startWithDataFitMode || !1, await tK(() => this.isChartLoaded), this.flutterChart ?.app.newChart({
+                                    symbol: this.mainStore.chart.currentActiveSymbol ?.symbol,
                                     granularity: this.getGranularityInMs(),
                                     chartType: this.mainStore.state.chartType,
                                     isLive: this.mainStore.chart.isLive || !1,
@@ -21777,18 +21777,18 @@
                             }), pJ(this, "stopScroll", e => {
                                 e.style.removeProperty("overflow-y"), e.style.removeProperty("overflow-x"), e.style.removeProperty("touch-action")
                             }), pJ(this, "toggleDataFitMode", () => {
-                                this.isDataFitModeEnabled = !this.isDataFitModeEnabled, window.flutterChart ? .app.toggleDataFitMode(this.isDataFitModeEnabled)
+                                this.isDataFitModeEnabled = !this.isDataFitModeEnabled, window.flutterChart ?.app.toggleDataFitMode(this.isDataFitModeEnabled)
                             }), pJ(this, "getInterpolatedPositionAndPrice", e => {
                                 if (!e) return;
                                 let t = fk().utc(e).toDate(),
-                                    r = this.mainStore.chart.feed ? .getClosestQuoteIndexForEpoch(e),
+                                    r = this.mainStore.chart.feed ?.getClosestQuoteIndexForEpoch(e),
                                     n = this.getXFromEpoch(e);
                                 if ("number" == typeof r && r > -1) {
-                                    let e = this.mainStore.chart.feed ? .quotes[r],
+                                    let e = this.mainStore.chart.feed ?.quotes[r],
                                         i, a, o, s = e ? e.Close : null;
                                     if (e && e.DT < t) {
-                                        let l = this.mainStore.chart.feed ? .quotes[r + 1],
-                                            c = r > 0 ? this.mainStore.chart.feed ? .quotes[r - 1] : null;
+                                        let l = this.mainStore.chart.feed ?.quotes[r + 1],
+                                            c = r > 0 ? this.mainStore.chart.feed ?.quotes[r - 1] : null;
                                         l && l.Close && l.DT > t ? (i = this.getXFromEpoch(l.DT.getTime()) - n, o = (t - e.DT.getTime()) / (l.DT.getTime() - e.DT.getTime()), s && (a = l.Close - s)) : c && c.Close && (i = n - this.getXFromEpoch(c.DT.getTime()), o = (t - e.DT.getTime()) / (e.DT.getTime() - c.DT.getTime()), s && (a = s - c.Close))
                                     }
                                     return o && (i && (n += o * i), s && a && (s += o * a)), {
@@ -21838,7 +21838,7 @@
                                 onCrosshairHover: (e, t, r, n, i) => {
                                     if (this.isOverFlutterCharts) {
                                         if (this.onCrosshairMove(e, t, r, n, i), null != this.drawingHoverIndex) {
-                                            let r = this.mainStore.chartAdapter.flutterChart ? .drawingTool.getDrawingToolsRepoItems().map(e => na(e)).filter(e => e);
+                                            let r = this.mainStore.chartAdapter.flutterChart ?.drawingTool.getDrawingToolsRepoItems().map(e => na(e)).filter(e => e);
                                             if (!r) return;
                                             let n = r[this.drawingHoverIndex];
                                             n && this.mainStore.crosshair.renderDrawingToolToolTip(pe(n.name.replace("dt_", "")) || "", e, t)
@@ -21911,30 +21911,30 @@
                         onMount(e) {
                             e.appendChild(window.flutterChartElement);
                             let t = window._flutter.initState;
-                            t.isMounted = !0, t.isEngineIntialized && !t.isInitialRunCompleted && pK(), window.flutterChartElement ? .addEventListener("wheel", this.onWheel, {
+                            t.isMounted = !0, t.isEngineIntialized && !t.isInitialRunCompleted && pK(), window.flutterChartElement ?.addEventListener("wheel", this.onWheel, {
                                 capture: !0
-                            }), window.flutterChartElement ? .addEventListener("touchstart", this.onTouch, {
+                            }), window.flutterChartElement ?.addEventListener("touchstart", this.onTouch, {
                                 capture: !0
-                            }), window.flutterChartElement ? .addEventListener("touchmove", this.onTouch, {
+                            }), window.flutterChartElement ?.addEventListener("touchmove", this.onTouch, {
                                 capture: !0
-                            }), window.flutterChartElement ? .addEventListener("touchend", this.onTouch, {
+                            }), window.flutterChartElement ?.addEventListener("touchend", this.onTouch, {
                                 capture: !0
-                            }), window.flutterChartElement ? .addEventListener("dblclick", this.onDoubleClick, {
+                            }), window.flutterChartElement ?.addEventListener("dblclick", this.onDoubleClick, {
                                 capture: !0
                             }), window.addEventListener("mousemove", this.onMouseMove, {
                                 capture: !0
                             })
                         }
                         onUnmount() {
-                            window._flutter.initState.isMounted = !1, window.flutterChartElement ? .removeEventListener("wheel", this.onWheel, {
+                            window._flutter.initState.isMounted = !1, window.flutterChartElement ?.removeEventListener("wheel", this.onWheel, {
                                 capture: !0
-                            }), window.flutterChartElement ? .removeEventListener("touchstart", this.onTouch, {
+                            }), window.flutterChartElement ?.removeEventListener("touchstart", this.onTouch, {
                                 capture: !0
-                            }), window.flutterChartElement ? .removeEventListener("touchmove", this.onTouch, {
+                            }), window.flutterChartElement ?.removeEventListener("touchmove", this.onTouch, {
                                 capture: !0
-                            }), window.flutterChartElement ? .removeEventListener("touchend", this.onTouch, {
+                            }), window.flutterChartElement ?.removeEventListener("touchend", this.onTouch, {
                                 capture: !0
-                            }), window.flutterChartElement ? .removeEventListener("dblclick", this.onDoubleClick, {
+                            }), window.flutterChartElement ?.removeEventListener("dblclick", this.onDoubleClick, {
                                 capture: !0
                             }), window.removeEventListener("mousemove", this.onMouseMove, {
                                 capture: !0
@@ -21950,8 +21950,8 @@
                             let t = this.mainStore.chart.chartNode,
                                 r = document.querySelector(".flutter-chart");
                             if (t && this.scrollableChartParent && !this.mainStore.state.isVerticalScrollEnabled) {
-                                if (this.touchValues.multiTouch) return void("touchend" === e.type && (this.touchValues.touchIds = this.touchValues.touchIds ? .filter(t => t === e.changedTouches[0].identifier), this.touchValues = {
-                                    multiTouch: !!this.touchValues.touchIds ? .length
+                                if (this.touchValues.multiTouch) return void("touchend" === e.type && (this.touchValues.touchIds = this.touchValues.touchIds ?.filter(t => t === e.changedTouches[0].identifier), this.touchValues = {
+                                    multiTouch: !!this.touchValues.touchIds ?.length
                                 }));
                                 if (e.touches.length > 1) return this.touchValues = {
                                     multiTouch: !0
@@ -21971,8 +21971,8 @@
                                     if (this.touchValues.x && this.touchValues.y) {
                                         let t = this.touchValues.x - n,
                                             l = this.touchValues.y - i,
-                                            u = (this.touchValues.deltaXTotal ? ? 0) + t,
-                                            d = (this.touchValues.deltaYTotal ? ? 0) + l,
+                                            u = (this.touchValues.deltaXTotal ?? 0) + t,
+                                            d = (this.touchValues.deltaYTotal ?? 0) + l,
                                             h = "touchend" === e.type ? Math.abs(u) : Math.abs(t),
                                             f = ("touchend" === e.type ? Math.abs(d) : Math.abs(l)) > h;
                                         this.touchValues = { ...this.touchValues,
@@ -21996,8 +21996,8 @@
                             }
                         }
                         onCrosshairMove(e, t, r, n, i) {
-                            let a = this.flutterChart ? .crosshair.getEpochFromX(r) || 0,
-                                o = (this.flutterChart ? .crosshair.getQuoteFromY(n) || 0).toFixed(this.mainStore.crosshair.decimalPlaces);
+                            let a = this.flutterChart ?.crosshair.getEpochFromX(r) || 0,
+                                o = (this.flutterChart ?.crosshair.getQuoteFromY(n) || 0).toFixed(this.mainStore.crosshair.decimalPlaces);
                             this.mainStore.crosshair.onMouseMove(e, t, a, o), this.crossHairValue = {
                                 x: e,
                                 y: t,
@@ -22031,14 +22031,14 @@
                             return 1e3 * (this.mainStore.state.granularity || 1)
                         }
                         async onTickHistory(e) {
-                            this.isFeedLoaded = !0, await tK(() => this.isChartLoaded), this.mainStore.chart.feed ? .updateQuotes(e, !1), this.flutterChart ? .feed.onTickHistory(e, !1)
+                            this.isFeedLoaded = !0, await tK(() => this.isChartLoaded), this.mainStore.chart.feed ?.updateQuotes(e, !1), this.flutterChart ?.feed.onTickHistory(e, !1)
                         }
                         async onTick(e) {
                             await tK(() => this.isChartLoaded);
-                            let t = this.mainStore.chart.feed ? .quotes[this.mainStore.chart.feed ? .quotes.length - 1];
-                            t && new Date(t.Date) > new Date(e.Date) || (this.mainStore.chart.feed ? .addQuote(e), tO(() => {
+                            let t = this.mainStore.chart.feed ?.quotes[this.mainStore.chart.feed ?.quotes.length - 1];
+                            t && new Date(t.Date) > new Date(e.Date) || (this.mainStore.chart.feed ?.addQuote(e), tO(() => {
                                 this.mainStore.chart.lastQuote = e
-                            }), e.ohlc ? this.flutterChart ? .feed.onNewCandle(e) : 6e4 > this.getGranularityInMs() && this.flutterChart ? .feed.onNewTick(e))
+                            }), e.ohlc ? this.flutterChart ?.feed.onNewCandle(e) : 6e4 > this.getGranularityInMs() && this.flutterChart ?.feed.onNewTick(e))
                         }
                         loadHistory(e) {
                             let {
@@ -22050,41 +22050,41 @@
                             } = this.mainStore, {
                                 granularity: a
                             } = n;
-                            i.feed ? .fetchPaginationData(i.currentActiveSymbol ? .symbol, r, t, a, e => {
+                            i.feed ?.fetchPaginationData(i.currentActiveSymbol ?.symbol, r, t, a, e => {
                                 let {
                                     quotes: t
                                 } = e;
-                                this.mainStore.chart.feed ? .updateQuotes(t || [], !0), this.flutterChart ? .feed.onTickHistory(t || [], !0)
+                                this.mainStore.chart.feed ?.updateQuotes(t || [], !0), this.flutterChart ?.feed.onTickHistory(t || [], !0)
                             })
                         }
                         updateChartStyle(e) {
-                            this.flutterChart ? .config.updateChartStyle(e)
+                            this.flutterChart ?.config.updateChartStyle(e)
                         }
                         async updateTheme(e) {
-                            await tK(() => this.isChartLoaded), this.flutterChart ? .config.updateTheme(e)
+                            await tK(() => this.isChartLoaded), this.flutterChart ?.config.updateTheme(e)
                         }
                         async updateLeftMargin(e) {
-                            await tK(() => this.isChartLoaded), this.flutterChart ? .config.updateLeftMargin(e)
+                            await tK(() => this.isChartLoaded), this.flutterChart ?.config.updateLeftMargin(e)
                         }
                         async updateLiveStatus(e) {
-                            await tK(() => this.isChartLoaded), this.flutterChart ? .config.updateLiveStatus(e)
+                            await tK(() => this.isChartLoaded), this.flutterChart ?.config.updateLiveStatus(e)
                         }
                         async setSymbolClosed(e) {
-                            await tK(() => this.isChartLoaded), this.flutterChart ? .config.setSymbolClosed(e)
+                            await tK(() => this.isChartLoaded), this.flutterChart ?.config.setSymbolClosed(e)
                         }
                         async updateRightPadding(e) {
-                            await tK(() => this.isChartLoaded), this.flutterChart ? .config.updateRightPadding(e)
+                            await tK(() => this.isChartLoaded), this.flutterChart ?.config.updateRightPadding(e)
                         }
                         async setShowInterval(e) {
-                            await tK(() => this.isChartLoaded), this.flutterChart ? .config.toggleTimeIntervalVisibility(e)
+                            await tK(() => this.isChartLoaded), this.flutterChart ?.config.toggleTimeIntervalVisibility(e)
                         }
                         scale(e) {
                             null !== this.mainStore.studies.currentHoverIndex && (this.isScaled = !0), this.isDataFitModeEnabled = !1;
-                            let t = this.flutterChart ? .app.scale(e);
+                            let t = this.flutterChart ?.app.scale(e);
                             null != t && this.setMsPerPx(t)
                         }
                         async updateContracts(e) {
-                            let t = e.filter(e => e.markers ? .length > 0).map(e => (e.markers.forEach(e => {
+                            let t = e.filter(e => e.markers ?.length > 0).map(e => (e.markers.forEach(e => {
                                 if (!e.quote) {
                                     let {
                                         price: t
@@ -22092,22 +22092,22 @@
                                     e.quote = t
                                 }
                             }), e));
-                            await tK(() => this.isFeedLoaded), this.flutterChart ? .config.updateContracts(t)
+                            await tK(() => this.isFeedLoaded), this.flutterChart ?.config.updateContracts(t)
                         }
                         setMsPerPx(e) {
                             this.msPerPx = e, this.mainStore.state.saveLayout()
                         }
                         getXFromEpoch(e) {
-                            return this.flutterChart ? .app.getXFromEpoch(e) ? ? 0
+                            return this.flutterChart ?.app.getXFromEpoch(e) ?? 0
                         }
                         getYFromQuote(e) {
-                            return this.flutterChart ? .app.getYFromQuote(e) ? ? 0
+                            return this.flutterChart ?.app.getYFromQuote(e) ?? 0
                         }
                         getEpochFromX(e) {
-                            return this.flutterChart ? .app.getEpochFromX(e) ? ? 0
+                            return this.flutterChart ?.app.getEpochFromX(e) ?? 0
                         }
                         getQuoteFromY(e) {
-                            return this.flutterChart ? .app.getQuoteFromY(e) ? ? 0
+                            return this.flutterChart ?.app.getQuoteFromY(e) ?? 0
                         }
                         get scrollableChartParent() {
                             let e = this.mainStore.chart.chartNode;
@@ -22167,9 +22167,9 @@
                                 let r = rZ().useRef(!1);
                                 r.current || (i.current = new t(n), r.current = !0)
                             })(), rZ().useEffect(() => {
-                                i.current ? .updateProps ? .(r)
+                                i.current ?.updateProps ?.(r)
                             }), rZ().useEffect(() => () => {
-                                i.current ? .destructor ? .()
+                                i.current ?.destructor ?.()
                             }, []), rZ().createElement(rZ().Fragment, null, r.children(i.current))
                         },
                         p6 = e => {
@@ -23444,8 +23444,8 @@
                                 content: e.isPrediction && l ? m7.translate("This indicator does not support 1-tick intervals. To use this indicator, change your chart time interval to 1 minute or more.") : `${e.name} ${e.bars?`(${e.bars})`:""}`
                             }, rZ().createElement("div", {
                                 className: "info",
-                                onClick: () => r ? .(e.flutter_chart_id),
-                                onTouchEnd: () => r ? .(e.flutter_chart_id)
+                                onClick: () => r ?.(e.flutter_chart_id),
+                                onTouchEnd: () => r ?.(e.flutter_chart_id)
                             }, rZ().createElement(m9, {
                                 Icon: e.icon
                             }), rZ().createElement("div", {
@@ -23607,12 +23607,12 @@
                                 isMobile: C
                             } = n, T = o.open, k = p.length;
                             _(t);
-                            let O = e => hJ().find(t => t.items.some(t => t.flutter_chart_id === e)) ? .category.replace("-", " ") ? ? "",
+                            let O = e => hJ().find(t => t.items.some(t => t.flutter_chart_id === e)) ?.category.replace("-", " ") ?? "",
                                 A = (e, t, r) => {
                                     i.stateChange(t, {
                                         indicator_type_name: e,
                                         indicators_category_name: O(e),
-                                        ...r ? ? {}
+                                        ...r ?? {}
                                     })
                                 };
                             return rZ().createElement(md, {
@@ -23648,20 +23648,20 @@
                                 autoHide: !0,
                                 height: "360px",
                                 className: "sc-studies__info__content"
-                            }, rZ().createElement("p", null, b ? .description)), rZ().createElement("div", {
+                            }, rZ().createElement("p", null, b ?.description)), rZ().createElement("div", {
                                 className: "sc-studies__info__footer"
                             }, rZ().createElement(mn, {
-                                enabled: b ? .disabledAddBtn,
+                                enabled: b ?.disabledAddBtn,
                                 content: fa.predictionIndicator
                             }, rZ().createElement("button", {
                                 type: "button",
                                 className: "sc-btn sc-btn--primary sc-btn--w100",
                                 onClick: () => {
-                                    f(b ? .flutter_chart_id), A(b ? .flutter_chart_id, ft, {
+                                    f(b ?.flutter_chart_id), A(b ?.flutter_chart_id, ft, {
                                         is_info_open: !0
                                     })
                                 },
-                                disabled: b ? .disabledAddBtn
+                                disabled: b ?.disabledAddBtn
                             }, m7.translate("Add"))))), rZ().createElement(gi, {
                                 onSelectTab: h,
                                 selectedTab: d,
@@ -23766,7 +23766,7 @@
                                 let {
                                     chartType: r,
                                     timeUnit: n
-                                } = e ? ? {};
+                                } = e ?? {};
                                 return t && !("line" === r && "tick" === n)
                             };
                             return rZ().createElement("div", {
@@ -23972,8 +23972,8 @@
                                 onRowClick: o,
                                 className: s
                             } = e, [l, c] = rZ().useState(!1), [u, d] = rZ().useState(0), [h, f] = rZ().useState(0), [p, m] = rZ().useState(), g = rZ().useRef(null), v = rZ().useRef(null), y = rZ().useCallback(() => {
-                                let e = g.current ? .getBoundingClientRect();
-                                d(l ? void 0 : e ? .top), f(l ? void 0 : e ? .left), m(e ? .width), c(e => !e)
+                                let e = g.current ?.getBoundingClientRect();
+                                d(l ? void 0 : e ?.top), f(l ? void 0 : e ?.left), m(e ?.width), c(e => !e)
                             }, [l, g]), b = rZ().useCallback(e => {
                                 e.target !== v.current && (c(!1), d(0), f(0))
                             }, [v]);
@@ -24072,8 +24072,8 @@
                                 theme: i,
                                 setColor: a
                             } = e, [o, s] = rZ().useState(!1), [l, c] = rZ().useState(0), [u, d] = rZ().useState(0), [h, f] = rZ().useState(), p = rZ().useRef(null), m = rZ().useRef(null), g = rZ().useMemo(() => "auto" !== r ? r : "light" === i ? "#000000" : "#ffffff", [r, i]), v = rZ().useCallback(() => {
-                                let e = p.current ? .getBoundingClientRect();
-                                c(o ? void 0 : e ? .top), d(o ? void 0 : e ? .left), f(e ? .width), s(e => !e)
+                                let e = p.current ?.getBoundingClientRect();
+                                c(o ? void 0 : e ?.top), d(o ? void 0 : e ?.left), f(e ?.width), s(e => !e)
                             }, [o, p]), y = rZ().useCallback(e => {
                                 e.target !== m.current && (s(!1), c(0), d(0))
                             }, [m]);
@@ -24594,7 +24594,7 @@
                                 key: e.key,
                                 onClick: () => c(e.key),
                                 className: n()("form__group__item", {
-                                    "form__group__item--active": s ? .key === e.key
+                                    "form__group__item--active": s ?.key === e.key
                                 })
                             }, e.icon, rZ().createElement("span", {
                                 className: "text"
@@ -24902,7 +24902,7 @@
                                 hasSubgroup: d,
                                 favoritesId: h
                             } = e, f = e => {
-                                o ? .(e, t.categoryId)
+                                o ?.(e, t.categoryId)
                             };
                             return rZ().createElement("div", {
                                 className: n()("sc-mcd__category", `sc-mcd__category--${t.categoryId}`, {
@@ -24967,7 +24967,7 @@
                                     isNestedList: s,
                                     handleTitleClick: l,
                                     favoritesId: c
-                                }), e.subgroups ? .map(e => {
+                                }), e.subgroups ?.map(e => {
                                     if (g1(e) > 0) return rZ().createElement(g6, {
                                         key: e.categoryId,
                                         ItemType: n,
@@ -25007,7 +25007,7 @@
                             } = p2(), [o] = rZ().useState(pO.getInstance()), [s, l] = rZ().useState(!1), c = rZ().useCallback(e => {
                                 e.stopPropagation(), e.nativeEvent.isHandledByDialog = !0, o.toggleFavorite(t, r), a.stateChange("FAVORITE_MARKETS_TOGGLE", {
                                     is_favorite: o.isFavorite(t, r),
-                                    symbol: i.activeSymbols ? .symbolMap[r] ? .symbol
+                                    symbol: i.activeSymbols ?.symbolMap[r] ?.symbol
                                 })
                             }, [i, a, o, t, r]), u = rZ().useCallback(() => {
                                 let e = o.isFavorite(t, r);
@@ -25071,7 +25071,7 @@
                             } = e;
                             return rZ().createElement("div", {
                                 className: `sc-mcd__item sc-mcd__item--${r.itemId} ${r.selected?"sc-mcd__item--selected ":""}`,
-                                onClick: () => r.enabled && t ? .(r.dataObject)
+                                onClick: () => r.enabled && t ?.(r.dataObject)
                             }, rZ().createElement(ve, {
                                 item: r
                             }), rZ().createElement(vt, {
@@ -25124,7 +25124,7 @@
                                 let l = t && t.length ? t === e.categoryId : r === e.categoryId,
                                     u = i.subgroups.filter(e => e.categoryId === t || !t && e.categoryId === r).length > 0;
                                 return l && u && !o ? (s(!0), c(!0)) : !u && o && s(!1), rZ().createElement("div", {
-                                    key: e ? .categoryId,
+                                    key: e ?.categoryId,
                                     className: `sc-mcd__filter__subgroups-item ${o?"sc-mcd__filter__item--active":""} ${l&&!a?"sc-mcd__filter__item--selected":""}`,
                                     onClick: () => n(e.categoryId)
                                 }, vn.translate(e.categoryName))
@@ -25185,7 +25185,7 @@
                                 isMobile: x
                             } = t.chart, E = rZ().createElement(g4, {
                                 onSelectItem: (e, t) => {
-                                    w ? .(e, t), c("")
+                                    w ?.(e, t), c("")
                                 },
                                 disableAll: i,
                                 isNestedList: a,
@@ -25475,7 +25475,7 @@
                             }), []), rZ().useEffect(() => {
                                 c()
                             }, [r.epochBounds, r.quoteBounds, r.isFeedLoaded, r.isChartLoaded, t.lastQuote]), rZ().useEffect(() => {
-                                let e = o.current ? .querySelector(".chart-spot-label-profit");
+                                let e = o.current ?.querySelector(".chart-spot-label-profit");
                                 return e && r.updateRightPadding(110), () => {
                                     e && r.updateRightPadding(0)
                                 }
@@ -25680,9 +25680,9 @@
                                 isChartReady: o
                             } = i, [s, l] = rZ().useState();
                             return rZ().useEffect(() => {
-                                a ? .then(e => {
+                                a ?.then(e => {
                                     let r = `cq-inchart-${t}`,
-                                        n = e.topNode ? .querySelector(`.${r}`);
+                                        n = e.topNode ?.querySelector(`.${r}`);
                                     n || (n = function(e) {
                                         let t = document.createElement("div");
                                         return t.innerHTML = e, t.firstChild
@@ -25742,9 +25742,9 @@
                                     }
                                 }, e => e),
                                 number: e => rZ().createElement(gg, {
-                                    min: e.min ? ? 1,
-                                    step: e.step ? ? 1,
-                                    max: e.max ? ? 100,
+                                    min: e.min ?? 1,
+                                    step: e.step ?? 1,
+                                    max: e.max ?? 100,
                                     value: e.value,
                                     onChange: t => i(e, t)
                                 }),
@@ -25900,13 +25900,13 @@
                                 isFeedLoaded: n
                             } = t, {
                                 feed: i
-                            } = e, a = i ? .quotes;
+                            } = e, a = i ?.quotes;
                             if (void 0 === a || !1 === n || 0 === a.length) return null;
-                            let o = a[a.length - 1].DT ? .getTime();
+                            let o = a[a.length - 1].DT ?.getTime();
                             return o ? r.rightEpoch > o ? null : rZ().createElement("div", {
                                 className: "scroll_to_recent",
                                 onClick: () => {
-                                    t.flutterChart ? .app.scrollToLastTick()
+                                    t.flutterChart ?.app.scrollToLastTick()
                                 }
                             }, rZ().createElement(dq, null)) : null
                         });
@@ -25987,7 +25987,7 @@
                             }, [e]), t.current
                         })(vj.lang);
                         rZ().useEffect(() => {
-                            D && D !== vj.lang && !P && N ? .()
+                            D && D !== vj.lang && !P && N ?.()
                         }, [vj.lang]);
                         let {
                             id: j,
@@ -38613,10 +38613,10 @@ attempted value: ${a}
                 name: o,
                 mergeRefs: s
             }) {
-                s = s ? ? ec;
+                s = s ?? ec;
                 let l = eu(t, e);
                 if (a) return el(l, r, n, o, s);
-                let c = i ? ? 0;
+                let c = i ?? 0;
                 if (2 & c) {
                     let {
                         static: e = !1,
@@ -38849,7 +38849,7 @@ attempted value: ${a}
                                 let r = t.resolveItems();
                                 if (r.length <= 0) return null;
                                 let n = t.resolveActiveIndex(),
-                                    i = n ? ? -1;
+                                    i = n ?? -1;
                                 switch (e.focus) {
                                     case 0:
                                         for (let e = 0; e < r.length; ++e)
@@ -40744,7 +40744,7 @@ attempted value: ${a}
                                 return a[r.indexOf(i)] = !0, a
                             }(t, e)
                         },
-                        h = c ? ? (t = null == s ? l : s, r = n, "" === t || !(null != r && r.match(/\d/)) && "string" == typeof t && (!!t.match(/^\d+$/) || "" === t)),
+                        h = c ?? (t = null == s ? l : s, r = n, "" === t || !(null != r && r.match(/\d/)) && "string" == typeof t && (!!t.match(/^\d+$/) || "" === t)),
                         f = Object.assign(Object.assign({}, e), {
                             valueIsNumericString: h
                         });
@@ -41460,7 +41460,7 @@ attempted value: ${a}
                     theme: t,
                     persistent: r
                 }) => {
-                    let [a, o] = (0, i.useState)(t), [s, d] = (0, i.useState)(t ? ? "light"), h = ["light", "dark"], f = "u" > typeof document ? document.documentElement : null, p = function(e, {
+                    let [a, o] = (0, i.useState)(t), [s, d] = (0, i.useState)(t ?? "light"), h = ["light", "dark"], f = "u" > typeof document ? document.documentElement : null, p = function(e, {
                         defaultValue: t = !1,
                         initializeWithValue: r = !0
                     } = {}) {
@@ -42778,7 +42778,7 @@ attempted value: ${a}
                 ro = t5(ri),
                 rs = (e => {
                     let t = t3(e);
-                    return e => (e *= 2) < 1 ? .5 * t(e) : .5 * (2 - Math.pow(2, -10 * (e - 1)))
+                    return e => (e *= 2) < 1 ?.5 * t(e) : .5 * (2 - Math.pow(2, -10 * (e - 1)))
                 })(1.525),
                 rl = 4356 / 361,
                 rc = 35442 / 1805,
@@ -43000,7 +43000,7 @@ attempted value: ${a}
                     backOut: ra,
                     anticipate: rs,
                     bounceIn: rh,
-                    bounceInOut: e => e < .5 ? .5 * (1 - rd(1 - 2 * e)) : .5 * rd(2 * e - 1) + .5,
+                    bounceInOut: e => e < .5 ?.5 * (1 - rd(1 - 2 * e)) : .5 * rd(2 * e - 1) + .5,
                     bounceOut: rd
                 },
                 rU = function(e) {
@@ -44180,7 +44180,7 @@ attempted value: ${a}
                             dragDirectionLock: void 0 !== r && r,
                             dragPropagation: void 0 !== n && n,
                             dragConstraints: void 0 !== i && i,
-                            dragElastic: void 0 === a ? .35 : a,
+                            dragElastic: void 0 === a ?.35 : a,
                             dragMomentum: void 0 === o || o
                         })
                     }, e
@@ -44467,7 +44467,7 @@ attempted value: ${a}
             function it(e) {
                 return "string" == typeof e && e.startsWith("var(--")
             }
-            var ir = /var\((--[a-zA-Z0-9-_]+),? ?([a-zA-Z0-9 ()%#.,-]+)?\)/;
+            var ir = /var\((--[a-zA-Z0-9-_]+),??([a-zA-Z0-9 ()%#.,-]+)?\)/;
 
             function ii(e, t, r) {
                 void 0 === r && (r = 1), p(r <= 4, 'Max CSS variable fallback depth detected in property "'.concat(e, '". This may indicate a circular fallback dependency.'));
