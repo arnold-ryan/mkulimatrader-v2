@@ -7392,10 +7392,10 @@
                                     className: "landing-page__header-logo",
                                     children: [(0, n.jsx)("span", {
                                         className: "landing-page__header-logo-db",
-                                        children: "DB"
+                                        children: "Mkulima"
                                     }), (0, n.jsx)("span", {
                                         className: "landing-page__header-logo-traders",
-                                        children: "Traders"
+                                        children: "Trader"
                                     })]
                                 }), (0, n.jsxs)("button", {
                                     onClick: b,
