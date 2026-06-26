@@ -274,7 +274,7 @@
     --core-color-solid-coral-400: #ff7e88;
     --core-color-solid-coral-500: #ff6671;
     --core-color-solid-coral-600: #ff535e;
-    --core-color-solid-coral-700: #ff444f;
+    --core-color-solid-coral-700: #656d4a;
     --core-color-solid-coral-800: #e12e3a;
     --core-color-solid-coral-900: #c41c28;
     --core-color-solid-coral-1000: #a60e19;
@@ -459,15 +459,15 @@
     --core-color-opacity-cherry-600: #de0040b8;
     --core-color-opacity-cherry-700: #de0040cc;
     --core-color-opacity-cherry-800: #de0040e0;
-    --core-color-opacity-coral-75: #ff444f0a;
-    --core-color-opacity-coral-100: #ff444f14;
-    --core-color-opacity-coral-200: #ff444f29;
-    --core-color-opacity-coral-300: #ff444f3d;
-    --core-color-opacity-coral-400: #ff444f7a;
-    --core-color-opacity-coral-500: #ff444f8f;
-    --core-color-opacity-coral-600: #ff444fb8;
-    --core-color-opacity-coral-700: #ff444fcc;
-    --core-color-opacity-coral-800: #ff444fe0;
+    --core-color-opacity-coral-75: #656d4a0a;
+    --core-color-opacity-coral-100: #656d4a14;
+    --core-color-opacity-coral-200: #656d4a29;
+    --core-color-opacity-coral-300: #656d4a3d;
+    --core-color-opacity-coral-400: #656d4a7a;
+    --core-color-opacity-coral-500: #656d4a8f;
+    --core-color-opacity-coral-600: #656d4ab8;
+    --core-color-opacity-coral-700: #656d4acc;
+    --core-color-opacity-coral-800: #656d4ae0;
     --core-color-opacity-slate-75: #4146520a;
     --core-color-opacity-slate-100: #41465214;
     --core-color-opacity-slate-200: #41465229;
@@ -12047,14 +12047,14 @@ meter {
     --du-text-align-center: center;
     --du-brand-white: #fff;
     --du-brand-dark-gray: #0e0e0e;
-    --du-brand-red-coral: #ff444f;
-    --du-brand-orange: #ff6444;
-    --du-brand-secondary: #85acb0;
+    --du-brand-red-coral: #656d4a;
+    --du-brand-orange: #7f4f24;
+    --du-brand-secondary: #a4ac86;
     --du-deriv-airtm: linear-gradient(90deg, #1a8fff 0%, #0083ff 100%);
     --du-deriv-banxa: linear-gradient(90deg, #000 0%, #4ac0ba 96.35%);
     --du-deriv-bitcoin: linear-gradient(90deg, #f89e32 0%, #f7931b 103.12%);
     --du-deriv-credit: linear-gradient(274.73deg, #464750 3.82%, #0e0f11 88.49%);
-    --du-deriv-dp2p: linear-gradient(90deg, #ff444f 0%, #211d1e 95.22%);
+    --du-deriv-dp2p: linear-gradient(90deg, #656d4a 0%, #211d1e 95.22%);
     --du-deriv-fasapay: linear-gradient(90deg, #f6931c 0%, #4873ac 95.22%);
     --du-deriv-jeton: linear-gradient(90deg, #ff7635 0%, #ff671f 100%);
     --du-deriv-mastercard: linear-gradient(90deg, #eb001b 0%, #f79e1b 100%);
@@ -12093,13 +12093,13 @@ meter {
     --du-text-prominent: #333;
     --du-text-disabled: #999;
     --du-text-disabled-1: #d6d6d6;
-    --du-text-loss-danger: #ec3f3f;
-    --du-text-profit-success: #4bb4b3;
-    --du-text-warning: #ffad3a;
-    --du-text-red: #ff444f;
+    --du-text-loss-danger: #536046;
+    --du-text-profit-success: #a4ac86;
+    --du-text-warning: #a68a64;
+    --du-text-red: #656d4a;
     --du-text-green: #17eabd;
-    --du-text-blue: #0796e0;
-    --du-text-info-blue: #377cfc;
+    --du-text-blue: #656d4a;
+    --du-text-info-blue: #656d4a;
     --du-text-black: #000;
     --du-text-orange: #ff9c13;
     --du-system-dark-2-general-text: #c2c2c2;
@@ -12109,25 +12109,25 @@ meter {
     --du-icon-dark-background: #fff;
     --du-icon-gray-background: #f2f3f4;
     --du-icon-black-plus: #000;
-    --du-text-status-info-blue: #377cfc;
+    --du-text-status-info-blue: #656d4a;
     --du-text-hint: #333;
     --du-text-white: #fff;
     --du-text-black-transparent: #000000b8;
-    --du-purchase-main-1: #4bb4b3;
+    --du-purchase-main-1: #a4ac86;
     --du-purchase-section-1: #3d9494;
-    --du-purchase-main-2: #ec3f3f;
+    --du-purchase-main-2: #536046;
     --du-purchase-section-2: #d33636;
     --du-purchase-disabled-main: #eaeced;
     --du-purchase-disabled-section: #e6e9e9;
     --du-button-primary-default: var(--du-brand-red-coral);
     --du-button-secondary-default: #999;
     --du-button-tertiary-default: transparent;
-    --du-button-primary-light-default: #ff444f29;
-    --du-button-primary-hover: #eb3e48;
+    --du-button-primary-light-default: #656d4a29;
+    --du-button-primary-hover: #536046;
     --du-button-secondary-hover: #00000014;
-    --du-button-tertiary-hover: #ff444f14;
-    --du-button-primary-light-hover: #ff444f3d;
-    --du-button-toggle-primary: #0796e0;
+    --du-button-tertiary-hover: #656d4a14;
+    --du-button-primary-light-hover: #656d4a3d;
+    --du-button-toggle-primary: #656d4a;
     --du-button-toggle-secondary: #d6dadb;
     --du-button-toggle-alternate: #fff;
     --du-overlay-outside-dialog: #000000b8;
@@ -12158,14 +12158,14 @@ meter {
     --du-fill-disabled: #eaeced;
     --du-status-default: #eaeced;
     --du-status-adjustment: #999;
-    --du-status-danger: #ec3f3f;
-    --du-status-success: #4bb4b3;
-    --du-status-warning: #ffad3a;
-    --du-status-warning-transparent: #ffad3a29;
-    --du-status-transfer: #ff6444;
-    --du-status-info: #377cfc;
+    --du-status-danger: #536046;
+    --du-status-success: #a4ac86;
+    --du-status-warning: #a68a64;
+    --du-status-warning-transparent: #a68a6429;
+    --du-status-transfer: #7f4f24;
+    --du-status-info: #656d4a;
     --du-status-colored-background: #fff;
-    --du-status-alert-background: #ffad3a29;
+    --du-status-alert-background: #a68a6429;
     --du-dashboard-swap-free: linear-gradient(58.51deg, #061828 28.06%, #1a3c60 93.51%);
     --du-dashboard-app: linear-gradient(274.25deg, #333 9.01%, #5c5b5b 103.31%);
     --du-payment-skrill: linear-gradient(274.73deg, #5a205d 3.82%, #7f3883 88.49%);
@@ -12179,35 +12179,35 @@ meter {
     --du-payment-jeton: linear-gradient(90deg, #ff7635 0%, #ff671f 100%);
     --du-payment-sticpay: linear-gradient(90deg, #f36938 0%, #f25822 100%);
     --du-payment-airtm: linear-gradient(90deg, #1a8fff 0%, #0083ff 100%);
-    --du-payment-dp2p: linear-gradient(90deg, #ff444f 0%, #211d1e 95.22%);
-    --du-payment-deriv: linear-gradient(90deg, #ff6444 0%, #ff444f 100%);
-    --du-transparent-success: #4bb4b3eb;
+    --du-payment-dp2p: linear-gradient(90deg, #656d4a 0%, #211d1e 95.22%);
+    --du-payment-deriv: linear-gradient(90deg, #7f4f24 0%, #656d4a 100%);
+    --du-transparent-success: #a4ac86eb;
     --du-transparent-success-secondary: #00883214;
     --du-transparent-blue-secondary: #2c9aff14;
-    --du-transparent-info: #377cfc29;
-    --du-transparent-hint: #377cfc14;
-    --du-transparent-danger: #ff444f29;
+    --du-transparent-info: #656d4a29;
+    --du-transparent-hint: #656d4a14;
+    --du-transparent-danger: #656d4a29;
     --du-transparent-danger-secondary: #e6190e14;
-    --du-transparent-correct-message: #4bb4b329;
-    --du-transparent-fake-message: #ec3f3f29;
+    --du-transparent-correct-message: #a4ac8629;
+    --du-transparent-fake-message: #53604629;
     --du-transparent-warning-secondary: #ff9c1314;
-    --du-gradient-success: linear-gradient(to top, #fff, #4bb4b329);
-    --du-gradient-danger: linear-gradient(to top, #fff, #ff444f29);
-    --du-contract-gradient-danger: linear-gradient(to top, #fff 85%, #ff444f29);
+    --du-gradient-success: linear-gradient(to top, #fff, #a4ac8629);
+    --du-gradient-danger: linear-gradient(to top, #fff, #656d4a29);
+    --du-contract-gradient-danger: linear-gradient(to top, #fff 85%, #656d4a29);
     --du-gradient-right-edge: linear-gradient(to right, #fff0 -5%, #fff 71%);
     --du-gradient-blue: linear-gradient(90deg, #00a8af 0%, #04cfd8 104.41%);
     --du-gradient-gold: linear-gradient(90deg, #f7931a 0%, #ffc71b 104.41%);
     --du-gradient-green: linear-gradient(90deg, #1db193 0%, #09da7a 104.41%);
     --du-badge-white: #fff;
-    --du-badge-blue: #0677af;
+    --du-badge-blue: #414833;
     --du-badge-blue-secondary: #0777c4;
-    --du-badge-light-blue: #0677af;
-    --du-badge-violet: #2a3052;
-    --du-badge-success: #4bb4b3;
+    --du-badge-light-blue: #414833;
+    --du-badge-violet: #333d29;
+    --du-badge-success: #a4ac86;
     --du-badge-success-secondary: #007a22;
-    --du-badge-warning: #ffad3a;
+    --du-badge-warning: #a68a64;
     --du-badge-warning-secondary: #c47d00;
-    --du-badge-danger: #ec3f3f;
+    --du-badge-danger: #536046;
     --du-badge-danger-secondary: #c40000;
     --du-badge-purple: #722fe4;
     --du-traders-hub-banner-border-color: #e6e9e9;
@@ -12215,7 +12215,7 @@ meter {
     --du-derivs-banner-ready-tick-bg-color: #4ab4b3;
     --du-derivs-banner-border-color: #e6e9e9;
     --du-derivs-banner-dot-color: #d6d6d6;
-    --du-derivs-banner-active-dot-color: #ff444f;
+    --du-derivs-banner-active-dot-color: #656d4a;
     --du-derivs-card-active-gradient-background: linear-gradient(180deg, #0000 50%, #00000029 100%);
     --du-deriv-demo-bg-color: #fff8f9;
     --du-deriv-demo-divider-color: #fff0f1;
@@ -12231,7 +12231,7 @@ meter {
 :root .theme--dark {
     --du-general-main-1: #0e0e0e;
     --du-general-main-2: #151717;
-    --du-general-main-3: #1d1f20;
+    --du-general-main-3: #1e2416;
     --du-general-main-4: #0e0e0e80;
     --du-general-section-1: #151717;
     --du-general-section-2: #0e0e0e;
@@ -12239,7 +12239,7 @@ meter {
     --du-general-section-4: #242828;
     --du-general-section-5: #242828;
     --du-general-section-6: #6e6e6e;
-    --du-general-disabled: #1d1f20;
+    --du-general-disabled: #1e2416;
     --du-general-hover: #242828;
     --du-general-hover-1: #fff;
     --du-general-active: #323738;
@@ -12249,13 +12249,13 @@ meter {
     --du-text-primary: #999;
     --du-text-disabled: #3e3e3e;
     --du-text-disabled-1: #3e3e3e;
-    --du-text-profit-success: #00a79e;
-    --du-text-loss-danger: #cc2e3d;
-    --du-text-red: #ff444f;
+    --du-text-profit-success: #656d4a;
+    --du-text-loss-danger: #3c4f2e;
+    --du-text-red: #656d4a;
     --du-text-colored-background: #fff;
     --du-text-info-blue: #92b8ff;
     --du-text-info-blue-background: #182130;
-    --du-text-status-info-blue: #377cfc;
+    --du-text-status-info-blue: #656d4a;
     --du-text-hint: #c2c2c2;
     --du-text-white: #fff;
     --du-icon-light-background: #5c5c5c;
@@ -12263,21 +12263,21 @@ meter {
     --du-icon-gray-background: #333;
     --du-icon-black-plus: #fff;
     --du-text-black-transparent: #ffffff47;
-    --du-purchase-main-1: #00a79e;
+    --du-purchase-main-1: #656d4a;
     --du-purchase-section-1: #008079;
-    --du-purchase-main-2: #cc2e3d;
+    --du-purchase-main-2: #3c4f2e;
     --du-purchase-section-2: #a32430;
-    --du-purchase-disabled-main: #1d1f20;
+    --du-purchase-disabled-main: #1e2416;
     --du-purchase-disabled-section: #0e0e0e;
     --du-button-primary-default: var(--du-brand-red-coral);
     --du-button-secondary-default: #6e6e6e;
     --du-button-tertiary-default: transparent;
-    --du-button-primary-light-default: #ff444f29;
-    --du-button-primary-hover: #eb3e48;
+    --du-button-primary-light-default: #656d4a29;
+    --du-button-primary-hover: #536046;
     --du-button-secondary-hover: #ffffff14;
-    --du-button-tertiary-hover: #ff444f14;
-    --du-button-primary-light-hover: #ff444f3d;
-    --du-button-toggle-primary: #0796e0;
+    --du-button-tertiary-hover: #656d4a14;
+    --du-button-primary-light-hover: #656d4a3d;
+    --du-button-toggle-primary: #656d4a;
     --du-button-toggle-secondary: #323738;
     --du-button-toggle-alternate: #323738;
     --du-overlay-outside-dialog: #000000b8;
@@ -12289,7 +12289,7 @@ meter {
     --du-state-normal: #0e0e0e;
     --du-state-hover: #242828;
     --du-state-active: #323738;
-    --du-state-disabled: #1d1f20;
+    --du-state-disabled: #1e2416;
     --du-checkbox-disabled-gray: #d6d6d6;
     --du-sidebar-tab: #6e6e6e;
     --du-border-normal: #323738;
@@ -12299,50 +12299,50 @@ meter {
     --du-border-hover: #6e6e6e;
     --du-border-hover-1: #5c5c5c;
     --du-border-active: var(--du-brand-secondary);
-    --du-border-disabled: #1d1f20;
+    --du-border-disabled: #1e2416;
     --du-border-divider: #2e2e2e;
     --du-fill-normal: #0e0e0e;
     --du-fill-normal-1: #333;
     --du-fill-hover: #6e6e6e;
     --du-fill-active: var(--du-brand-secondary);
-    --du-fill-disabled: #1d1f20;
+    --du-fill-disabled: #1e2416;
     --du-status-default: #eaeced;
     --du-status-adjustment: #999;
-    --du-status-danger: #cc2e3d;
-    --du-status-warning: #ffad3a;
-    --du-status-warning-transparent: #ffad3a29;
-    --du-status-success: #00a79e;
-    --du-status-transfer: #ff6444;
-    --du-status-info: #377cfc;
+    --du-status-danger: #3c4f2e;
+    --du-status-warning: #a68a64;
+    --du-status-warning-transparent: #a68a6429;
+    --du-status-success: #656d4a;
+    --du-status-transfer: #7f4f24;
+    --du-status-info: #656d4a;
     --du-status-colored-background: #fff;
-    --du-status-alert-background: #ffad3a29;
-    --du-transparent-success: #00a79eeb;
+    --du-status-alert-background: #a68a6429;
+    --du-transparent-success: #656d4aeb;
     --du-transparent-success-secondary: #00883214;
     --du-transparent-blue-secondary: #2c9aff14;
-    --du-transparent-info: #377cfc29;
-    --du-transparent-hint: #377cfc29;
-    --du-transparent-danger: #ff444f29;
+    --du-transparent-info: #656d4a29;
+    --du-transparent-hint: #656d4a29;
+    --du-transparent-danger: #656d4a29;
     --du-transparent-danger-secondary: #e6190e14;
-    --du-transparent-correct-message: #4bb4b329;
-    --du-transparent-fake-message: #ec3f3f29;
+    --du-transparent-correct-message: #a4ac8629;
+    --du-transparent-fake-message: #53604629;
     --du-transparent-warning-secondary: #ff9c1314;
-    --du-gradient-success: linear-gradient(to top, #0e0e0e, #00a79e29);
-    --du-gradient-danger: linear-gradient(to top, #0e0e0e, #ff444f29);
-    --du-contract-gradient-danger: linear-gradient(to top, #0e0e0e 85%, #ff444f29);
+    --du-gradient-success: linear-gradient(to top, #0e0e0e, #656d4a29);
+    --du-gradient-danger: linear-gradient(to top, #0e0e0e, #656d4a29);
+    --du-contract-gradient-danger: linear-gradient(to top, #0e0e0e 85%, #656d4a29);
     --du-gradient-right-edge: linear-gradient(to right, #0e0e0e00 -5%, #0e0e0e 71%);
     --du-gradient-blue: linear-gradient(90deg, #00a8af 0%, #04cfd8 104.41%);
     --du-gradient-gold: linear-gradient(90deg, #f7931a 0%, #ffc71b 104.41%);
     --du-gradient-green: linear-gradient(90deg, #1db193 0%, #09da7a 104.41%);
     --du-badge-white: #fff;
-    --du-badge-blue: #0677af;
+    --du-badge-blue: #414833;
     --du-badge-blue-secondary: #0777c4;
     --du-badge-light-blue: #00c6ef;
-    --du-badge-violet: #2a3052;
-    --du-badge-success: #00a79e;
+    --du-badge-violet: #333d29;
+    --du-badge-success: #656d4a;
     --du-badge-success-secondary: #007a22;
-    --du-badge-warning: #ffad3a;
+    --du-badge-warning: #a68a64;
     --du-badge-warning-secondary: #c47d00;
-    --du-badge-danger: #cc2e3d;
+    --du-badge-danger: #3c4f2e;
     --du-badge-danger-secondary: #c40000;
     --du-badge-purple: #8f4bff;
     --du-traders-hub-banner-border-color: #242828;
@@ -12350,7 +12350,7 @@ meter {
     --du-derivs-banner-ready-tick-bg-color: #4ab4b3;
     --du-derivs-banner-border-color: #e6e9e9;
     --du-derivs-banner-dot-color: #d6d6d6;
-    --du-derivs-banner-active-dot-color: #ff444f;
+    --du-derivs-banner-active-dot-color: #656d4a;
     --du-derivs-card-active-gradient-background: linear-gradient(180deg, #fff0 50%, #ffffff29 100%);
     --du-deriv-demo-bg-color: #140506;
     --du-deriv-demo-divider-color: #323738;
@@ -12396,15 +12396,15 @@ html {
 }
 
 .deriv-linear-progress-bar__line--green {
-    background: var(--du-status-success, #4bb4b3) !important
+    background: var(--du-status-success, #a4ac86) !important
 }
 
 .deriv-linear-progress-bar__line--yellow {
-    background: var(--du-status-warning, #ffad3a) !important
+    background: var(--du-status-warning, #a68a64) !important
 }
 
 .deriv-linear-progress-bar__line--red {
-    background: var(--du-status-danger, #ec3f3f) !important
+    background: var(--du-status-danger, #536046) !important
 }
 
 .deriv-linear-progress-bar__infinite-loader {
@@ -13927,8 +13927,8 @@ html {
 
 .smartcharts-light .cq-chart-controls .stxMenuActive .cq-menu-btn .ic-icon svg,
 .smartcharts-light .ciq-chart-types .ciq-list-item .active.ic-icon svg {
-    fill: #2a3052;
-    stroke: #2a3052
+    fill: #333d29;
+    stroke: #333d29
 }
 
 .smartcharts-dark .cq-chart-controls .stxMenuActive .cq-menu-btn .ic-icon svg,
@@ -14109,7 +14109,7 @@ html {
 
 .smartcharts-light .sc-chart-type__item--active,
 .smartcharts-dark .sc-chart-type__item--active {
-    border-color: #85acb0
+    border-color: #a4ac86
 }
 
 .sc-chart-type__item--active .text {
@@ -14247,7 +14247,7 @@ html {
 .smartcharts-dark .ciq-list .ciq-list-item {
     color: #c2c2c2;
     background: #0e0e0e;
-    border: 1px solid #1d1f20;
+    border: 1px solid #1e2416;
     border-top: none
 }
 
@@ -14261,7 +14261,7 @@ html {
 }
 
 .smartcharts-dark .ciq-list .ciq-list-item:first-child {
-    border-top: 1px solid #1d1f20
+    border-top: 1px solid #1e2416
 }
 
 .ciq-list .ciq-list-item:last-child {
@@ -14282,7 +14282,7 @@ html {
 }
 
 .smartcharts-light .ciq-list .ciq-list-item.active {
-    color: #2a3052;
+    color: #333d29;
     background-color: #00000029
 }
 
@@ -14642,13 +14642,13 @@ html {
 .smartcharts-light .tabs--vertical .react-tabs__tab-list .react-tabs__tab--selected {
     color:  !important;
     background: #fff !important;
-    border-left-color: #ff444f !important
+    border-left-color: #656d4a !important
 }
 
 .smartcharts-dark .tabs--vertical .react-tabs__tab-list .react-tabs__tab--selected {
     color: #fff !important;
     background: #0e0e0e !important;
-    border-left-color: #ff444f !important
+    border-left-color: #656d4a !important
 }
 
 .smartcharts-dark .tabs--vertical .react-tabs__tab-list .react-tabs__tab--selected .ic-icon {
@@ -14886,13 +14886,13 @@ html {
 
 .smartcharts-light .sc-interval__content .sc-interval__item--active {
     color: #333;
-    border-color: #85acb0;
+    border-color: #a4ac86;
     font-weight: 700
 }
 
 .smartcharts-dark .sc-interval__content .sc-interval__item--active {
     color: #fff;
-    border-color: #85acb0;
+    border-color: #a4ac86;
     font-weight: 700
 }
 
@@ -15416,7 +15416,7 @@ html {
 
 .smartcharts-light .sc-search-input>input:focus,
 .smartcharts-dark .sc-search-input>input:focus {
-    border-color: #85acb0
+    border-color: #a4ac86
 }
 
 .sc-search-input .ic-icon {
@@ -15464,12 +15464,12 @@ html {
 
 .smartcharts-light .sc-search-input.active>input {
     color: #333 !important;
-    border-color: #85acb0 !important
+    border-color: #a4ac86 !important
 }
 
 .smartcharts-dark .sc-search-input.active>input {
     color: #fff !important;
-    border-color: #85acb0 !important
+    border-color: #a4ac86 !important
 }
 
 .sc-search-input.active .ic-icon.icon-reset {
@@ -15542,22 +15542,22 @@ html {
 
 .smartcharts-light .form--sc-views__input--active .subtitle,
 .smartcharts-dark .form--sc-views__input--active .subtitle {
-    color: #85acb0
+    color: #a4ac86
 }
 
 .smartcharts-light .form--sc-views__input--active input {
     color: #333;
-    border-color: #85acb0
+    border-color: #a4ac86
 }
 
 .smartcharts-dark .form--sc-views__input--active input {
     color: #fff;
-    border-color: #85acb0
+    border-color: #a4ac86
 }
 
 .smartcharts-light .form--sc-views__input--active button,
 .smartcharts-dark .form--sc-views__input--active button {
-    background: #ff444f
+    background: #656d4a
 }
 
 .sc-views {
@@ -15651,7 +15651,7 @@ html {
 
 .smartcharts-light .sc-views--empty button>.ic-icon,
 .smartcharts-dark .sc-views--empty button>.ic-icon {
-    fill: #ff444f
+    fill: #656d4a
 }
 
 .sc-views__views {
@@ -16082,13 +16082,13 @@ html {
 }
 
 .smartcharts-light .sc-slider .sc-slider-range input[type=range]::-ms-thumb {
-    background-color: #ff444f;
-    border: 2px solid #ff444f
+    background-color: #656d4a;
+    border: 2px solid #656d4a
 }
 
 .smartcharts-dark .sc-slider .sc-slider-range input[type=range]::-ms-thumb {
-    background-color: #ff444f;
-    border: 2px solid #ff444f
+    background-color: #656d4a;
+    border: 2px solid #656d4a
 }
 
 .sc-slider .sc-slider-range input[type=range]::-moz-range-thumb {
@@ -16101,13 +16101,13 @@ html {
 }
 
 .smartcharts-light .sc-slider .sc-slider-range input[type=range]::-moz-range-thumb {
-    background-color: #ff444f;
-    border: 2px solid #ff444f
+    background-color: #656d4a;
+    border: 2px solid #656d4a
 }
 
 .smartcharts-dark .sc-slider .sc-slider-range input[type=range]::-moz-range-thumb {
-    background-color: #ff444f;
-    border: 2px solid #ff444f
+    background-color: #656d4a;
+    border: 2px solid #656d4a
 }
 
 .sc-slider .sc-slider-range input[type=range]::-webkit-slider-thumb {
@@ -16121,13 +16121,13 @@ html {
 }
 
 .smartcharts-light .sc-slider .sc-slider-range input[type=range]::-webkit-slider-thumb {
-    background-color: #ff444f;
-    border: 2px solid #ff444f
+    background-color: #656d4a;
+    border: 2px solid #656d4a
 }
 
 .smartcharts-dark .sc-slider .sc-slider-range input[type=range]::-webkit-slider-thumb {
-    background-color: #ff444f;
-    border: 2px solid #ff444f
+    background-color: #656d4a;
+    border: 2px solid #656d4a
 }
 
 .sc-slider .sc-slider-range input[type=range]::-moz-focus-outer {
@@ -16145,7 +16145,7 @@ html {
 }
 
 .smartcharts-dark .sc-slider .sc-slider-range .sc-slider-bar {
-    background: #1d1f20
+    background: #1e2416
 }
 
 .sc-slider .sc-slider-range .sc-slider-active-bar {
@@ -16155,7 +16155,7 @@ html {
 
 .smartcharts-light .sc-slider .sc-slider-range .sc-slider-active-bar,
 .smartcharts-dark .sc-slider .sc-slider-range .sc-slider-active-bar {
-    background: #ff444f
+    background: #656d4a
 }
 
 .sc-slider>div:last-child {
@@ -16288,7 +16288,7 @@ html {
 
 .smartcharts-light .sc-dropdown .value.active,
 .smartcharts-dark .sc-dropdown .value.active {
-    border-color: #85acb0
+    border-color: #a4ac86
 }
 
 .sc-dropdown .value.active svg {
@@ -16309,7 +16309,7 @@ html {
     right: -4px;
     overflow: scroll;
     transform: translateY(-8px);
-    box-shadow: 0 2px 8px #2a305224
+    box-shadow: 0 2px 8px #333d2924
 }
 
 .smartcharts-light .sc-dropdown .dropdown {
@@ -16430,7 +16430,7 @@ html {
 
 .smartcharts-light .sc-dropdown.active .subtitle span,
 .smartcharts-dark .sc-dropdown.active .subtitle span {
-    color: #85acb0
+    color: #a4ac86
 }
 
 .sc-color-picker {
@@ -16596,12 +16596,12 @@ html {
 
 .smartcharts-light .sc-color-picker.active .subtitle span,
 .smartcharts-dark .sc-color-picker.active .subtitle span {
-    color: #85acb0
+    color: #a4ac86
 }
 
 .smartcharts-light .sc-color-picker.active .value,
 .smartcharts-dark .sc-color-picker.active .value {
-    border-color: #85acb0
+    border-color: #a4ac86
 }
 
 .sc-color-picker.active .value svg {
@@ -16641,11 +16641,11 @@ html {
 }
 
 .smartcharts-light .sc-switch.on {
-    background: #4bb4b3
+    background: #a4ac86
 }
 
 .smartcharts-dark .sc-switch.on {
-    background: #00a79e
+    background: #656d4a
 }
 
 .sc-switch.off .handle {
@@ -16657,7 +16657,7 @@ html {
 }
 
 .smartcharts-dark .sc-switch.off {
-    background: #1d1f20
+    background: #1e2416
 }
 
 .sc-checkbox {
@@ -16689,8 +16689,8 @@ html {
 
 .smartcharts-light .sc-checkbox--checked .sc-checkbox__box svg,
 .smartcharts-dark .sc-checkbox--checked .sc-checkbox__box svg {
-    fill: #ff444f;
-    background: #ff444f
+    fill: #656d4a;
+    background: #656d4a
 }
 
 .sc-switch-icon {
@@ -16741,7 +16741,7 @@ html {
 
 .smartcharts-light .sc-numbercolorpicker input:focus,
 .smartcharts-dark .sc-numbercolorpicker input:focus {
-    border-color: #85acb0 !important
+    border-color: #a4ac86 !important
 }
 
 .sc-numbercolorpicker .sc-numeric-input {
@@ -16837,17 +16837,17 @@ html {
 
 .smartcharts-light .sc-numeric-input input[type=number]:focus {
     color: #333 !important;
-    border-color: #85acb0 !important
+    border-color: #a4ac86 !important
 }
 
 .smartcharts-dark .sc-numeric-input input[type=number]:focus {
     color: #fff !important;
-    border-color: #85acb0 !important
+    border-color: #a4ac86 !important
 }
 
 .smartcharts-light .sc-numeric-input input[type=number]:focus+.subtitle>span,
 .smartcharts-dark .sc-numeric-input input[type=number]:focus+.subtitle>span {
-    color: #85acb0 !important
+    color: #a4ac86 !important
 }
 
 .sc-numeric-input .sc-numeric-input-buttons {
@@ -17228,7 +17228,7 @@ html {
 
 .smartcharts-light .sc-chart-setting .form__group--theme .form__group__item--active .ic-icon,
 .smartcharts-dark .sc-chart-setting .form__group--theme .form__group__item--active .ic-icon {
-    border-color: #85acb0
+    border-color: #a4ac86
 }
 
 .sc-chart-setting .form__group--theme .form__group__item--active .text {
@@ -17294,7 +17294,7 @@ html {
 
 .smartcharts-light .sc-chart-setting .form__group--language .form__group__item--active,
 .smartcharts-dark .sc-chart-setting .form__group--language .form__group__item--active {
-    border-color: #85acb0
+    border-color: #a4ac86
 }
 
 .sc-download-menu .sc-dialog {
@@ -17502,7 +17502,7 @@ body {
 }
 
 .cq-change.down:after {
-    border-top: 8px solid #e31c4b
+    border-top: 8px solid #414833
 }
 
 .cq-change .cq-todays-change-percent {
@@ -18092,7 +18092,7 @@ body {
 .smartcharts-light .sc-notification-badge,
 .smartcharts-dark .sc-notification-badge {
     color: #fff;
-    background: #ec3f3f
+    background: #536046
 }
 
 .sc-btn {
@@ -18110,7 +18110,7 @@ body {
 
 .smartcharts-light .sc-btn,
 .smartcharts-dark .sc-btn {
-    color: #ff444f;
+    color: #656d4a;
     background: 0 0;
     border-color: #0000
 }
@@ -18121,7 +18121,7 @@ body {
 
 .smartcharts-light .sc-btn:hover,
 .smartcharts-dark .sc-btn:hover {
-    background: #ff444f14
+    background: #656d4a14
 }
 
 .sc-btn--sm {
@@ -18136,13 +18136,13 @@ body {
 .smartcharts-light .sc-btn--primary,
 .smartcharts-dark .sc-btn--primary {
     color: #fff;
-    background: #ff444f;
-    border-color: #ff444f
+    background: #656d4a;
+    border-color: #656d4a
 }
 
 .smartcharts-light .sc-btn--primary:hover {
-    background: #eb3e48;
-    border-color: #eb3e48
+    background: #536046;
+    border-color: #536046
 }
 
 .smartcharts-dark .sc-btn--primary:hover {
@@ -18158,8 +18158,8 @@ body {
 .smartcharts-dark .sc-btn--primary--disabled,
 .smartcharts-light .sc-btn--primary--disabled:hover,
 .smartcharts-dark .sc-btn--primary--disabled:hover {
-    background: #ff444f;
-    border-color: #ff444f
+    background: #656d4a;
+    border-color: #656d4a
 }
 
 .sc-btn--outline-secondary {
@@ -18199,7 +18199,7 @@ body {
 
 .smartcharts-light .sc-chart__status--online,
 .smartcharts-dark .sc-chart__status--online {
-    background: #4bb4b3
+    background: #a4ac86
 }
 
 .sc-chart__status--blinker {
@@ -18208,12 +18208,12 @@ body {
 
 .smartcharts-light .sc-chart__status--blinker,
 .smartcharts-dark .sc-chart__status--blinker {
-    background: #4bb4b3
+    background: #a4ac86
 }
 
 .smartcharts-light .sc-chart__status--offline,
 .smartcharts-dark .sc-chart__status--offline {
-    background: #cc2e3d
+    background: #3c4f2e
 }
 
 .sc-input {
@@ -18266,7 +18266,7 @@ body {
 
 .smartcharts-light .sc-input--active,
 .smartcharts-dark .sc-input--active {
-    border-color: #85acb0 !important
+    border-color: #a4ac86 !important
 }
 
 [dir=rtl] .sc-input {
@@ -18324,7 +18324,7 @@ body {
 .chart-line.horizontal .drag-line {
     float: left;
     border-top-width: 1px;
-    border-top-color: #377cfc;
+    border-top-color: #656d4a;
     width: 100%;
     height: 1px;
     margin-left: -10px;
@@ -18362,7 +18362,7 @@ body {
 }
 
 .drag-price {
-    background-color: #377cfc;
+    background-color: #656d4a;
     border-radius: 4px;
     justify-content: space-between;
     height: 24px;
@@ -18397,7 +18397,7 @@ body {
 }
 
 .price--zero {
-    color: #377cfc
+    color: #656d4a
 }
 
 .smartcharts-light .price--zero {
@@ -18410,7 +18410,7 @@ body {
 
 .price-overlay {
     opacity: .3;
-    background-color: #377cfc;
+    background-color: #656d4a;
     height: 24px;
     position: absolute;
     top: -12px;
@@ -18568,7 +18568,7 @@ body {
 
 .smartcharts-light .sc-inline-loader__inner__bullet,
 .smartcharts-dark .sc-inline-loader__inner__bullet {
-    background-color: #85acb0
+    background-color: #a4ac86
 }
 
 .sc-inline-loader__inner__bullet:nth-child(2) {
@@ -18621,7 +18621,7 @@ body {
 
 .smartcharts-light .cq-last-digits .cq-bars .min,
 .smartcharts-dark .cq-last-digits .cq-bars .min {
-    color: #e31c4b
+    color: #414833
 }
 
 .smartcharts-light .cq-last-digits .cq-bars .max {
@@ -18669,7 +18669,7 @@ body {
 
 .smartcharts-light .cq-last-digits .cq-bars .cq-bar.min,
 .smartcharts-dark .cq-last-digits .cq-bars .cq-bar.min {
-    background-color: #e31c4b
+    background-color: #414833
 }
 
 .smartcharts-light .cq-last-digits .cq-bars .cq-bar.max {
@@ -18758,7 +18758,7 @@ body {
 
 .smartcharts-light .cq-chart-controls .ciq-menu.ciq-enabled.stxMenuActive,
 .smartcharts-dark .cq-chart-controls .ciq-menu.ciq-enabled.stxMenuActive {
-    box-shadow: 0 -2px #ff444f
+    box-shadow: 0 -2px #656d4a
 }
 
 .smartcharts-light .cq-chart-controls .ciq-menu.ciq-enabled.stxMenuActive .cq-menu-btn {
@@ -18899,7 +18899,7 @@ body {
 
 .smartcharts-light .cq-chart-control-left .cq-chart-controls .ciq-menu .stxMenuActive,
 .smartcharts-dark .cq-chart-control-left .cq-chart-controls .ciq-menu .stxMenuActive {
-    box-shadow: 2px .3px #ff444f
+    box-shadow: 2px .3px #656d4a
 }
 
 .cq-chart-control-left .cq-chart-controls .ciq-menu .cq-menu-btn {
@@ -19134,7 +19134,7 @@ body {
 
 .smartcharts-light .cq-chart-title.ciq-menu.ciq-enabled.stxMenuActive>.cq-menu-btn>.cq-symbol-select-btn,
 .smartcharts-dark .cq-chart-title.ciq-menu.ciq-enabled.stxMenuActive>.cq-menu-btn>.cq-symbol-select-btn {
-    border: 1px solid #85acb0
+    border: 1px solid #a4ac86
 }
 
 .cq-chart-title.ciq-menu.ciq-enabled.stxMenuActive>.cq-menu-btn>.cq-symbol-select-btn>.ic-icon.cq-symbol-dropdown svg {
@@ -19312,9 +19312,9 @@ body {
 
 .cq-chart-title .cq-symbol-select-btn .cq-symbol-closed-text {
     text-align: center;
-    color: #e31c4b;
+    color: #414833;
     text-transform: uppercase;
-    border: 2px solid #e31c4b;
+    border: 2px solid #414833;
     border-radius: 4px;
     flex-direction: column;
     justify-content: center;
@@ -19516,13 +19516,13 @@ body {
 .smartcharts-light .sc-mcd__filter__subgroups-item--selected {
     color: #333;
     background-color: #fff !important;
-    border-left-color: #e31c4b !important
+    border-left-color: #414833 !important
 }
 
 .smartcharts-dark .sc-mcd__filter__subgroups-item--selected {
     color: #fff;
     background-color: #0e0e0e !important;
-    border-left-color: #ff444f !important
+    border-left-color: #656d4a !important
 }
 
 .sc-mcd__filter__subgroups--open {
@@ -19580,13 +19580,13 @@ body {
 .smartcharts-light .sc-mcd__filter__item--active {
     color: #333;
     background-color: #fff !important;
-    border-left-color: #e31c4b !important
+    border-left-color: #414833 !important
 }
 
 .smartcharts-dark .sc-mcd__filter__item--active {
     color: #fff;
     background-color: #0e0e0e !important;
-    border-left-color: #ff444f !important
+    border-left-color: #656d4a !important
 }
 
 .sc-mcd__filter__item--selected {
@@ -19596,13 +19596,13 @@ body {
 .smartcharts-light .sc-mcd__filter__item--selected {
     color: #333;
     background-color: #fff !important;
-    border-left-color: #e31c4b !important
+    border-left-color: #414833 !important
 }
 
 .smartcharts-dark .sc-mcd__filter__item--selected {
     color: #fff;
     background-color: #0e0e0e !important;
-    border-left-color: #ff444f !important
+    border-left-color: #656d4a !important
 }
 
 .smartcharts-light .sc-mcd__filter__item--selected .ic-icon svg {
@@ -19808,8 +19808,8 @@ body {
 }
 
 .sc-mcd__item .closed-market {
-    color: #f44336;
-    border: 1px solid #f44336;
+    color: #656d4a;
+    border: 1px solid #656d4a;
     border-radius: 4px;
     padding: 3px 6px;
     font-size: .64em
@@ -20178,7 +20178,7 @@ body {
 
 .smartcharts-light .spot__fill-red,
 .smartcharts-dark .spot__fill-red {
-    background-color: #e31c4b
+    background-color: #414833
 }
 
 .smartcharts-light .spot__fill-blue,

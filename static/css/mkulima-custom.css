@@ -74,6 +74,283 @@
 [class*="profit"] { color: #414833 !important; }
 [class*="loss"]   { color: #582F0E !important; }
 
+/* ============================================================
+   WHOLE-APP OVERRIDES — Dashboard, Tabs, All UI Components
+   ============================================================ */
+
+/* ── Navigation & Sidebar ───────────────────────────────── */
+.sidebar,
+.navigation__tab-item--active,
+.dc-tabs__active,
+.tab--active,
+[class*="tab"][class*="active"],
+[class*="nav"][class*="active"] {
+  border-color: #656D4A !important;
+  color: #656D4A !important;
+}
+.sidebar__item--active,
+.menu-item--active,
+[class*="menu-item"][class*="active"],
+[class*="sidebar"][class*="active"] {
+  background-color: rgba(101,109,74,0.12) !important;
+  border-left-color: #936639 !important;
+  color: #656D4A !important;
+}
+.dc-tabs__list::before,
+.dc-tabs__list::after,
+[class*="tab-indicator"],
+[class*="tabs__bar"] {
+  background-color: #656D4A !important;
+}
+
+/* ── Primary Buttons (all variants) ────────────────────── */
+.dc-btn--primary,
+.dc-btn--buy,
+.btn--primary,
+[class*="btn"][class*="primary"],
+[class*="button"][class*="primary"] {
+  background-color: #656D4A !important;
+  border-color: #656D4A !important;
+  color: #fff !important;
+}
+.dc-btn--primary:hover,
+.btn--primary:hover,
+[class*="btn"][class*="primary"]:hover {
+  background-color: #414833 !important;
+  border-color: #414833 !important;
+}
+.dc-btn--sell,
+[class*="btn"][class*="sell"] {
+  background-color: #936639 !important;
+  border-color: #936639 !important;
+  color: #fff !important;
+}
+.dc-btn--sell:hover { background-color: #7F4F24 !important; border-color: #7F4F24 !important; }
+
+/* Run/Stop/Reset bot buttons */
+.dbot-run-panel__btn--run,
+[class*="run-panel"][class*="run"],
+[class*="run-button"],
+[class*="btn-run"] {
+  background-color: #656D4A !important;
+  border-color: #656D4A !important;
+  color: #fff !important;
+}
+.dbot-run-panel__btn--stop,
+[class*="run-panel"][class*="stop"],
+[class*="btn-stop"] {
+  background-color: #7F4F24 !important;
+  border-color: #7F4F24 !important;
+}
+.dbot-run-panel__btn--reset,
+[class*="btn-reset"] {
+  border-color: #A68A64 !important;
+  color: #936639 !important;
+}
+
+/* ── Toggle / Switch ────────────────────────────────────── */
+.dc-toggle-switch__input:checked + .dc-toggle-switch__slider,
+[class*="toggle"][class*="checked"],
+[class*="switch"][class*="on"] {
+  background-color: #656D4A !important;
+}
+.dc-toggle-switch__slider { background-color: #A4AC86 !important; }
+
+/* ── Checkboxes & Radio ─────────────────────────────────── */
+.dc-checkbox__box--active,
+.dc-checkbox__box:checked,
+[class*="checkbox"][class*="active"],
+[class*="checkbox"][class*="checked"] {
+  background-color: #656D4A !important;
+  border-color: #656D4A !important;
+}
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+  accent-color: #656D4A !important;
+}
+
+/* ── Input / Select focus ───────────────────────────────── */
+.dc-input:focus,
+.dc-input--focus,
+.dc-dropdown--is-open,
+[class*="input"]:focus,
+[class*="select"]:focus,
+[class*="dropdown"][class*="open"] {
+  border-color: #936639 !important;
+  box-shadow: 0 0 0 2px rgba(147,102,57,0.2) !important;
+  outline-color: #936639 !important;
+}
+.dc-input__label--focused,
+[class*="input-label"][class*="focused"],
+[class*="label"][class*="active"] {
+  color: #936639 !important;
+}
+
+/* ── Links & Text accents ───────────────────────────────── */
+a,
+.dc-link,
+[class*="link"],
+[class*="anchor"] {
+  color: #656D4A !important;
+}
+a:hover, .dc-link:hover { color: #936639 !important; }
+[class*="text-red"],
+[class*="text-coral"],
+[class*="text-primary-color"] { color: #656D4A !important; }
+[class*="text-loss"] { color: #582F0E !important; }
+[class*="text-profit"] { color: #414833 !important; }
+
+/* ── Cards & Panels ─────────────────────────────────────── */
+.dc-card--active,
+.dc-card--selected,
+[class*="card"][class*="active"],
+[class*="card"][class*="selected"],
+[class*="panel"][class*="active"] {
+  border-color: #936639 !important;
+  box-shadow: 0 4px 16px rgba(147,102,57,0.18) !important;
+}
+
+/* ── Progress Bar ───────────────────────────────────────── */
+[class*="progress-bar"][class*="fill"],
+[class*="progress"][class*="bar"],
+[role="progressbar"] > div {
+  background-color: #656D4A !important;
+}
+
+/* ── Badges & Tags ──────────────────────────────────────── */
+.dc-badge,
+[class*="badge"],
+[class*="tag"][class*="active"],
+[class*="chip"][class*="active"] {
+  background-color: rgba(101,109,74,0.15) !important;
+  color: #656D4A !important;
+  border-color: rgba(101,109,74,0.3) !important;
+}
+[class*="badge--success"],
+[class*="status--active"],
+[class*="status--online"] {
+  background-color: rgba(65,72,51,0.15) !important;
+  color: #414833 !important;
+}
+
+/* ── Notification / Toast ───────────────────────────────── */
+[class*="notification"][class*="success"],
+[class*="toast"][class*="success"],
+[class*="alert"][class*="success"] {
+  background-color: rgba(65,72,51,0.1) !important;
+  border-color: #414833 !important;
+  color: #333D29 !important;
+}
+[class*="notification"][class*="error"],
+[class*="toast"][class*="error"],
+[class*="alert"][class*="error"],
+[class*="notification"][class*="danger"] {
+  background-color: rgba(88,47,14,0.1) !important;
+  border-color: #582F0E !important;
+}
+
+/* ── Modal header / accent ──────────────────────────────── */
+.dc-modal__header,
+[class*="modal"][class*="header"],
+[class*="dialog"][class*="header"] {
+  border-bottom-color: rgba(147,102,57,0.25) !important;
+}
+[class*="modal"][class*="title"],
+[class*="dialog"][class*="title"] {
+  color: #333D29 !important;
+}
+
+/* ── DBot workspace blocks ──────────────────────────────── */
+[class*="dbot"] svg[class*="icon"],
+[class*="dbot"] [class*="icon-color"] { color: #656D4A !important; fill: #656D4A !important; }
+.dbot-workspace__toolbar,
+[class*="dbot"][class*="toolbar"] {
+  border-bottom-color: rgba(147,102,57,0.2) !important;
+}
+[class*="block"][class*="active"],
+[class*="block"][class*="selected"],
+[class*="block"][class*="highlight"] {
+  outline-color: #936639 !important;
+  box-shadow: 0 0 0 2px rgba(147,102,57,0.4) !important;
+}
+.injectionDiv .blocklySelected > .blocklyPath {
+  fill: rgba(147,102,57,0.15) !important;
+  stroke: #936639 !important;
+}
+
+/* ── Chart / Trading panel accents ─────────────────────── */
+[class*="chart"][class*="title"],
+[class*="trade-panel"][class*="header"],
+[class*="trading"][class*="header"] {
+  color: #333D29 !important;
+}
+[class*="chart"][class*="active-contract"],
+[class*="chart"][class*="cursor"] {
+  background-color: rgba(147,102,57,0.12) !important;
+}
+[class*="purchase-button"],
+[class*="btn-purchase"] {
+  background: linear-gradient(135deg, #656D4A, #414833) !important;
+  border-color: #656D4A !important;
+}
+[class*="purchase-button"]:hover { background: linear-gradient(135deg, #414833, #333D29) !important; }
+
+/* ── Dropdown items hover ───────────────────────────────── */
+.dc-list__item--selected,
+.dc-dropdown-container__list__item--selected,
+[class*="dropdown-item"][class*="selected"],
+[class*="list-item"][class*="selected"],
+[class*="option"][class*="selected"] {
+  background-color: rgba(101,109,74,0.12) !important;
+  color: #656D4A !important;
+}
+.dc-list__item:hover,
+[class*="dropdown-item"]:hover,
+[class*="list-item"]:hover {
+  background-color: rgba(101,109,74,0.08) !important;
+}
+
+/* ── Table rows ─────────────────────────────────────────── */
+[class*="table"] tr:hover,
+[class*="row"]:hover { background-color: rgba(101,109,74,0.06) !important; }
+[class*="table"][class*="header"],
+th { border-bottom-color: rgba(147,102,57,0.2) !important; }
+
+/* ── Loader / Spinner ───────────────────────────────────── */
+[class*="spinner"],
+[class*="loader"],
+[class*="loading"] { border-top-color: #656D4A !important; border-left-color: #656D4A !important; }
+[class*="loading-dots"] span,
+[class*="dot-loader"] span { background-color: #656D4A !important; }
+
+/* ── Scrollbar ──────────────────────────────────────────── */
+::-webkit-scrollbar-thumb { background-color: #A4AC86 !important; }
+::-webkit-scrollbar-thumb:hover { background-color: #656D4A !important; }
+
+/* ── Icon fills ─────────────────────────────────────────── */
+[class*="ic-brand"],
+[class*="icon-brand"],
+[class*="icon--active"] { fill: #656D4A !important; color: #656D4A !important; }
+
+/* ── Summary / stats ────────────────────────────────────── */
+[class*="summary-card"][class*="total"],
+[class*="stats"][class*="total"],
+[class*="run-panel"][class*="total"] {
+  color: #936639 !important;
+  border-color: rgba(147,102,57,0.2) !important;
+}
+
+/* ── Header app bar ─────────────────────────────────────── */
+.main__top-nav,
+.main-nav,
+[class*="header__nav"],
+[class*="app-header"] {
+  border-bottom-color: rgba(147,102,57,0.15) !important;
+}
+
+/* ── Selected / Focused state across form elements ──────── */
+*:focus-visible { outline-color: #936639 !important; }
+
 /* ── Landing page brand colors (override green/red) ─────── */
 
 /* Header logo: "Mkulima" in warm brown, "Trader" in olive */
