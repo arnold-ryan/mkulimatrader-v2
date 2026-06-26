@@ -1,0 +1,144 @@
+/*
+ * Mkulima Trader — Custom Color Palette Override
+ * Primary:   #FCA311  (Gold)
+ * Dark:      #14213D  (Navy)
+ * Black:     #000000
+ * Light Gray:#E5E5E5
+ * White:     #FFFFFF
+ */
+
+/* ── Global brand tokens ── */
+:host, :root {
+  --du-brand-red-coral:   #FCA311;
+  --du-brand-dark-gray:   #14213D;
+  --du-brand-secondary:   #14213D;
+  --du-brand-orange:      #FCA311;
+
+  /* Gradient overrides */
+  --du-gradient-blue:   linear-gradient(90deg, #FCA311 0%, #e8920a 104.41%);
+  --du-gradient-gold:   linear-gradient(90deg, #FCA311 0%, #ffd166 104.41%);
+  --du-gradient-green:  linear-gradient(90deg, #14213D 0%, #1d3461 104.41%);
+}
+
+/* ── Light theme ── */
+:root .theme--light, :host .theme--light {
+  /* Backgrounds */
+  --du-general-main-1:      #FFFFFF;
+  --du-general-main-2:      #FFFFFF;
+  --du-general-section-1:   #E5E5E5;
+  --du-general-section-2:   #E5E5E5;
+  --du-general-section-3:   #F5F5F5;
+  --du-general-section-4:   #F5F5F5;
+  --du-general-hover:       #d4d4d4;
+  --du-general-active:      #c0c0c0;
+
+  /* Text */
+  --du-text-general:        #14213D;
+  --du-text-prominent:      #000000;
+  --du-text-less-prominent: #555555;
+  --du-text-primary:        #888888;
+  --du-text-red:            #FCA311;
+  --du-text-info-blue:      #14213D;
+  --du-text-hint:           #14213D;
+
+  /* Buttons */
+  --du-button-primary-default:       #FCA311;
+  --du-button-primary-hover:         #e8920a;
+  --du-button-primary-light-default: rgba(252,163,17,0.16);
+  --du-button-primary-light-hover:   rgba(252,163,17,0.24);
+  --du-button-toggle-primary:        #14213D;
+  --du-button-toggle-secondary:      #E5E5E5;
+  --du-button-toggle-alternate:      #FFFFFF;
+
+  /* Borders */
+  --du-border-active:   #FCA311;
+  --du-border-hover:    #888888;
+
+  /* Status / semantic */
+  --du-status-danger:   #e07b00;
+  --du-status-info:     #14213D;
+
+  /* Purchase (buy/sell) */
+  --du-purchase-main-1:    #FCA311;
+  --du-purchase-section-1: #e8920a;
+  --du-purchase-main-2:    #14213D;
+  --du-purchase-section-2: #0d1829;
+
+  /* Transparency helpers */
+  --du-transparent-danger:           rgba(252,163,17,0.16);
+  --du-transparent-danger-secondary: rgba(232,146,10,0.08);
+  --du-transparent-hint:             rgba(20,33,61,0.08);
+  --du-transparent-info:             rgba(20,33,61,0.16);
+
+  /* Gradient overlays */
+  --du-gradient-danger:          linear-gradient(to top, #FFFFFF, rgba(252,163,17,0.16));
+  --du-contract-gradient-danger: linear-gradient(to top, #FFFFFF 85%, rgba(252,163,17,0.16));
+}
+
+/* ── Dark theme ── */
+:root .theme--dark, :host .theme--dark {
+  --du-general-main-1:      #000000;
+  --du-general-main-2:      #0a0f1a;
+  --du-general-main-3:      #14213D;
+  --du-general-section-1:   #0a0f1a;
+  --du-general-section-2:   #000000;
+  --du-general-section-3:   #1d2d50;
+  --du-general-hover:       #1d2d50;
+  --du-general-active:      #263660;
+
+  --du-text-prominent:      #FFFFFF;
+  --du-text-general:        #E5E5E5;
+  --du-text-red:            #FCA311;
+  --du-text-info-blue:      #FCA311;
+  --du-text-hint:           #E5E5E5;
+
+  --du-button-primary-default:       #FCA311;
+  --du-button-primary-hover:         #e8920a;
+  --du-button-primary-light-default: rgba(252,163,17,0.16);
+  --du-button-primary-light-hover:   rgba(252,163,17,0.24);
+  --du-button-toggle-primary:        #FCA311;
+  --du-button-toggle-secondary:      #14213D;
+  --du-button-toggle-alternate:      #14213D;
+
+  --du-border-active:   #FCA311;
+  --du-border-normal:   #263660;
+  --du-border-divider:  #1d2d50;
+
+  --du-gradient-danger: linear-gradient(to top, #000000, rgba(252,163,17,0.16));
+}
+
+/* ── Component-level overrides ── */
+
+/* Contained primary button */
+.deriv-button__variant--contained.deriv-button__color--primary {
+  background-color: #FCA311;
+}
+.deriv-button__variant--contained.deriv-button__color--primary:hover:not(:disabled) {
+  background-color: #e8920a;
+}
+.deriv-button__variant--contained.deriv-button__color--primary span { color: #000000; }
+
+/* Outlined primary button */
+.deriv-button__variant--outlined.deriv-button__color--primary { border-color: #FCA311; }
+.deriv-button__variant--outlined.deriv-button__color--primary span { color: #FCA311; }
+.deriv-button__variant--outlined.deriv-button__color--primary:hover:not(:disabled) { background: #FCA311; }
+.deriv-button__variant--outlined.deriv-button__color--primary:hover:not(:disabled) span { color: #000000; }
+
+/* Ghost primary button */
+.deriv-button__variant--ghost.deriv-button__color--primary span { color: #FCA311; }
+.deriv-button__variant--ghost.deriv-button__color--primary:hover:not(:disabled) { background-color: #e8920a; }
+
+/* Text colors */
+.derivs-text__color--red   { color: #FCA311; }
+.derivs-text__color--blue  { color: #14213D; }
+
+/* Input active / focus border */
+.deriv-input--active { border-color: #FCA311; }
+.deriv-input--general:focus-within { border-color: #FCA311; }
+.deriv-input__label--active { color: #FCA311; }
+.deriv-input--general .deriv-input__field:focus + .deriv-input__label { color: #FCA311; }
+
+/* Page background — give it the navy touch */
+body, .body {
+  background-color: #FFFFFF;
+}
