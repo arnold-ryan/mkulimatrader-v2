@@ -4157,7 +4157,7 @@
                         opacity: +(.09 * r(41 * t) + .03).toFixed(3),
                         color: r(53 * t) > .5 ? "#00d4aa" : "#ff4757"
                     })),
-                    p = ["Connecting to Volatility Markets", "Analyzing Tick Data", "Optimizing AI Bots", "Scanning Trade Signals", "Loading Analytics Engine", "Initializing Speed Bot"],
+                    p = ["Connecting to Markets...", "Syncing Live Prices...", "Loading Your Dashboard...", "Preparing Trade Engine...", "Fetching Market Data...", "Almost Ready..."],
                     b = [{
                         symbol: "BTC/USD",
                         price: "67,234.50",

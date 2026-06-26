@@ -1,144 +1,75 @@
-/*
- * Mkulima Trader — Custom Color Palette Override
- * Primary:   #FCA311  (Gold)
- * Dark:      #14213D  (Navy)
- * Black:     #000000
- * Light Gray:#E5E5E5
- * White:     #FFFFFF
- */
+/* ============================================================
+   Mkulima Trader — Brand Theme
+   Palette: Earthy Browns & Olive Greens
+   #582F0E  #7F4F24  #936639  #A68A64  #B6AD90
+   #C2C5AA  #A4AC86  #656D4A  #414833  #333D29
+   ============================================================ */
 
-/* ── Global brand tokens ── */
+/* ── Global token overrides ─────────────────────────────── */
 :host, :root {
-  --du-brand-red-coral:   #FCA311;
-  --du-brand-dark-gray:   #14213D;
-  --du-brand-secondary:   #14213D;
-  --du-brand-orange:      #FCA311;
-
-  /* Gradient overrides */
-  --du-gradient-blue:   linear-gradient(90deg, #FCA311 0%, #e8920a 104.41%);
-  --du-gradient-gold:   linear-gradient(90deg, #FCA311 0%, #ffd166 104.41%);
-  --du-gradient-green:  linear-gradient(90deg, #14213D 0%, #1d3461 104.41%);
+  --du-brand-red-coral:        #936639;
+  --du-brand-dark-gray:        #333D29;
+  --du-brand-secondary:        #414833;
+  --du-color-brand-orange:     #936639;
+  --du-color-brand-red-coral:  #936639;
+  --du-color-brand-secondary:  #414833;
 }
 
-/* ── Light theme ── */
+/* ── Light theme ─────────────────────────────────────────── */
 :root .theme--light, :host .theme--light {
-  /* Backgrounds */
-  --du-general-main-1:      #FFFFFF;
-  --du-general-main-2:      #FFFFFF;
-  --du-general-section-1:   #E5E5E5;
-  --du-general-section-2:   #E5E5E5;
-  --du-general-section-3:   #F5F5F5;
-  --du-general-section-4:   #F5F5F5;
-  --du-general-hover:       #d4d4d4;
-  --du-general-active:      #c0c0c0;
-
-  /* Text */
-  --du-text-general:        #14213D;
-  --du-text-prominent:      #000000;
-  --du-text-less-prominent: #555555;
-  --du-text-primary:        #888888;
-  --du-text-red:            #FCA311;
-  --du-text-info-blue:      #14213D;
-  --du-text-hint:           #14213D;
-
-  /* Buttons */
-  --du-button-primary-default:       #FCA311;
-  --du-button-primary-hover:         #e8920a;
-  --du-button-primary-light-default: rgba(252,163,17,0.16);
-  --du-button-primary-light-hover:   rgba(252,163,17,0.24);
-  --du-button-toggle-primary:        #14213D;
-  --du-button-toggle-secondary:      #E5E5E5;
-  --du-button-toggle-alternate:      #FFFFFF;
-
-  /* Borders */
-  --du-border-active:   #FCA311;
-  --du-border-hover:    #888888;
-
-  /* Status / semantic */
-  --du-status-danger:   #e07b00;
-  --du-status-info:     #14213D;
-
-  /* Purchase (buy/sell) */
-  --du-purchase-main-1:    #FCA311;
-  --du-purchase-section-1: #e8920a;
-  --du-purchase-main-2:    #14213D;
-  --du-purchase-section-2: #0d1829;
-
-  /* Transparency helpers */
-  --du-transparent-danger:           rgba(252,163,17,0.16);
-  --du-transparent-danger-secondary: rgba(232,146,10,0.08);
-  --du-transparent-hint:             rgba(20,33,61,0.08);
-  --du-transparent-info:             rgba(20,33,61,0.16);
-
-  /* Gradient overlays */
-  --du-gradient-danger:          linear-gradient(to top, #FFFFFF, rgba(252,163,17,0.16));
-  --du-contract-gradient-danger: linear-gradient(to top, #FFFFFF 85%, rgba(252,163,17,0.16));
+  --du-button-primary-default:       #656D4A;
+  --du-button-primary-hover:         #414833;
+  --du-button-primary-active:        #333D29;
+  --du-button-primary-light-default: rgba(101,109,74,0.12);
+  --du-button-primary-light-hover:   rgba(101,109,74,0.22);
+  --du-text-red:                     #936639;
+  --du-text-loss:                    #582F0E;
+  --du-text-profit:                  #414833;
+  --du-text-brand:                   #656D4A;
+  --du-button-toggle-primary:        #656D4A;
+  --du-button-toggle-secondary:      #C2C5AA;
+  --du-button-toggle-alternate:      #B6AD90;
+  --du-border-active:                #936639;
+  --du-border-hover:                 #A68A64;
+  --du-border-brand:                 #656D4A;
+  --du-general-section-1:            #f5f3ee;
+  --du-general-section-2:            #eeebe3;
+  --du-general-section-3:            #e4e0d6;
+  --du-general-section-4:            #C2C5AA;
+  --du-general-active:               rgba(101,109,74,0.15);
+  --du-general-hover:                rgba(101,109,74,0.08);
+  --du-status-main:                  #656D4A;
+  --du-status-success:               #414833;
+  --du-status-warning:               #936639;
+  --du-status-danger:                #582F0E;
 }
 
-/* ── Dark theme ── */
+/* ── Dark theme ─────────────────────────────────────────── */
 :root .theme--dark, :host .theme--dark {
-  --du-general-main-1:      #000000;
-  --du-general-main-2:      #0a0f1a;
-  --du-general-main-3:      #14213D;
-  --du-general-section-1:   #0a0f1a;
-  --du-general-section-2:   #000000;
-  --du-general-section-3:   #1d2d50;
-  --du-general-hover:       #1d2d50;
-  --du-general-active:      #263660;
-
-  --du-text-prominent:      #FFFFFF;
-  --du-text-general:        #E5E5E5;
-  --du-text-red:            #FCA311;
-  --du-text-info-blue:      #FCA311;
-  --du-text-hint:           #E5E5E5;
-
-  --du-button-primary-default:       #FCA311;
-  --du-button-primary-hover:         #e8920a;
-  --du-button-primary-light-default: rgba(252,163,17,0.16);
-  --du-button-primary-light-hover:   rgba(252,163,17,0.24);
-  --du-button-toggle-primary:        #FCA311;
-  --du-button-toggle-secondary:      #14213D;
-  --du-button-toggle-alternate:      #14213D;
-
-  --du-border-active:   #FCA311;
-  --du-border-normal:   #263660;
-  --du-border-divider:  #1d2d50;
-
-  --du-gradient-danger: linear-gradient(to top, #000000, rgba(252,163,17,0.16));
+  --du-button-primary-default:       #656D4A;
+  --du-button-primary-hover:         #414833;
+  --du-button-primary-active:        #333D29;
+  --du-text-red:                     #A68A64;
+  --du-text-loss:                    #7F4F24;
+  --du-text-profit:                  #A4AC86;
+  --du-text-brand:                   #A4AC86;
+  --du-button-toggle-primary:        #656D4A;
+  --du-button-toggle-secondary:      #414833;
+  --du-button-toggle-alternate:      #333D29;
+  --du-border-active:                #936639;
+  --du-border-hover:                 #A68A64;
+  --du-general-section-1:            #333D29;
+  --du-general-section-2:            #414833;
+  --du-general-section-3:            #4a5438;
+  --du-general-section-4:            #656D4A;
+  --du-general-active:               rgba(164,172,134,0.15);
+  --du-general-hover:                rgba(164,172,134,0.08);
+  --du-status-main:                  #A4AC86;
+  --du-status-success:               #A4AC86;
+  --du-status-warning:               #A68A64;
+  --du-status-danger:                #7F4F24;
 }
 
-/* ── Component-level overrides ── */
-
-/* Contained primary button */
-.deriv-button__variant--contained.deriv-button__color--primary {
-  background-color: #FCA311;
-}
-.deriv-button__variant--contained.deriv-button__color--primary:hover:not(:disabled) {
-  background-color: #e8920a;
-}
-.deriv-button__variant--contained.deriv-button__color--primary span { color: #000000; }
-
-/* Outlined primary button */
-.deriv-button__variant--outlined.deriv-button__color--primary { border-color: #FCA311; }
-.deriv-button__variant--outlined.deriv-button__color--primary span { color: #FCA311; }
-.deriv-button__variant--outlined.deriv-button__color--primary:hover:not(:disabled) { background: #FCA311; }
-.deriv-button__variant--outlined.deriv-button__color--primary:hover:not(:disabled) span { color: #000000; }
-
-/* Ghost primary button */
-.deriv-button__variant--ghost.deriv-button__color--primary span { color: #FCA311; }
-.deriv-button__variant--ghost.deriv-button__color--primary:hover:not(:disabled) { background-color: #e8920a; }
-
-/* Text colors */
-.derivs-text__color--red   { color: #FCA311; }
-.derivs-text__color--blue  { color: #14213D; }
-
-/* Input active / focus border */
-.deriv-input--active { border-color: #FCA311; }
-.deriv-input--general:focus-within { border-color: #FCA311; }
-.deriv-input__label--active { color: #FCA311; }
-.deriv-input--general .deriv-input__field:focus + .deriv-input__label { color: #FCA311; }
-
-/* Page background — give it the navy touch */
-body, .body {
-  background-color: #FFFFFF;
-}
+/* ── Accent splashes ────────────────────────────────────── */
+[class*="profit"] { color: #414833 !important; }
+[class*="loss"]   { color: #582F0E !important; }
